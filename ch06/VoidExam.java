@@ -14,8 +14,5 @@ public class VoidExam {
 		System.out.println(n);
 		n= Hello(100);
 		System.out.println(n);
-		
-		
 	}
-
 }
