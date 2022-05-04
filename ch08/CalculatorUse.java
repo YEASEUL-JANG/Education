@@ -4,6 +4,8 @@ public class CalculatorUse {
 
 	public static void main(String[] args) {
 		Calculator c1 = new Calculator(); //객체 생성과 동시에 기본 생성자를 호출함(Calculator() 메소드 )
+		
+		
 		System.out.println(c1);
 		c1.setLeft(10);
 		c1.setRight(20);

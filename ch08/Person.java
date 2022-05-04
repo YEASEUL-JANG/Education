@@ -29,7 +29,7 @@ public class Person {
 		Person p1 = new Person(); //객체생성과 동시에 기본생성자 호출
 		p1.showInfo();
 		
-		Person p2 = new Person("김상범"); //객체생성과 동시에 기본생성자 호출
+		Person p2 = new Person("김상범"); // 매개변수가 한개인 생성자 호출
 		p2.showInfo();
 		
 	}
