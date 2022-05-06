@@ -7,6 +7,22 @@ public class Student {
 	private int year;
 	
 	public Student() {}
+
+
+	//생성자로 매개변수처리
+	public Student(String name, String num, String major, int year) {
+		this.name = name;
+		this.num = num;
+		this.major = major;
+		this.year = year;
+	}
+	//일반메소드로 매개변수 처리
+	public void input(String name, String num, String major, int year) {
+		this.name = name;
+		this.num = num;
+		this.major = major;
+		this.year = year;
+	}
 	
 	public String getName() {
 		return name;
@@ -30,22 +46,6 @@ public class Student {
 		return year;
 	}
 	public void setYear(int year) {
-		this.year = year;
-	}
-
-
-	//생성자로 매개변수처리
-	public Student(String name, String num, String major, int year) {
-		this.name = name;
-		this.num = num;
-		this.major = major;
-		this.year = year;
-	}
-	//일반메소드로 매개변수 처리
-	public void input(String name, String num, String major, int year) {
-		this.name = name;
-		this.num = num;
-		this.major = major;
 		this.year = year;
 	}
 	
