@@ -14,9 +14,12 @@ public class ProductUse {
 		System.out.println("-------------------------------------------------------------");
 		System.out.println("제품명\t제조사\t제조일자\t\t단가(만원)\t수량\t금액");
 		System.out.println("-------------------------------------------------------------");
+		
 		for(int i=0;i<list.size();i++) {
 			Product s = list.get(i);
-			System.out.println(s.getName()+"\t"+s.getMaker()+"\t"+s.getDate()+"\t"+s.getMoney()+"\t"+s.getNum()+"\t"+s.getTotal());
+			System.out.println(i+"번째 주소값 : "+s);
+			System.out.println(s.getName()+"\t"+s.getMaker()+"\t"+s.getDate()+
+					"\t"+s.getMoney()+"\t"+s.getNum()+"\t"+s.getTotal());
 		}
 		System.out.println("-------------------------------------------------------------");
 	}

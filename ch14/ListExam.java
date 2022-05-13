@@ -2,7 +2,6 @@ package ch14;
 
 import java.util.ArrayList;
 import java.util.List;
-
 //ArrayList : 벡터와 사용법이 비슷하지만 좀 더 가볍고 속도가 빠름
 public class ListExam {
 public static void main(String[] args) {
@@ -16,6 +15,5 @@ public static void main(String[] args) {
 	for(int i=0;i<list.size();i++) {
 		System.out.print(list.get(i)+"\t");
 	}
-	
 }
 }
