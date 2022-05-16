@@ -7,7 +7,7 @@ public class ThreadExam extends Thread{//멀티스레드는 Thread를 상속받�
 		super(name); //부모클래스의 생성자
 	}
 	@Override
-	public void run() {
+	public void run() {//부모 Thread의 run()메소드 필수 구현
 		for(int i=1; i<=5;i++) {
 			System.out.println(Thread.currentThread().getName());
 			try {
@@ -27,5 +27,4 @@ public class ThreadExam extends Thread{//멀티스레드는 Thread를 상속받�
 		e2.start(); //위와 동시에 호출됨
 		e3.start(); //위와 동시에 호출됨
 	}
-
 }

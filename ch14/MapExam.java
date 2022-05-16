@@ -25,8 +25,6 @@ public static void main(String[] args) {
 		String key = (String)iterator.next();
 		System.out.print("key = "+key);
 		System.out.println(", value = "+map.get(key));
-		
 	}
-	
 }
 }

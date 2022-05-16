@@ -4,13 +4,17 @@ public class RunnableExam implements Runnable{
 
 	@Override
 	public void run() {
-		for(int i=1;i<=100;i++) {
+		for(int i=1;i<=10;i++) {
 			System.out.println((Thread.currentThread().getName())+"==>"+i);
-			
+			try {
+				Thread.sleep(1000);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
 		}
-		
 	}
 public static void main(String[] args) {
+	
 	RunnableExam e1 = new RunnableExam();
 	
 	//Runnable을 쓸때는 Thread를 별도로 생성해서 써야한다.
@@ -20,8 +24,5 @@ public static void main(String[] args) {
 	
 	t1.start();
 	t2.start();
-	
 }
-
-
 }

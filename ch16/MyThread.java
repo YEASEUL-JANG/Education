@@ -5,7 +5,6 @@ public MyThread(String name) {
 super(name);
 }
 public MyThread() {
-	// TODO Auto-generated constructor stub
 }
 
 public void run() {

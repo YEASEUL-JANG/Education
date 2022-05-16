@@ -12,8 +12,5 @@ public static void main(String[] args) {
 	for(int i = 0; i<nation.length;i++) {
 		System.out.println(s.pop());//값을 끄집어냄
 	}
-	
-	
-	
 }
 }

@@ -15,15 +15,13 @@ public class SetExam_Hashset {
 		hs.add("britain");
 		hs.add("korea");
 		System.out.println(hs);
-		for(String str : hs) {
-			System.out.println(str);
-		}
 		
-		Iterator<String> it = hs.iterator();
+//		for(String str : hs) {
+//			System.out.println(str);
+//		}
+		Iterator<String> it = hs.iterator();// Set의 메소드 iterator();
 		while(it.hasNext()) {//다음 요소가 있으면 true
 			System.out.println(it.next()); //다음요소를 꺼님
 		}
-		
 	}
-
 }

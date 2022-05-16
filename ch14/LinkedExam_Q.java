@@ -17,7 +17,5 @@ public class LinkedExam_Q {
 		while((str1=(String)list.poll()) != null) {
 			System.out.println(str1+ " 삭제되었습니다.");
 		}
-		
 	}
-
 }

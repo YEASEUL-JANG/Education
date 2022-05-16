@@ -19,12 +19,15 @@ public class ListProdEx {
 		print(map);//맵을 받아서 처리하는 print메소드
 	}
 	static void print(Map map) {
-		ArrayList<ProdEx> list2 = (ArrayList<ProdEx>)map.get("list");//맵에 집어넣은 후 꺼낼때 다시 리스트에 넣어서 꺼냄
+		ArrayList<ProdEx> list2 = (ArrayList<ProdEx>)map.get("list");
+		//맵에 집어넣은 후 꺼낼때 다시 리스트에 넣어서 꺼냄
 		//맵과 리스트는 이종의 데이터 타입이므로 형변환해줘야 함. 받은쪽이 우선이므로 list타입으로 형변환 함.
 		System.out.println("----------------------------------------------");
 		System.out.println("제품명\t제품번호\t제조사\t단가\t수량\t판매금액");
 		System.out.println("----------------------------------------------");
-		for(ProdEx s : list2) {
+//		for(ProdEx s : list2) {
+		for(int i=0; i<list2.size();i++) {
+			ProdEx s = list2.get(i);
 			System.out.println(s.getName()+"\t"+s.getNum()+"\t"+s.getCompany()
 			+"\t"+s.getPrice()+"\t"+s.getAmount()+"\t"+s.getMoney());
 		}
