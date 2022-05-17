@@ -1,29 +1,20 @@
 package ch16;
 
 public class BankPlayer extends Thread{
-	int type;
+	String name;
 	MyBank my;
+	int money;
 	
 	public BankPlayer() {
 	}
-	public BankPlayer(int type, MyBank my) {
+	public BankPlayer(String name, int money,MyBank my) {
 		this.my=my;
-		this.type=type;
+		this.money=money;
+		this.name=name;
 	}
-	BankPlayer b;
+	
 	@Override
 	public void run() {
-		switch (type) {
-		case 1:
-			my.Bankstart1();
-			break;
-		case 2:
-			my.Bankstart2();
-			break;
-		case 3:
-			my.Bankstart3();
-			break;
-
-		}
+		my.Bankstart(money, name);
 	}//end run
 }

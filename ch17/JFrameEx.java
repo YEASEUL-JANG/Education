@@ -9,7 +9,6 @@ public class JFrameEx extends JFrame{
 	
 	setSize(300,200);
 	setVisible(true);
-	
 		
 		
 	}

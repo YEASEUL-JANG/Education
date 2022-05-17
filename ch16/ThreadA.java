@@ -7,9 +7,7 @@ public static void main(String[] args) {
 	synchronized (b) {//ThreadB객체에 대해 동기화 블럭설정
 		try {
 			System.out.println("b가 완료될때까지 기다립니다.");
-			b.wait();//main스레드가 ThreadB에게 자신은 wait하겠다고 알림.
-			//즉 , wait()은 잠금(락)을 풀고, 다른 스레드에서 notify를 호출해주기를 기다린다.(잠잔다.)
-			//notify가 도착하면 다시 락을닫고 실행을 이어나감.
+			b.wait();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -31,7 +29,7 @@ class ThreadB extends Thread{
 					e.printStackTrace();
 				}
 			}//for
-			notify();//wait하고 있는 스레드를 깨움
+			notify();
 		}//synchronized
 	}//run()
 }
