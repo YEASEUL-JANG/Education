@@ -13,6 +13,7 @@ public class TextFieldEx extends JFrame{
 	public TextFieldEx() {
 		super("텍스트필드 예제");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
 		Container c = getContentPane();
 		c.setLayout(new FlowLayout());
 		
@@ -26,11 +27,8 @@ public class TextFieldEx extends JFrame{
 		c.add(new JPasswordField(20)); //비밀번호표시 텍스트필드
 		setSize(300,150);
 		setVisible(true);
-		
 	}
 	public static void main(String[] args) {
 		new TextFieldEx();
-		
 	}
-	
 }

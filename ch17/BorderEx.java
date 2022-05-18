@@ -24,7 +24,7 @@ public class BorderEx extends Frame{
 	add(b2,"West");
 	add(b3,"South");
 	add(b4,"North");
-	add(b5,"Center"); //add(b5)만 해도 센터처리됨.
+	add(b5); //add(b5)만 해도 자동센터처리됨.
 	
 	//윈도우창 닫기
 	addWindowListener(new WindowAdapter() {

@@ -12,12 +12,11 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 public class TextAreaEx extends JFrame{
-	private JTextField tf = new JTextField(20);
+	private JTextField tf = new JTextField(20);//1열의 텍스트상자
 	private JTextArea ta = new JTextArea(6,20);//6행 20열의 기본값으로 입력창 생성됨
 	
 	public TextAreaEx() {
 		super("TextArea 예제");
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		Container c = getContentPane();
 		c.setLayout(new FlowLayout());
 		c.add(new JLabel("입력 후 <Enter>키를 입력하세요"));
@@ -25,16 +24,17 @@ public class TextAreaEx extends JFrame{
 		c.add(new JScrollPane(ta)); //스크롤이 되는 패널에 textarea를 추가
 		
 		tf.addActionListener(new ActionListener() {
-			
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				JTextField t = (JTextField)e.getSource();
-				ta.append(t.getText()+"\n");//텍스트필드의 문자열을 ta영역으로 옮김
+				//e.getSource()로 문자내용 가져와 t에 저장함.
+				ta.append(t.getText()+"\n");//t의 텍스트필드 문자를 ta영역으로 옮김
 				t.setText("");//현재 텍스트 필드에 입력된 내용을 지워줌
 			}
 		});
 		setSize(250,200);
 		setVisible(true);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 	public static void main(String[] args) {
 		new TextAreaEx();

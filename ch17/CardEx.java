@@ -11,20 +11,20 @@ import javax.swing.JPanel;
 
 public class CardEx extends JFrame{
 	CardLayout card;
-	Container con;
+	Container con= getContentPane();//컨텐츠팬을 알아낸다.(컨텐츠팬은 Container타입)
 	public CardEx() {
 		super("CardLayout 예제");
 		card = new CardLayout();
-		con = getContentPane();//프레임에 컨텐츠 추가처리하는 메소드
 		setLayout(card);//기본 레이아웃을 카드레이아웃으로 변경
 		JPanel[] pan = new JPanel[5];//패널을 배열처리
 		Color[] color = {Color.red, Color.yellow, Color.green,Color.blue,Color.cyan};
+		
 		for(int i=0;i<pan.length;i++) {
 			pan[i]=new JPanel();//패널을 생성
 			pan[i].setBackground(color[i]);//패널 배경색 설정
-			add("card"+i,pan[i]);//add("이름",컴퍼넌트)
+			add("카드",pan[i]);//add("이름",컴퍼넌트) : "카드"라는 이름으로 카드에 패널들을 차례로 추가
+
 			//패널에 마우스 이벤트를 추가
-			
 			pan[i].addMouseListener(new MouseAdapter() {
 				@Override
 				public void mouseClicked(MouseEvent e) {

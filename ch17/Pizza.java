@@ -48,11 +48,8 @@ public class Pizza extends JFrame{
 		//기본 보더레이아웃 사용
 		add(panel,"North");
 		
-		//이벤트처리
+		//이벤트처리 (ActionListener 객체생성)
 		ActionListener handler = new ActionListener() {
-			
-			//모달창인 dialog(경고, 안내창등)들을 이벤트를 통해 출력
-			//모달창이란 본창(부모) 앞에 튀어나온 별도의 창으로 부모-자식관계를 가진 디자인요소.
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -61,13 +58,16 @@ public class Pizza extends JFrame{
 							"치즈피자를 선택하셨습니다.\n 가격 : 23,000원 ",
 							"치즈피자",JOptionPane.INFORMATION_MESSAGE);
 				}else if(e.getActionCommand().equals("불고기")) {
-					JOptionPane.showMessageDialog(null,"불고기피자를 선택하셨습니다. \n가격:25,000원",
+					JOptionPane.showMessageDialog(null,
+							"불고기피자를 선택하셨습니다. \n가격:25,000원",
 							"불고기피자",JOptionPane.WARNING_MESSAGE);
 				}else if(e.getActionCommand().equals("포테이토")) {
-					JOptionPane.showMessageDialog(null,"포테이토피자를 선택하셨습니다. \n가격:20,000원",
+					JOptionPane.showMessageDialog(null,
+							"포테이토피자를 선택하셨습니다. \n가격:20,000원",
 							"포테이토피자",JOptionPane.DEFAULT_OPTION);
 				}else if(e.getActionCommand().equals("종료")) {
-					JOptionPane.showMessageDialog(null,"프로그램을 정말 종료하시겠습니까?",
+					JOptionPane.showMessageDialog(null,
+							"프로그램을 정말 종료하시겠습니까?",
 							"종료",JOptionPane.OK_CANCEL_OPTION);
 					System.exit(0);
 				}

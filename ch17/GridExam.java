@@ -9,7 +9,7 @@ public class GridExam extends JFrame{
 
 	public GridExam() {
 		super("GridLayout 예제");
-		setLayout(new GridLayout(2, 3));
+		setLayout(new GridLayout(2, 3,4,4)); //2행 3열의 격자를 생성.
 		for(int i=1;i<=6;i++) {
 			JButton button =new JButton("button"+i);
 			add(button);//프레임에 버튼 추가

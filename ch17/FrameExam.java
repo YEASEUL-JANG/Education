@@ -11,7 +11,7 @@ public static void main(String[] args) {
 	f.setSize(200,300);//가로 200 세로 300 프레임의 사이즈 설정
 	f.setVisible(true);//프레임을 화면에 표시함
 	
-	//화면닫기기능
+//	화면닫기기능
 //	f.addWindowListener(new WindowListener() {//익명내부클래스
 //		
 //		@Override
