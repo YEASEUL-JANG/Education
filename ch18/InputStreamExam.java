@@ -15,7 +15,7 @@ public class InputStreamExam {
 			System.out.println("내용을 입력하세요 : ");
 			var = System.in.read(); //키보드에서 1바이트를 읽음(따라서 한글처리안됨(한글 =2byte))
 			while(var != 13) {//13인 엔터키를 입력할때까지 반복
-				System.out.println(var+"==>"+(char)var);
+				System.out.println((char)var);
 				//모든 문자에는 고유한 숫자코드가 있음. int형 var를 문자형var로 형변환해서 출력
 				var = System.in.read();
 				

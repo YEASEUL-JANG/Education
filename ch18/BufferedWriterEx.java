@@ -8,11 +8,6 @@ import java.io.PrintStream;
 public class BufferedWriterEx {
 
 	public static void main(String[] args) {
-//	PrintStream ps = System.out;
-//	OutputStream os = ps;
-//	OutputStreamWriter osw = new OutputStreamWriter(os);
-//	BufferedWriter bw = new BufferedWriter(osw);
-	//위의 네줄을 아래 한줄로 사용가능
 	BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 	try {
 		bw.write("환영합니다.\n");
@@ -23,7 +18,5 @@ public class BufferedWriterEx {
 	} catch (Exception e) {
 		e.printStackTrace();
 	}
-
 	}
-
 }

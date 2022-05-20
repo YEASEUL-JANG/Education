@@ -5,7 +5,6 @@ import java.io.OutputStreamWriter;
 import java.io.PrintStream;
 
 public class OutputStreamWriterEx {
-
 	public static void main(String[] args) {
 		PrintStream ps = System.out;
 		OutputStream os=ps;
@@ -18,7 +17,5 @@ public class OutputStreamWriterEx {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
 	}
-
 }

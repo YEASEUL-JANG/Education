@@ -39,7 +39,7 @@ public class FileCopy2 {
 			System.out.println("파일복사가 완료되었습니다.");
 		} catch (Exception e) {
 			e.printStackTrace();
-		}finally {
+		}finally {//리소스처리
 		try {
 			if(reader != null) reader.close();
 		} catch (Exception e2) {
