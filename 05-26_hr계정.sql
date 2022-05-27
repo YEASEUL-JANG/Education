@@ -236,6 +236,8 @@ insert into student values (
 
 commit;
 
+
+
 SELECT*from emp;
 select*from dept;
 select empno,ename,sal from emp where sal>=300;
@@ -252,6 +254,116 @@ select name 지도교수이름, position 직책, hiredate 입사일, deptno 과�
 from professor
 order by hiredate desc;
 
+-- sal이 100~400인 사람 출력
+select*from emp
+where sal between 100 and 400
+order by sal desc;
+
+select * from emp
+where not(sal>=250 and sal <=350)
+order by sal;
+
+select * from emp
+where deptno=10 or deptno=20 or deptno=40;
+-- where deptno in(10,20,40); 와 같음
+
+select * from emp
+where deptno in(10,20,40);
+
+-- sal이 300보다 큰 직원들 출력
+select * from emp
+where sal >= any(300);
+
+-- 성이 '성'인 사람찾기 (%: 와일드카드)
+-- 이름에 성이 있으면 '%성%'
+-- 두번째 문자에 철이 들어간 경우 '_철%'
+select ename from emp
+where ename like '성%';
+
+--null인 레코드출력 ('='은 사용X)
+select*from emp
+where comm is null;
+
+-- NVL(A,B) : A가 NULL이면 B출력(아니면 A그대로 출력)
+select empno 사원번호,ename 이름,sal 급여,
+comm 커미션,sal*12+nvl(comm,0) 연봉 from emp
+order by 연봉 desc;
+
+--연결연산자 ||
+select ename ||'의 급여는'||sal||'입니다' 
+from emp
+order by sal;
+
+select * from emp;
+
+--'2005-01-01'이전에 입사한 사람검색
+select ename 이름, job 직책, deptno 부서번호,hiredate 입사일 from emp
+where hiredate <'2005-01-01'
+order by hiredate desc;
+
+--select 뒤에는 from 절이 필수로 나와야 하므로 
+-- 가장절인 dual을 만들어 붙여줌.
+select chr(65) from dual;
+select sysdate from dual;
+
+-- concat(컬럼명,'문자열') 컬럼에 해당하는 문자열을 붙임
+select concat(ename,'의 직책은'), job from emp;
+
+--initcap('문자열') : 시작문자를 대문자로
+select initcap('hello java') from dual;
+
+--LAPD 자릿수만큼 채우되, 왼쪽에 문자열을 채워넣음
+select  Lpad('abc',9,'*') from dual;
+
+-- 왼쪽부터 문자열을 제거함.
+select LTRIM('ABCD', 'AB') from dual;
+
+--replace('문자1','문자2','문자3') 문자1에서 문자2를 문자3과 바꿈
+select replace('예슬이는 바부야','바부','천재') from dual;
+
+--특정문자열을 자리수만큼 잘라오고싶을때
+select substr('예슬이천재', 4, 2) from dual;
+select ename from emp
+where substr(ename,2,1)='철';
+
+--'-'이 처음나오는 위치값
+select instr('wow-wow-wow-wow', '-') from dual;
+
+select greatest(10,20,30,40) from dual; -- 가장 큰값 출력
+select greatest('a','ab','abc','abcdxfd') from dual; -- 문자열길이 가장 긴 것도 확인가능
+
+--모조컬럼
+select rownum, rowid, empno, ename from emp
+where rownum <=10;
+
+--현재일자 기준 3개월 후 검색
+select add_months(sysdate, 3) from dual;
+
+select studno,name,birthday,round(sysdate-birthday,2) from student; --살아온 일수계산
+select months_between('2013/05/25','2013-01-05') from dual;-- 두 날짜 사이의 개월수 반환
+select next_day(sysdate,'토') from dual; --현재일자 기준으로 돌아오는 첫번째 토요일
+
+--to_char : 문자변환함수
+select to_char(sysdate,'yyyy-mm-dd am hh:mi:ss day') from dual;
+
+--decode : 값을 비교해서 해당하는 값을 돌려줌 like switch문
+select name, deptno, decode(deptno,101,'컴공','102','멀티미디어','103','소프트','기타학과') from professor;
 
 
+--문제3)
+select ename 이름, job 직책, LPAD(sal,5,'*') 급여
+from emp
+where sal >= 300
+order by sal desc;
+
+--문제4)
+select ename 이름, trunc((sysdate-hiredate)/30) 근무개월수
+from emp
+where trunc((sysdate-hiredate)/30)>=250;
+
+--문제5)
+select * from student;
+select name 이름, jumin 주민, grade 학년, decode(substr(jumin,7,1),1,'남자',2,'여자') 성별
+from student
+where deptno1=101;
 
