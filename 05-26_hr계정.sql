@@ -367,3 +367,14 @@ select name 이름, jumin 주민, grade 학년, decode(substr(jumin,7,1),1,'남�
 from student
 where deptno1=101;
 
+
+
+
+select substr('자바개발자 과정', 3, 3) from dual;
+
+
+
+
+
+
+

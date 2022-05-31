@@ -3,6 +3,7 @@ alter system set undo_retention=1500;
 
 select * from tab;
 select * from member;
+--레코드 삭제
 delete from member 
 where userid='kim';
 
