@@ -20,7 +20,8 @@ and pay < (select pay from professor where name='조인형');
 문제3]
 select grade 학년, name 이름, height 키
 from student
-where (grade,height) in(select grade,max(height) from student group by grade);
+where (grade,height) in(select grade,max(height) from student group by grade)
+order by grade;
 
 
 
@@ -108,3 +109,5 @@ update customer set deptno='20' where id = 'lee';
 update customer set deptno='30' where id = 'park';
 
 commit;
+
+
