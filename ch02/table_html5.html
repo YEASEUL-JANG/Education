@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>html 전용 그룹태그들</title>
+
+<!-- css 처리(head안에)  -->
+<style type="text/css">
+thead{
+ background-color: yellow;
+}
+tbody{
+background-color: aqua;
+}
+tfoot{
+background-color: orange;
+}
+/* 테이블 고정 */
+table{
+width: 500px;
+table-layout: fixed;
+}
+</style>
+
+</head>
+<body>
+<!-- html5전용 그룹화 태그 : thead, tbody, tfoot -->
+
+<table border="1">
+<caption>우리반 성적표</caption>
+<thead>
+ <tr>
+  <th>이름</th>
+  <th>국어</th>
+  <th>영어</th>
+  <th>수학</th>
+  <th>총점</th>
+  <th>평균</th>
+ </tr>
+</thead>
+
+<tbody>
+ <tr>
+  <td>홍길동</td>
+  <td>90</td>
+  <td>80</td>
+  <td>70</td>
+  <td>240</td>
+  <td>80</td>
+ </tr>
+ 
+ <tr>
+  <td>장예슬</td>
+  <td>90</td>
+  <td>100</td>
+  <td>100</td>
+  <td>290</td>
+  <td>97</td>
+ </tr>
+ 
+ <tr>
+  <td>장가을</td>
+  <td>50</td>
+  <td>50</td>
+  <td>50</td>
+  <td>150</td>
+  <td>50</td>
+ </tr>
+</tbody>
+
+<tfoot>
+ <tr>
+  <td>합계</td>
+  <td>250</td>
+  <td>300</td>
+ <td>500</td>
+  <td>300</td>
+  <td>800</td>
+ </tr>
+</tfoot>
+
+</table>
+</body>
+</html>
