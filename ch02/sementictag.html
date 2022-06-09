@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>HTML5 페이지 기본 레이아웃</title>
+
+<style type="text/css">
+/* *는 전체 페이지 적용  */
+* {
+margin : 0px; padding: 5px 0px;
+}
+
+body {
+  font-sixe: 14px;
+  width: auto;
+  height: auto;
+  margin: 0 auto;
+}
+
+section {
+  width: 80%;
+  float: left;
+  background: #E4F2d0;
+}
+
+aside {
+  width: 20%;
+  float: right;
+  background: #f1dcf2;
+}
+
+ /* 아이디 처리한 값은 #으로 들어감 */
+#article1 {
+  font-size: 12px;
+  background: silver;
+  margin: 0px 10px;
+}
+
+header{
+  background: #085c3c; color: white;
+}
+footer {
+background: #085c3c; color: white; 
+clear: both; /* float 처리를 초기화해주는 설정 */
+}
+
+nav{
+  background: olive;
+}
+
+h1{
+ font-size: 11px}
+
+h1{
+ font-size: 9px}
+
+</style>
+
+</head>
+<body>
+
+<header>
+<h1>Header 영역</h1>
+</header>
+
+<nav>
+ <h1>Nav영역</h1>
+</nav>
+
+<section id="section1">
+<h1>Section 1</h1>
+<p>section tag 하나의 제목 중심의 내용들을 그룹화하기 위해 사용한다.
+section tag 하나의 제목 중심의 내용들을 그룹화하기 위해 사용한다.
+section tag 하나의 제목 중심의 내용들을 그룹화하기 위해 사용한다.
+section tag 하나의 제목 중심의 내용들을 그룹화하기 위해 사용한다.
+section tag 하나의 제목 중심의 내용들을 그룹화하기 위해 사용한다.</p>
+</section>
+
+<aside>
+ <h1>Aside place</h1>
+ <p>aside tag 는 페이지 영역중 보조적인 내용을 지정할 때 사용 보통 광고나 즐겨찾기</p>
+</aside>
+
+<section id ="section2">
+ <h1>section2 place</h1>
+ <p>내용 구성에 따라 섹션 태그안에 광고태그 등을 쓸수있다.</p>
+ <article id="article1">
+  <h2>Article1 place</h2>
+  <p>article tag 는 개별 내용단위에서 활용됨. 블로그, 뉴스기사, 포스트 등 독립적 내용영역으로 사용</p>
+ </article>
+</section>
+
+<footer>
+ <h1>Footer place</h1>
+</footer>
+
+
+
+
+
+
+
+
+
+</body>
+</html>
