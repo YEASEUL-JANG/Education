@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+//자바스크립트 코드영역
+//function 함수이름(){}
+function check(){
+	var price=document.input.price.value;
+	var amount=document.input.amount.value;
+	if(price == ""){
+		alert("가격을 입력하세요."); //모달창
+		document.input.price.focus();//입력포커스 이동
+		return; //함수를 호출한 곳으로 되돌아감. 더이상 진행되지 않음.
+	}
+	if(amount == ""){
+		alert("수량을 입력하세요.");
+		document.input.amount.focus();
+		return;
+	}
+	document.input.submit();//수동으로 submit함수를 사용해 데이터 제출
+}
+
+</script>
+
+
+</head>
+<body>
+
+<form name="input" method="post" action="buttonf_result.jsp">
+가격 : <input type="text" name="price"> <br>
+수량 : <input type="text" name="amount"> <br>
+<!-- 자스 함수 / on+이벤트이름 : onclick, onfocus, onchange... -->
+<input type="button" value="계산" onclick="check()"> 
+<!-- 버튼은 제출기능이 없음, 대신 자스함수를 활용해서 데이터 제출 --> 
+
+
+
+
+</form>
+
+
+
+
+
+</body>
+</html>

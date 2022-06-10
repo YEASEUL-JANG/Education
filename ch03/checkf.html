@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<!-- 값을 보내기 위해서는 항상 form 태그 필요 -->
+
+<form method="post" action="checkf_result.jsp">
+<!-- jsp에서 한꺼번에 들어오는 값을 처리하려면 => 배열처리해줌 -->
+ Q. 좋아하는 과일을 선택하세요 <br>
+ <input type="checkbox" name="fruits" value="사과"> 사과
+ <input type="checkbox" name="fruits" value="포도"> 포도
+ <input type="checkbox" name="fruits" value="수박" checked> 수박
+ <input type="checkbox" name="fruits" value="바나나"> 바나나
+<input type="submit" value="확인">
+<input type="reset" value="취소">
+
+
+</form>
+
+
+
+</body>
+</html>

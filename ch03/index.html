@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+*{background-color: #f5f5dc;
+}
+h1{
+font-size: 40px;}
+#section{
+border: 1px solid black ;
+width: 450px;
+position: absolute;
+left: 37%;
+padding: 20px;
+}
+</style>
+
+<script type="text/javascript">
+
+function check(){
+	let name=document.input.name.value;
+	let hobby1=document.input.hobby1.value;
+	let hobby2=document.input.hobby2.value;
+	let hobby3=document.input.hobby3.value;
+	let MBTI=document.input.MBTI.value;
+	let food=document.input.food.value;
+	let feeling=document.input.feeling.value;
+	let date=document.input.date.value;
+	if(name == ""){
+		alert("이름을 입력하세요."); 
+		document.input.name.focus();
+		return; 
+	}
+	if(hobby1 == ""){
+		alert("취미를 입력하세요.");
+		document.input.hobby1.focus();
+		return;
+	}
+	if(hobby2 == ""){
+		alert("취미를 입력하세요.");
+		document.input.hobby2.focus();
+		return;
+	}
+	if(hobby3 == ""){
+		alert("취미를 입력하세요.");
+		document.input.hobby3.focus();
+		return;
+	}
+	if(MBTI == ""){
+		alert("MBTI를 입력하세요.");
+		document.input.MBTI.focus();
+		return;
+	}
+	if(food == ""){
+		alert("좋아하는 음식을 입력하세요.");
+		document.input.food.focus();
+		return;
+	}
+	if(feeling == ""){
+		alert("오늘의 감정을 입력하세요.");
+		document.input.feeling.focus();
+		return;
+	}
+	if(date == ""){
+		alert("오늘의 감정을 입력하세요.");
+		document.input.date.focus();
+		return;
+	}
+	document.input.submit();
+}
+
+</script>
+
+
+</head>
+<body>
+
+<div id="header" align="center">
+<br>
+<br>
+<br>
+<br>
+<h1>&#9998;Let's make a blog!!</h1>
+<h5>Please write down your information.&#10000;</h5>
+</div>
+
+<br>
+<br>
+<div id="section" align="center">
+<form name="input" method="post" action="index_result.jsp" >
+<b>Name</b> : <input type="text" name="name"><br>
+<b>Hobby1</b> : <input type="text" name="hobby1"> <br>
+<b>Hobby2</b> : <input type="text" name="hobby2"> <br>
+<b>Hobby3</b> : <input type="text" name="hobby3"> <br>
+<b>MBTI</b> : <input type="text" name="MBTI"> <br>
+<b>Favorite Food</b> : <input type="text" name="food"> <br>
+<b>Feeling</b> : <textarea rows="6" cols="25" name="feeling"> Today is...</textarea><br>
+<b>Date</b> :<input type="date" name="date">
+   <input type="button" value="완료" onclick="check()">
+
+
+</form>
+</div>
+
+
+
+</body>
+</html>
