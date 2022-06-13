@@ -19,9 +19,5 @@ int money= price*amount;
 수량 : <%= amount %><br>
 금액 : <%= money %>
 
-
-
-
-
 </body>
 </html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<form name="form1">
+<!-- onchange는 자바스크립트의 이벤트함수 -->
+ <input type="range" name="range" min="1" max="100" 
+ onchange="document.form1.rangeout.value=this.value">
+ <output name="rangeout" for="range">50</output>
+
+</form>
+
+</body>
+</html>

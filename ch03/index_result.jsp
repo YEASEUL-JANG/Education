@@ -92,6 +92,11 @@ String hobby3= request.getParameter("hobby3");
 String MBTI= request.getParameter("MBTI");
 String food= request.getParameter("food");
 String feeling= request.getParameter("feeling");
+feeling=feeling.replace("<", "&lt;");
+feeling=feeling.replace(">", "&gt;");
+feeling=feeling.replace("\n", "<br>");
+feeling=feeling.replace("  ", "&nbsp;&nbsp;");
+
 //SimpleDateFormat date = new SimpleDateFormat("yyyy년 mm월 dd일"); //date.format(date);
 String date=request.getParameter("date");
 %>

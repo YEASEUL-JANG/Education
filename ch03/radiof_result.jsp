@@ -9,7 +9,6 @@
 <body>
 
 <!-- 한글처리 따로 해줘야함 -->
-
 <%
 //기본 인코딩(iso-8859-1에서 utf-8로 변경)
 request.setCharacterEncoding("utf-8");
@@ -28,10 +27,6 @@ gender=gender.equals("male")? "남자":"여자";
 나이 : <%= age %> <br>
 성별 : <%= gender %> <br>
 살아온 날 : <%= days %>
-
-
-
-
 
 </body>
 </html>

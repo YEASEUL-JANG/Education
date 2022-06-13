@@ -15,6 +15,8 @@ position: absolute;
 left: 37%;
 padding: 20px;
 }
+table{
+font-weight: bold;}
 </style>
 
 <script type="text/javascript">
@@ -90,15 +92,59 @@ function check(){
 <br>
 <div id="section" align="center">
 <form name="input" method="post" action="index_result.jsp" >
-<b>Name</b> : <input type="text" name="name"><br>
-<b>Hobby1</b> : <input type="text" name="hobby1"> <br>
-<b>Hobby2</b> : <input type="text" name="hobby2"> <br>
-<b>Hobby3</b> : <input type="text" name="hobby3"> <br>
-<b>MBTI</b> : <input type="text" name="MBTI"> <br>
-<b>Favorite Food</b> : <input type="text" name="food"> <br>
-<b>Feeling</b> : <textarea rows="6" cols="25" name="feeling"> Today is...</textarea><br>
-<b>Date</b> :<input type="date" name="date">
-   <input type="button" value="완료" onclick="check()">
+<table>
+<tr>
+<td>Name</td>
+<td><input type="text" name="name"></td>
+</tr>
+<tr>
+<td>Hobby1</td>
+<td><input type="text" name="hobby1"></td>
+</tr>
+<tr>
+<td>Hobby2</td>
+<td><input type="text" name="hobby2"></td>
+</tr>
+<tr>
+<td>Hobby3</td>
+<td><input type="text" name="hobby3"></td>
+</tr>
+<tr>
+<td>MBTI</td>
+<td>
+<select name="MBTI">
+ <option value="INTJ" selected>INTJ</option>
+ <option value="INFJ">INFJ</option>
+ <option value="ISTJ">ISTJ</option>
+ <option value="ISTP">ISTP</option>
+ <option value="INTP">INTP</option>
+ <option value="INFP">INFP</option>
+ <option value="ISFJ">ISFJ</option>
+ <option value="ISFP">ISFP</option>
+ <option value="ENTJ">ENTJ</option>
+ <option value="ENFJ">ENFJ</option>
+ <option value="ESTJ">ESTJ</option>
+ <option value="ESTP">ESTP</option>
+ <option value="ENTP">ENTP</option>
+ <option value="ENFP">ENFP</option>
+ <option value="ESFJ">ESFJ</option>
+ <option value="ESFP">ESFP</option>
+</select></td>
+</tr>
+<tr>
+<td>Favorite Food</td>
+<td><input type="text" name="food"></td>
+</tr>
+<tr>
+<td>Feeling</td>
+<td><textarea rows="6" cols="25" placeholder="Today is..." name="feeling"></textarea></td>
+</tr>
+<tr>
+<td>Date</td>
+<td><input type="date" name="date">
+ <input type="button" value="완료" onclick="check()"></td>
+</tr>
+</table>
 
 
 </form>
