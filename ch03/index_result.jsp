@@ -40,15 +40,15 @@ background: white;
 padding: 15px 20px;
 position: absolute;
 left: 17%;
-top: 40%;
-border : 1px soild black;
+top: 400px;
+border : 1px dashed black;
 }
 #sec2{
 background: white;
 padding: 25px;
 position: absolute;
 left: 28%;
-top: 40%;
+top: 650px;
 width: 1000px;
 border : 1px dashed black;
 }
@@ -57,7 +57,7 @@ background: white;
 padding: 25px;
 position: absolute;
 left: 28%;
-top: 1600px;
+top: 1850px;
 width: 1000px;
 border : 1px dashed black;
 }
@@ -67,6 +67,48 @@ background: white;
 width: 120px;
 height: 170px;
 font-size: 12px;
+}
+#sec1>b{
+font-size: 8px;
+}
+.search{
+background: white;
+border : 1px dashed black;
+position: absolute;
+left: 28%;
+top: 3160px;
+padding: 10px;}
+.search b {
+font-size: 13px;}
+.top{
+background: white;
+border: 1px dashed black;
+font-size : 13px;
+font-weight: bold;
+font-color: gray;
+padding : 20px;
+width: 1010px;
+position: absolute;
+left: 28%;
+top: 3080px;
+}
+#category{
+background: white;
+border: 1px dashed black;
+width: 1010px;
+position: absolute;
+left: 28%;
+font-color: gray;
+font-size: 12px;
+padding: 15px;
+top: 400px;
+}
+#category span {
+border: 1px solid gray;
+padding : 5px;
+}
+#category select {
+float: right;
 }
 a:link{
 text-decoration: none;
@@ -96,8 +138,6 @@ feeling=feeling.replace("<", "&lt;");
 feeling=feeling.replace(">", "&gt;");
 feeling=feeling.replace("\n", "<br>");
 feeling=feeling.replace("  ", "&nbsp;&nbsp;");
-
-//SimpleDateFormat date = new SimpleDateFormat("yyyy년 mm월 dd일"); //date.format(date);
 String date=request.getParameter("date");
 %>
 
@@ -127,9 +167,29 @@ perfil-anonimo.png"
 width="120px" length="200px"> <br>
 <div style="text-align:right; font-size: 8px;"><a href="#"><b>프로필 설정</b></a></div>
  <div class="feeling">
- <i><strong>Today's feeling...</strong></i><br>
- <%= feeling %>
+  <i><strong>Today's feeling...</strong></i><br>
+  <%= feeling %><br>
  </div>
+ <b><a href="#">✍글쓰기</a></b>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ <b><a href="#">📃통계</a></b>
+</div>
+
+<div id="category">
+<p><b><%= name %></b> 2개의 글</p>
+<br>
+글제목<br>
+<b><hr></b>
+<p><a href="#sec2"> 맛집 탐방_<%= food %> </a></p>
+<p><a href="#sec2">MBTI팩폭_<%= MBTI %></a></p>
+<hr><br>
+ <span><a href="#">글관리 열기</a></span>
+<select name="rows">
+<option value="5rows" selected>5줄보기</option>
+<option value="10rows">10줄보기</option>
+<option value="15rows">15줄보기</option>
+<option value="20rows">20줄보기</option>
+</select>
 </div>
 
 <div id="sec2">
@@ -155,7 +215,7 @@ jpg&type=sc960_832" width="500px" height="700px">
 
 <div id="sec3">
 <h2>MBTI팩폭_<%= MBTI %></h2>
-<%= name %> &nbsp; <%= date %><br>
+<div style="text-align:right"><%= name %> &nbsp; <%= date %></div>
 <hr>
 <p>
 <p>
@@ -172,8 +232,11 @@ width="500px" height="700px">
 <br><br><br>
 <u>#MBTI #블로그 #친목 #사실맞아</u>
 </div>
-
-
+<div class="top" align="right">
+<a href="#header">⬆ TOP</a>
+</div>
+<div class="search">
+<b>🔍SEARCH </b><input type="search" size="20px"></div>
 
 
 
