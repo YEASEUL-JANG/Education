@@ -43,7 +43,7 @@ border : 1px dashed black;
 #sec2{
 border-radius: 10px;
 background: white;
-padding: 60px 20px;
+padding: 30px 20px;
 position: absolute;
 left: 28%;
 top: 400px;
@@ -68,7 +68,7 @@ background: white;
 border : 1px dashed black;
 position: absolute;
 left: 28%;
-top: 780px;
+top: 1130px;
 padding: 10px;}
 .search b {
 font-size: 13px;}
@@ -83,7 +83,7 @@ padding : 20px;
 width: 1010px;
 position: absolute;
 left: 28%;
-top: 700px;
+top: 1050px;
 }
 .write{
 font-weight: bold;
@@ -91,7 +91,13 @@ border: 1px solid #e0e0eb;
 padding: 7px;
 display: inline;
 }
-
+.write{
+font-weight: bold;
+border: 1px solid #e0e0eb;
+padding: 7px;
+display: inline;
+float: right;
+}
 a:link{
 text-decoration: none;
 color: #065535;
@@ -143,13 +149,15 @@ width="120px" length="200px"> <br>
 </div>
 
 
-<div id="sec2" align="center">
-<p><b>아직 작성된 글이 없습니다.</b></p>
-문득 스치는 생각이나 기분, 일기 등 다양한 이야기로<br>
-나만의 공간을 채워보세요!<br><br>
-
-<p><div class="write"><a href="diary.html">&#128393;글쓰기</a></div>
+<div id="sec2" align="left">
+<input size="135px" placeholder="제목" style="border:none;">
+<hr>
+<p><textarea rows="30" cols="139" placeholder="내용입력" ></textarea>
+<p><div class="write">&#128393;발행</div>
 </div>
+
+
+
 
 <div class="top" align="right">
 <a href="#header">⬆ TOP</a>

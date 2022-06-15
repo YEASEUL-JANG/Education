@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+ * {
+ font-size : 1em;
+ }
+ 
+ #id1, #id2, #id3, #id4, #id5 {
+ font-size: 16px;
+ border: dotted silver;}
+ 
+#id1{
+font-family: arial;
+font-size: small;
+text-decoration: overline;
+}
+#id2{
+font-family: "돋움";
+font-size: large;
+text-align: center;
+text-decoration: line-through;
+}
+#id3{
+font-size: 200%;
+text-align: right;
+text-decoration: underline;
+font-style: oblique;}
+
+#id4{
+font-size: 2em;
+font-family: "times new roman";
+font-weight: bold;
+}
+#id5{
+font-family: "없는글씨체",serif;
+font-size: 100%;
+font-weight: lighter;
+}
+#id6{
+vertical-align: top;
+letter-spacing: 2pt; /* 글자사이 간격 */
+word-spacing: 3pt; /* 단어사이 간격 */
+}
+#id7 {
+text-align: justify;
+letter-spacing: 4pt;
+word-spacing: 6pt;
+}
+#id9{
+line-height: 300%;
+}
+
+/* text-shadow: 글자에 그림자 효과를 줌 : 그림자의 수평거리(x) 수직거리(y) 흐림정도 색 */
+h1{
+font-size: 32px;
+text-shadow: 8px 6px 5px silver;}
+h3{
+font-size: 2em;
+background: #800080;
+color: black;
+display: inline;
+text-shadow: 2px 2px 5px white;}
+
+
+
+</style>
+</head>
+<body>
+<p id="id1">AaBbCc스타일1</p>
+<p id="id2">AaBbCc스타일2</p>
+<p id="id3">AaBbCc스타일3</p>
+<p id="id4">AaBbCc스타일4</p>
+<p id="id5">AaBbCc스타일5</p>
+
+<table border="1">
+ <tr>
+  <td>
+    <p id="id6">AaBbCc스타일6 스타일6 스타일6 스타일6</p> 
+    <p id="id7">AaBbCc스타일7 스타일7 스타일7 스타일7</p> 
+  </td>
+ </tr>
+ <tr>
+  <td>
+    <p id="id8">AaBbCc스타일8 스타일6 스타일6 스타일6</p> 
+    <p id="id9">AaBbCc스타일9 스타일7 스타일7 스타일7</p> 
+  </td>
+ </tr>
+</table>
+
+<h1>h1 Shadow 효과</h1>
+<h3>h3 Shadow 효과</h3>
+
+
+
+</body>
+</html>

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>I'm Your Blog</title>
+<style type="text/css">
+body
+{background-color: #f5f5dc;
+}
+h1{
+font-size:50px;}
+strong{
+font-size:10px;
+}
+#music{
+float: right;
+}
+#header{
+padding: 20px;
+margin: 30px;
+text-decoration: underline;
+}
+#nav{
+border: 2px dashed #065535;
+padding: 20px;
+position: absolute;
+left: 17%;
+top: 270px;
+width: 1200px;
+font-size:20px;
+text-decoration: underline;
+color: #065535;
+}
+#sec1{
+border-radius: 10px;
+background: white;
+padding: 15px 20px;
+position: absolute;
+left: 17%;
+top: 400px;
+border : 1px dashed black;
+}
+#sec2{
+border-radius: 10px;
+background: white;
+padding: 40px 40px;
+position: absolute;
+left: 28%;
+top: 400px;
+width: 960px;
+border : 3px solid gray;
+}
+
+.feeling{
+border-radius: 10px;
+border : 1px dashed #065535;
+background: white;
+width: 120px;
+height: 170px;
+font-size: 12px;
+}
+#sec1>b{
+font-size: 8px;
+}
+.top{
+border-radius: 10px;
+background: white;
+border: 1px dashed black;
+font-size : 13px;
+font-weight: bold;
+color: gray;
+padding : 20px;
+width: 1010px;
+position: absolute;
+left: 28%;
+top: 960px;
+}
+.write{
+font-weight: bold;
+border: 1px solid #e0e0eb;
+padding: 7px;
+display: inline;
+
+}
+.search{
+border-radius: 10px;
+background: white;
+border : 1px dashed black;
+position: absolute;
+left: 28%;
+top: 1040px;
+padding: 10px;}
+.search b {
+font-size: 13px;}
+a:link{
+text-decoration: none;
+color: #065535;
+}
+a:visited {
+ color: #065535; 
+ }
+a:hover{
+	text-decoration: underline;
+	color: lime;
+
+</style>
+
+<script type="text/javascript">
+function check(){
+	let name=document.input.name.value;
+	let hobby1=document.input.hobby1.value;
+	let hobby2=document.input.hobby2.value;
+	let hobby3=document.input.hobby3.value;
+	let MBTI=document.input.MBTI.value;
+	let food=document.input.food.value;
+	let feeling=document.input.feeling.value;
+	let date=document.input.date.value;
+	if(name == ""){
+		alert("이름을 입력하세요."); 
+		document.input.name.focus();
+		return; 
+	}
+	if(hobby1 == ""){
+		alert("취미를 입력하세요.");
+		document.input.hobby1.focus();
+		return;
+	}
+	if(hobby2 == ""){
+		alert("취미를 입력하세요.");
+		document.input.hobby2.focus();
+		return;
+	}
+	if(hobby3 == ""){
+		alert("취미를 입력하세요.");
+		document.input.hobby3.focus();
+		return;
+	}
+	if(MBTI == ""){
+		alert("MBTI를 입력하세요.");
+		document.input.MBTI.focus();
+		return;
+	}
+	if(food == ""){
+		alert("좋아하는 음식을 입력하세요.");
+		document.input.food.focus();
+		return;
+	}
+	if(feeling == ""){
+		alert("오늘의 감정을 입력하세요.");
+		document.input.feeling.focus();
+		return;
+	}
+	if(date == ""){
+		alert("오늘의 날짜을 입력하세요.");
+		document.input.date.focus();
+		return;
+	}
+	document.input.action="index_result.jsp";
+	document.input.submit(); 
+	
+}
+</script>
+
+</head>
+<body>
+
+<div id="music">
+<audio autoplay controls> 
+ <source src="https://drive.google.com/uc?export=download&id=1qDTFcIx21YbFmlfcJL4FMimFKq4_R9-L" 
+ type="audio/mpeg">
+브라우저에서 오디오 파일을 지원하지 않습니다.<br>
+</audio>
+</div>
+
+<div id="header" align="center">
+<h1>&nbsp;&#9998;&nbsp;My Blog <a href="index.html">😀</h1></a>
+</div>
+
+<div id="nav" align="right">
+<b>
+<span><a href="introduce.html">소개&nbsp;&nbsp;</a></span>
+<span><a href="diary.html">Diary&nbsp;&nbsp;</a></span>
+<span><a href="#">안부게시판&nbsp;&nbsp;</a></span>
+<span><a href="book.html">서재&nbsp;&nbsp;</a></span>
+<span><a href="map.html">지도</a></span></b>
+</div>
+
+<div id="sec1">
+<img alt="프로필" src="https://www.nicepng.com/png/detail/105-1053345_comment-from-dj-buck-
+perfil-anonimo.png"
+width="120px" length="200px"> <br>
+<div style="text-align:right; font-size: 8px;"><a href="introduce.html"><b>프로필 설정</b></a></div>
+ <div class="feeling">
+  <i><strong>Today's feeling...</strong></i><br>
+  <br>
+ </div>
+ <b><a href="diary.html">✍글쓰기</a></b>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ <b><a href="#">📃통계</a></b>
+</div>
+
+
+<div id="sec2" align="left">
+<h3><u>&#9998;Information</u></h3>
+<h5>Please write down your information.&#10000;</h5>
+<br>
+<br>
+<form name="input" method="post" >
+<table>
+<tr>
+<td>Nickname</td>
+<td><input type="text" name="name"></td>
+</tr>
+<tr>
+<td>Hobby1</td>
+<td><input type="text" name="hobby1"></td>
+</tr>
+<tr>
+<td>Hobby2</td>
+<td><input type="text" name="hobby2"></td>
+</tr>
+<tr>
+<td>Hobby3</td>
+<td><input type="text" name="hobby3"></td>
+</tr>
+<tr>
+<td>Favorite Food</td>
+<td><input type="text" name="food"></td>
+</tr>
+<tr>
+<td>MBTI</td>
+<td>
+<select name="MBTI">
+ <option value="INTJ" selected>INTJ</option>
+ <option value="INFJ">INFJ</option>
+ <option value="ISTJ">ISTJ</option>
+ <option value="ISTP">ISTP</option>
+ <option value="INTP">INTP</option>
+ <option value="INFP">INFP</option>
+ <option value="ISFJ">ISFJ</option>
+ <option value="ISFP">ISFP</option>
+ <option value="ENTJ">ENTJ</option>
+ <option value="ENFJ">ENFJ</option>
+ <option value="ESTJ">ESTJ</option>
+ <option value="ESTP">ESTP</option>
+ <option value="ENTP">ENTP</option>
+ <option value="ENFP">ENFP</option>
+ <option value="ESFJ">ESFJ</option>
+ <option value="ESFP">ESFP</option>
+</select></td>
+</tr>
+<tr>
+<td>Feeling</td>
+<td><textarea rows="6" cols="25" placeholder="Today is..." name="feeling"></textarea></td>
+</tr>
+<tr>
+<td>Date</td>
+<td><input type="date" name="date">
+ <input type="button" value="완료" onclick="check()"></td>
+</tr>
+</table>
+<p><p>
+</div>
+
+
+<div class="top" align="right">
+<a href="#header">⬆ TOP</a>
+</div>
+
+<div class="search">
+<b>🔍SEARCH </b><input type="search" size="20px">
+</div>
+</body>
+</html>

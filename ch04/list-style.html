@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+
+ul li {
+list-style-type: square;
+}
+.class1 li{
+list-style-type: lower-roman;
+}
+.class2 li{
+list-style-type: upper-alpha;
+}
+.class3 li{
+list-style-type: lower-alpha;
+}
+#id1, #id2{
+ list-style-position: inside; /* 문단 안쪽에 마커지정 */
+}
+#id3{
+list-style-image: url("../images/star-type.jpg"); /* 이미지로 마커 지정 */
+}
+
+</style>
+</head>
+<body>
+
+<ul>
+ <li>AaBbCc스타일1</li>
+ <ol class="class1">
+  <li id="id1">AaBbCc스타일1-1</li>
+  <li>AaBbCc스타일1-2</li>
+  <li>AaBbCc스타일1-3</li>
+ </ol>
+ <li>AaBbCc스타일2</li>
+  <ol class="class2">
+   <li>AaBbCc스타일2-1</li>
+   <li>AaBbCc스타일2-2</li>
+   <li>AaBbCc스타일2-3</li>
+  </ol>
+  <li>AaBbCc스타일3</li>
+  <ol id="id3" class="class3">
+   <li>AaBbCc스타일3-1</li>
+   <li>AaBbCc스타일3-2</li>
+   <li>AaBbCc스타일3-3</li>
+  </ol>
+</ul>
+
+
+</body>
+</html>
