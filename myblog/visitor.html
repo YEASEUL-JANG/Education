@@ -24,7 +24,7 @@ text-decoration: underline;
 border: 2px dashed #065535;
 padding: 20px;
 position: absolute;
-left: 17%;
+left: 10%;
 top: 270px;
 width: 1200px;
 font-size:20px;
@@ -36,17 +36,27 @@ border-radius: 10px;
 background: white;
 padding: 15px 20px;
 position: absolute;
-left: 17%;
+left: 10%;
 top: 400px;
 border : 1px dashed black;
 }
 #sec2{
 border-radius: 10px;
 background: white;
-padding: 60px 20px;
+padding: 60px 20px 12px 20px;
 position: absolute;
-left: 28%;
+left: 22%;
 top: 400px;
+width: 1000px;
+border : 3px solid gray;
+}
+#sec3{
+border-radius: 10px;
+background: white;
+padding: 20px;
+position: absolute;
+left: 22%;
+top: 790px;
 width: 1000px;
 border : 3px solid gray;
 }
@@ -67,8 +77,8 @@ border-radius: 10px;
 background: white;
 border : 1px dashed black;
 position: absolute;
-left: 28%;
-top: 780px;
+left: 22%;
+top: 1380px;
 padding: 10px;}
 .search b {
 font-size: 13px;}
@@ -82,16 +92,9 @@ color: gray;
 padding : 20px;
 width: 1010px;
 position: absolute;
-left: 28%;
-top: 700px;
+left: 22%;
+top: 1300px;
 }
-.write{
-font-weight: bold;
-border: 1px solid #e0e0eb;
-padding: 7px;
-display: inline;
-}
-
 a:link{
 text-decoration: none;
 color: #065535;
@@ -123,7 +126,7 @@ a:hover{
 <b>
 <span><a href="introduce.html">소개&nbsp;&nbsp;</a></span>
 <span><a href="diary.html">Diary&nbsp;&nbsp;</a></span>
-<span><a href="#">안부게시판&nbsp;&nbsp;</a></span>
+<span><a href="visitor.html">안부게시판&nbsp;&nbsp;</a></span>
 <span><a href="book.html">서재&nbsp;&nbsp;</a></span>
 <span><a href="map.html">지도</a></span></b>
 </div>
@@ -143,17 +146,55 @@ width="120px" length="200px"> <br>
 </div>
 
 
-<div id="sec2" align="center">
-<p><b>아직 작성된 글이 없습니다.</b></p>
-문득 스치는 생각이나 기분, 일기 등 다양한 이야기로<br>
-나만의 공간을 채워보세요!<br><br>
-
-<p><div class="write"><a href="diary.html">&#128393;글쓰기</a></div>
+<div id="sec2" align="left">
+<div class="visitor" style="margin: 10px; font-weight: bold; border-bottom: 3px solid #e0e0eb;
+padding-bottom:10px">> 안부게시판</div>
+<span style="color: gray; font-size: 13px;margin:15px"><b><a href="#">Visitor</b></a></span>
+<span style="float: right;font-size: 8px; color: gray;"><input type="checkbox">&#128274;비밀글</span>
+<p>
+<div align="center"><textarea rows="10" cols="120"></textarea><p></div>
+<div align="right"><input type="button" value="&#128393;글쓰기"></div>
 </div>
 
 <div class="top" align="right">
 <a href="#header">⬆ TOP</a>
 </div>
+
+<div id="sec3" align="left">
+ <select>
+<option selected>&#9660;이웃별 안부글 보기</option>
+<option>EX</option>
+<option>운동하는 제이지</option>
+<option>또랑이</option>
+<option>Lucid</option>
+</select>
+<input placeholder="아이디/별명" style="border-style: groove;">
+<input type="button" value="검색">
+<p>
+<div class="visitor1" style="border-top: 1px solid #e0e0eb;border-bottom: 1px solid #e0e0eb; padding: 5px;">
+<span style="color: gray; font-size: 13px;margin:15px"><b><a href="#">👦 EX</b></a></span>
+<span style="color: gray; font-size: 10px;">수정 | 삭제</span>
+<span style="float: right;font-size: 10px; color: gray;">2022.06.16 02:13</span>
+</div>
+<p> 자냐..?</p><p><br>
+<p style="color:green; font-size: 15px;"><a href="#">댓글쓰기 ↓</a><p><br>
+
+<div class="visitor1" style="border-top: 1px solid #e0e0eb;border-bottom: 1px solid #e0e0eb; padding: 5px;">
+<span style="color: gray; font-size: 13px;margin:15px"><b><a href="#">🧟‍♀️ 또랑이</b></a></span>
+<span style="color: gray; font-size: 10px;">수정 | 삭제</span>
+<span style="float: right;font-size: 10px; color: gray;">2022.06.14 18:10</span>
+</div>
+<p> 이웃추가하고 가요~~^^</p>
+<p>
+<br>
+<p style="color:green; font-size: 15px;"><a href="#">댓글쓰기 ↓</a><p><br>
+</div>
+
+<div class="top" align="right">
+<a href="#header">⬆ TOP</a>
+</div>
+
+
 <div class="search">
 <b>🔍SEARCH </b><input type="search" size="20px"></div>
 </body>

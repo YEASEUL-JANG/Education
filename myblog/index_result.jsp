@@ -27,7 +27,7 @@ text-decoration: underline;
 border: 2px dashed #065535;
 padding: 20px;
 position: absolute;
-left: 17%;
+left: 10%;
 top: 270px;
 width: 1200px;
 font-size:20px;
@@ -39,7 +39,7 @@ border-radius: 10px;
 background: white;
 padding: 15px 20px;
 position: absolute;
-left: 17%;
+left: 10%;
 top: 400px;
 border : 1px dashed black;
 }
@@ -48,7 +48,7 @@ border-radius: 10px;
 background: white;
 padding: 25px;
 position: absolute;
-left: 28%;
+left: 22%;
 top: 650px;
 width: 1000px;
 border : 1px dashed black;
@@ -58,7 +58,7 @@ border-radius: 10px;
 background: white;
 padding: 25px;
 position: absolute;
-left: 28%;
+left: 22%;
 top: 1850px;
 width: 1000px;
 border : 1px dashed black;
@@ -79,7 +79,7 @@ border-radius: 10px;
 background: white;
 border : 1px dashed black;
 position: absolute;
-left: 28%;
+left: 22%;
 top: 3160px;
 padding: 10px;}
 .search b {
@@ -94,7 +94,7 @@ font-color: gray;
 padding : 20px;
 width: 1010px;
 position: absolute;
-left: 28%;
+left: 22%;
 top: 3080px;
 }
 #category{
@@ -103,7 +103,7 @@ background: white;
 border: 1px dashed black;
 width: 1010px;
 position: absolute;
-left: 28%;
+left: 22%;
 font-color: gray;
 font-size: 12px;
 padding: 15px;
@@ -166,7 +166,7 @@ String date=request.getParameter("date");
 <b>
 <span><a href="introduce.html">소개&nbsp;&nbsp;</a></span>
 <span><a href="diary.html">Diary&nbsp;&nbsp;</a></span>
-<span><a href="#">안부게시판&nbsp;&nbsp;</a></span>
+<span><a href="visitor.html">안부게시판&nbsp;&nbsp;</a></span>
 <span><a href="book.html">서재&nbsp;&nbsp;</a></span>
 <span><a href="map.html">지도</a></span></b>
 </div>

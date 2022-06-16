@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+div{
+ text-align: center;
+ text-decoration: none;
+}
+h1{
+text-decoration: underline;
+}
+p.date{
+text-align: left;
+text-decoration: none;
+}
+p.news{
+text-align: right;
+text-decoration: overline;
+}
+#company{
+text-align: inherit; /* 부모요소의 속성값을 상속받음, div의 자손으로서 가운데 정렬됨 */
+text-decoration: line-through;
+}
+</style>
+</head>
+<body>
+<div>
+ <h1>텍스트 정렬</h1>
+ <p class="date">2022년 6월</p>
+ <p class="news">"메타버스는 거부할 수 없는 '환경'이 되었다...</p>
+ <p id="company">MBC</p>
+</div>
+</body>
+</html>
