@@ -6,43 +6,8 @@
 <head>
 <meta charset="UTF-8">
 <title>I'm Your Blog</title>
+<link rel = "stylesheet" type="text/css" href="blog_css.css">
 <style type="text/css">
-body
-{background-color: #f5f5dc;
-}
-h1{
-font-size:50px;}
-strong{
-font-size:10px;
-}
-#music{
-float: right;
-}
-#header{
-padding: 20px;
-margin: 30px;
-text-decoration: underline;
-}
-#nav{
-border: 2px dashed #065535;
-padding: 20px;
-position: absolute;
-left: 10%;
-top: 270px;
-width: 1200px;
-font-size:20px;
-text-decoration: underline;
-color: #065535;
-}
-#sec1{
-border-radius: 10px;
-background: white;
-padding: 15px 20px;
-position: absolute;
-left: 10%;
-top: 400px;
-border : 1px dashed black;
-}
 #sec2{
 border-radius: 10px;
 background: white;
@@ -63,39 +28,9 @@ top: 1850px;
 width: 1000px;
 border : 1px dashed black;
 }
-.feeling{
-border-radius: 10px;
-border : 1px dashed #065535;
-background: white;
-width: 120px;
-height: 170px;
-font-size: 12px;
-}
-#sec1>b{
-font-size: 8px;
-}
 .search{
-border-radius: 10px;
-background: white;
-border : 1px dashed black;
-position: absolute;
-left: 22%;
-top: 3160px;
-padding: 10px;}
-.search b {
-font-size: 13px;}
-.top{
-border-radius: 10px;
-background: white;
-border: 1px dashed black;
-font-size : 13px;
-font-weight: bold;
-font-color: gray;
-padding : 20px;
-width: 1010px;
-position: absolute;
-left: 22%;
-top: 3080px;
+top: 3160px;}
+.top{top: 3080px;
 }
 #category{
 border-radius: 10px;
@@ -119,17 +54,6 @@ float: right;
 #category .right{
 float: right;
 }
-a:link{
-text-decoration: none;
-color: #065535;
-}
-a:visited {
- color: #065535; 
- }
-a:hover{
-	text-decoration: underline;
-	color: lime;
-
 </style>
 </head>
 <body>
@@ -159,7 +83,7 @@ String date=request.getParameter("date");
 </div>
 
 <div id="header" align="center">
-<h1>&nbsp;&#9998;&nbsp;My Blog <a href="myblog.html">😀</h1></a>
+<h1><a href="myblog.html">&nbsp;&#9998;&nbsp;My Blog 😀</h1></a>
 </div>
 
 <div id="nav" align="right">
@@ -247,7 +171,7 @@ width="500px" height="700px">
 </div>
 <div class="search">
 <b>🔍SEARCH </b><input type="search" size="20px"></div>
-
+<div class="up"><a href="#header">⇧</a></div>
 
 
 

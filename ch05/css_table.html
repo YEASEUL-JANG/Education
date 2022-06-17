@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+.table{
+ border-collapse: collapse;/* 셀테두리 간격 없앰 */
+ width: 400px;
+}
+.table td, th {
+color: white;
+background: green;
+height: 50px;
+width: 150px;
+text-align: center;
+vertical-align: middle;
+}
+.table, .table td, .table th {
+border: 1px solid gray;
+}
+.table caption{
+caption-side: top;
+font-size: 20px;
+text-align: right;
+}
+</style>
+</head>
+<body>
+<table class="table">
+<caption>고객 리스트</caption>
+<tr>
+ <th>이름</th>
+ <th>이메일</th>
+</tr>
+<tr>
+ <td>홍길동</td>
+ <td>hong@naver.com</td>
+</tr>
+<tr>
+ <td>김영희</td>
+ <td>kim@naver.com</td>
+</tr>
+</table>
+</body>
+</html>
