@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+.div3{
+width: 100px; height: 100px;
+background: red;
+position: relative;
+animation: 2s myanim;
+animation-iteration-count: 5; /* 애니매이션 반복횟수 , 무한반복은 infinite*/ 
+}
+/* 키프레임 선언  */
+@keyframes myanim{/* 애니메이션 진행정도가 %에 의해 좌표값으로 이동. */
+0% {left: 0px; top: 0px;}
+25% {left: 100px; top:50px;}
+50% {left: 200px; top:100px;}
+75% {left: 100px; top:50px;}
+100% {left: 0px; top:0px;}
+}
+
+</style>
+</head>
+<body>
+<div class="div3">
+</div>
+
+</body>
+</html>

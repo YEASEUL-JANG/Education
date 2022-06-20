@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+.div{
+position: absolute;
+left: 100px;
+top: 100px;
+width: 100px;
+height: 50px;
+border: 1px solid black;
+background: pink;
+/* transform은 주로 애니매이션 모듈과 함까ㅔ 많이 쓰이는 편이다. */
+transition: transform 1s;
+}
+.div:hover{
+ transform: rotate(90deg); /* 180도 회전시킴  */ 
+ /* transform: scale(1.5,1.5); */ /* 가로 세로 1.5배 크기변경  */
+ /* transform: skew(30deg, 20deg); */ /* x축각도, y축각도 만큼 비틀기  */
+}
+
+</style>
+</head>
+<body>
+<div class="div"></div>
+
+</body>
+</html>
