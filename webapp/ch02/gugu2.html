@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+document.write("<table border='1'>");
+for(i=2; i<=9; i++){
+document.write("<th style='background: pink;'><h3>"+i+"단</h3></th>");
+}
+	for(j=1; j<=9;j++){
+		document.write("<tr>")
+	for(var k=2; k<=9; k++){
+		document.write("<td style='padding: 3px; letter-spacing: 2px; font-weight: bold;'>"+k+"*"+j+"="+j*k+"</td>");
+		}document.write("</tr>")
+	}
+document.write("</table>");
+
+</script>
+</head>
+<body>
+</body>
+</html>
