@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+function add(){
+	//가변인자함수 : 매개변수가 함수에서 정의된것보다 많이 입력된것만 사용
+	//그러나 입력된 매개변수를 활용할 수 있도록 함수구현이 가능
+	//가변인자함수의 특징 : 
+		//1. 매개변수의 개수가 변할 수 있는 함수.
+		//2. 정의된것과 다르게 입력된 매개변수를 모두 활용할 수 있는 함수
+		//3. 모든 함수는 매개변수를 내장된 'arguments' 라는 배열에 저장함. (눈에 보이지 않게)
+	var output = '';
+	alert(typeof(arguments));
+	alert(arguments.length);
+	for(var i=0; i<arguments.length; i++){
+		output+= arguments[i]+ ' '; //arguments라는 배열참조변수에 저장된 값을 변수 output에 저장한다.
+	}return output;
+}
+var out = add(1,2,3,4,5);//매개변수형식이 달라도 보낼 수 있음
+alert(out);
+</script>
+</head>
+<body>
+
+</body>
+</html>

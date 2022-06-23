@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+function printTen(x){//매개변수가 있는 함수
+	alert('A'); return; //리턴값없이 함수가 실행되는 도중 호출한 곳으로 돌아감
+	alert('B');
+}
+var out = printTen(3);
+alert(out);//리턴받은 값이 없기때문에 undefined가 출력됨.
+
+</script>
+</head>
+<body>
+
+</body>
+</html>
