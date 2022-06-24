@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+function countVisit(){
+	var count=0;
+	var plus= function(){
+		return count+=1;
+	};
+	//plus변수는 익명내부함수의 모든 코드를 기억한다.
+	alert(plus);
+	return plus;
+}
+var num = countVisit();
+num();
+num();
+num();
+alert(num());
+
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

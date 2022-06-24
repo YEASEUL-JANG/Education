@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+function greeting2(){
+	var name = document.getElementById("name").value;
+	var position = document.getElementById("position").value;
+	if(name == ""){
+		alert("이름을 입력해주세요");
+		document.getElementById("name").focus();
+		return;
+	}
+	if(position ==""){
+		alert("직급을 입력해주세요");
+		document.getElementById("position").focus();
+		return;
+	}
+	var str = name + " "+ position + "님 안녕하세요?";
+	alert(str);
+	document.getElementById("form1").submit();
+	}
+</script>
+</head>
+<body>
+<button onclick="greeting('홍길동','부장')">클릭하세요</button> <!-- 따옴표 주의 -->
+
+<form id="form1" method="post" action="func_result.jsp" >
+id : <input id="name" name="name"><br>
+position : <input id="position" name="position"><br>
+<input type="button" onclick="greeting2()" value="확인">
+
+</form>
+</body>
+</html>

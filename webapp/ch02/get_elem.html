@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1 id="test" style="color: blue; background: purple;">This is a heading</h1>
+<script type="text/javascript">
+function func(){
+	var e = document.getElementById("test");//id가test인 태그
+	e.style.color="red"; //자바스크립트에서 css조작 가능
+	e.style.backgroundColor="yellow";
+}
+
+</script>
+<button type="button" onclick="func()">클릭!</button>
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+//비동기프로그램 : 어떤 작업을 요청한 후 다른 작업을 같이 수행하다가 이벤트가 발생하면 그에 대한 응답을 받아 처리하는것.
+function square(x, callback){
+	document.write(x*x);
+	setTimeout(callback, 1000);//1초후에 기억된 callback의 익명함수의 내용을 처리, 비동기적으로 처리함.
+}
+square(2,function(x){
+	alert("콜백함수 실행");
+});
+
+
+</script>
+</head>
+<body>
+
+</body>
+</html>
