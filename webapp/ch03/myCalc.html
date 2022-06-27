@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+#table{
+border-collapse: collapse;
+background: black;
+color: white;
+font-weight: bold;}
+#table td{
+padding: 5px;
+text-align: center;}
+#table input{
+border: none;
+text-align: right;}
+
+</style>
+<script type="text/javascript">
+function add(num){
+	document.getElementById("input").value += num;
+}
+function calc(){
+	var result = eval(document.getElementById("input").value);
+	document.getElementById("result").value=result;
+}
+function erase(){
+	document.getElementById("input").value="";
+	document.getElementById("result").value="";
+}
+</script>
+
+</head>
+<body>
+<h3>계산기 프로그램</h3>
+<table border="1" id="table" >
+<tr>
+<td colspan="4" style="background: white;"> <input type="text" id="input"> </td>
+</tr>
+<tr>
+<td colspan="4" style="background: white;"> <input type="text" id="result"></td>
+</tr>
+<tr>
+<td colspan="3" onclick="erase()" style="background: gray;">AC</td>
+<td onclick="add('/')" style="background: orange;">/</td>
+</tr>
+<tr >
+<td onclick="add(7)">7</td>
+<td onclick="add(8)">8</td>
+<td onclick="add(9)">9</td>
+<td onclick="add('*')" style="background: orange;">*</td>
+</tr>
+<tr>
+<td onclick="add(4)">4</td>
+<td onclick="add(5)">5</td>
+<td onclick="add(6)">6</td>
+<td onclick="add('-')" style="background: orange;">-</td>
+</tr>
+<tr>
+<td onclick="add(1)">1</td>
+<td onclick="add(2)">2</td>
+<td onclick="add(3)">3</td>
+<td onclick="add('+')" style="background: orange;">+</td>
+</tr>
+<tr>
+<td colspan="2" onclick="add(0)">0</td>
+<td onclick="add('.')">.</td>
+<td onclick="calc()" style="background: orange;">=</td>
+</tr>
+</table>
+</body>
+</html>

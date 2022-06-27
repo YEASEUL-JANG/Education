@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<div id="clock"></div>
+
+<script type="text/javascript">
+function setClock(){
+	let now = new Date();
+	let s = now.getFullYear()+"-"+(now.getMonth()+1)+"-"+now.getDate()+" "+now.getHours()+":"+now.getMinutes()+":"+now.getSeconds();
+	document.getElementById("clock").innerHTML=s;
+}
+setInterval("setClock()", 1000);
+//1초마다 계속 호출
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+function checkDate(){
+	let s= document.getElementById("pdate").value;
+	document.write("구입한 날짜 : "+s+"<br>");
+	let pdate=new Date(s);//특정 날짜
+	let today=new Date();//현재 날짜
+	document.write("구입타임스탬프 : "+pdate.getTime()+"밀리세컨드 <br>");
+	//getTime() :주어진 일시와 1970년 1월 1일 00시 00분 00초 사이의 간격값 반환. => 타임스탬프
+	document.write("구입타임스탬프 : "+today.getTime()+"밀리세컨드 <br>");
+	let diff = today.getTime()-pdate.getTime();
+	document.write("차이시간 : "+diff+"밀리세컨드<br>");
+	document.write("일자환산 : "+diff/(1000*60*60*24)+"일 <br>");
+	let days=Math.floor(diff/(1000*60*60*24));
+	if (days>30){
+		document.write("30일이 지나서 교환불가");
+	}else{
+		document.write("교환가능합니다.");
+	}
+}
+
+</script>
+</head>
+<body>
+구입날짜 : <input type="date" id="pdate">
+<button type="button" onclick="checkDate()">검사</button>
+
+</body>
+</html>
