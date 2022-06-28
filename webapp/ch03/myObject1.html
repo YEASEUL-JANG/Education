@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+function Profile(num,name,id,email,hp){
+	this.num=num;
+	this.name=name;
+	this.id=id;
+	this.email=email;
+	this.hp=hp;
+}
+myprofile = new Profile(123,"홍길동","hong","hong@gmail.com","010-1234-5678");
+document.write("=================원데이터===================","<br>")
+document.write("사번 : "+myprofile.num,"<br>");
+document.write("이름 : "+myprofile.name,"<br>");
+document.write("id : "+myprofile.id,"<br>");
+document.write("이메일 : "+myprofile.email,"<br>");
+document.write("hp : "+myprofile.hp,"<br>");
+document.write("=================변경데이터===================","<br>")
+myprofile.email="hong2@naver.com";
+myprofile.hp="010-3456-7788";
+document.write("이메일 : "+myprofile.email,"<br>");
+document.write("hp : "+myprofile.hp,"<br>");
+
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

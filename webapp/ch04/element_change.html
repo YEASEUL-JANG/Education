@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+function get(){
+	var val = document.getElementById("ex").innerHTML;
+	alert(val);
+}
+function set(v){
+	document.getElementById("ex").innerHTML = v;
+}
+function changeImage(){
+	var img = document.getElementById("image");
+	img.src="../images/tang2.jpg";
+	img.style.width="250px";
+	img.style.height="200px";
+}
+function hide(){
+	document.getElementById("image").style.visibility="hidden";
+}
+function show(){
+	document.getElementById("image").style.visibility="visible";
+
+}
+function changeStyle(){
+	var ex=document.getElementById("ex");
+	ex.style.color="red";
+	ex.style.backgroundColr="lime";
+	ex.style.fontSize="30px";
+	ex.style.fontFamily="굴림";
+	ex.style.fontWeight="bord";
+}
+
+</script>
+<style type="text/css">
+#ex{
+background: gray;
+font-family: "굴림체";
+font-size: 50px;}
+
+</style>
+</head>
+<body>
+<div id="ex">div영역</div>
+<a href="#" onclick="get()">div의 내용</a>
+<a href="#" onclick="set('변경되었습니다.')">div 변경</a>
+<br>
+<img src="../images/tang1.jpg" id="image">
+<input type="button" value="이미지 변경" onclick="changeImage()">
+<input type="button" value="이미지 숨김" onclick="hide()">
+<input type="button" value="이미지 표시" onclick="show()">
+<input type="button" value="글자스타일 변경" onclick="changeStyle()">
+
+</body>
+</html>

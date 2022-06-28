@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<ul>
+ <li>아이템1</li>
+ <li>아이템2</li>
+ <li>아이템3</li>
+</ul>
+<ul>
+ <li>아이템4</li>
+ <li>아이템5</li>
+ <li>아이템6</li>
+</ul>
+<!-- 자바스크립트 사용시 보통은 head영역에서 작업이 대부분이나, 특정 코드를 활용할 때오히려 body쪽에서 처리해야 잘 작동하는 경우가 있음. -->
+<script type="text/javascript">
+//[]: 순서를 의미 (배열처리)
+var list = document.getElementsByTagName("ul")[1];
+//allItems 변수는 두번째 ul태그의 li태그를 가리킴
+var allItems = list.getElementsByTagName("li");
+
+for(i=0;i<allItems.length; i++){
+	alert(allItems[i].firstChild.data);// 첫번째 요소의 데이터,아이템4를 가리킴
+}
+
+</script>
+
+</body>
+</html>

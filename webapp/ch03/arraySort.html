@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+var myArray = [10,100,88,77,99,200];
+myArray.sort();//문자열은 가나다 순으로, 숫자도 문자열 기준으로 정렬.
+document.write("문자열기준: "+ myArray+"<br>"); // 10,100,200,77,88,99
+
+//숫자기준 정렬처리는 sort함수의 내부알고리즘에 의해 앞의수와 뒤의수를 계산해 처리하는것을 활용
+//a-b<0 : 그대로, a-b>0 : 자리바꿈, a==b : 그대로
+//sort함수는 블랙박스함수라고 해서 우리가 내부를 볼 수 없다. (알고리즘만 확인가능)
+
+myArray.sort(function(a,b){
+	return a-b; //오름차순 정렬
+});
+document.write("오름차순정렬: "+ myArray+"<br>"); //10,77,88,99,100,200
+myArray.sort(function(a,b){
+	return b-a; //내림차순 정렬
+});
+document.write("내림차순정렬: "+ myArray+"<br>"); //200,100,99,88,77,10
+
+var numbers = [1,2,3,4,5,6,7,8,9,10];
+var newArray = numbers.slice(5); //인덱스 5번부터 끝까지 잘라냄
+document.write(newArray+"<br>");//6,7,8,9,10
+var newArray2 = numbers.slice(5,8); //6,7,8 까지 출력 (인덱스5~7)
+
+var result = numbers.join("-"); //배열을 하나의 문자열로 연결
+document.write(result+"<br>");//1-2-3-4-5-6-7-8-9-10
+
+var result2 = result.split("-"); //문자열을 기준으로 데이터를 나누어서 배열처리
+document.write(result2+"<br>"); //1,2,3,4,5,6,7,8,9,10
+
+</script>
+
+</body>
+</html>

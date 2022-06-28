@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+str = "자바프로그램, Like father, like son";
+//문자열.match(/검색키워드/옵션) : 검색키워드와 일치하는 내용들을 찾음
+//i : insensitive : 대소문자 구별없이 검사
+//g : global 전역검사 - 처음부터 끝까지 찾음
+result = str.match(/like/ig);//like라는 문자열을 대소문자 구별없이 모두찾음
+document.write(result+"<br>");
+result = str.replace("자바","Java");//문자열.replace(a,b): a를b로 바꿈
+document.write(result+"<br>");
+str = "one two three four five";
+a=str.split(" ");//split("구분자"): 구분자를 기준으로 문자열을 나눠서 배열처리함
+document.write(a+"<br>");
+for(var s in a){
+	document.write(a[s]+"<br>");
+}
+
+
+</script>
+</body>
+</html>

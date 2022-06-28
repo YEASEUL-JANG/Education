@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+//객체생성 2방법
+//var 객체참조변수 ={변수명(키) : 값, key:value,key:value,,}; 의 형태로 이루어짐
+var myCar = {
+		maker : "bmw",
+		model : "x5",
+		year : 2021,
+		speed : 200,
+		speedDown : function(){this.speed -= 10;},
+		speedUp : function(){this.speed += 10;}
+};
+
+document.write(typeof(myCar),"<br>");//object
+myCar.speedUp();
+document.write("속도 : "+myCar.speed,"<br>");//210
+myCar.speedDown();
+document.write("속도 : "+myCar.speed,"<br>");//200
+
+document.write(myCar.maker,"<br>");
+document.write(myCar["maker"],"<br>");
+myCar.maker="Benz";
+document.write(myCar.maker);
+</script>
+</body>
+</html>
