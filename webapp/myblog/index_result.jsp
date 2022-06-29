@@ -92,7 +92,8 @@ String date=request.getParameter("date");
 <span><a href="diary.html">Diary&nbsp;&nbsp;</a></span>
 <span><a href="visitor.html">안부게시판&nbsp;&nbsp;</a></span>
 <span><a href="book.html">서재&nbsp;&nbsp;</a></span>
-<span><a href="map.html">지도</a></span></b>
+<span><a href="map.html">지도&nbsp;&nbsp;&nbsp;</a></span>
+<span><a href="deco.html">blog꾸미기</a></span></b>
 </div>
 
 <div id="sec1">
@@ -180,7 +181,8 @@ width="500px" height="700px">
 <p><a href="diary.html">일 <br> 기</a></p>·
 <p><a href="visitor.html">안 <br> 부</a></p>·
 <p><a href="book.html">서 <br> 재</a></p>·
-<p><a href="map.html">지 <br> 도</a></p>
+<p><a href="map.html">지 <br> 도</a></p>·
+<p><a href="deco.html">de <br> co</a></p>
 
 </body>
 </html>

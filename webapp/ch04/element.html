@@ -23,8 +23,8 @@ var list = document.getElementsByTagName("ul")[1];
 //allItems 변수는 두번째 ul태그의 li태그를 가리킴
 var allItems = list.getElementsByTagName("li");
 
-for(i=0;i<allItems.length; i++){
-	alert(allItems[i].firstChild.data);// 첫번째 요소의 데이터,아이템4를 가리킴
+for(a in allItems){
+	document.write(allItems[a].firstChild.data);// 첫번째 요소의 데이터,아이템4를 가리킴
 }
 
 </script>

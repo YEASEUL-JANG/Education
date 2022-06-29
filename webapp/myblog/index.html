@@ -22,8 +22,33 @@ top: 700px;}
 top: 780px;
 }
 </style>
+<script type="text/javascript">
+
+function getCookie(name) {
+    var cookie = document.cookie;
+    
+    if (document.cookie != "") {
+        var cookie_array = cookie.split("; ");
+        for ( var index in cookie_array) {
+            var cookie_name = cookie_array[index].split("=");
+            
+            if (cookie_name[0] == "popupYN") {
+                return cookie_name[1];
+            }
+        }
+    }
+    return ;
+}
+
+function openPopup(url) { 
+    var cookieCheck = getCookie("popupYN");
+    if (cookieCheck != "N")
+        window.open(url,"학점은행제 광고","width=380,height=530, left=300, top=50, scrollbars=no, toolbars=no, location=no");
+}
+
+</script>
 </head>
-<body>
+<body onload="openPopup('pop.html')">
 
 <div id="music">
 <audio autoplay controls> 
@@ -43,7 +68,7 @@ top: 780px;
 <span><a href="diary.html">Diary&nbsp;&nbsp;</a></span>
 <span><a href="visitor.html">안부게시판&nbsp;&nbsp;</a></span>
 <span><a href="book.html">서재&nbsp;&nbsp;</a></span>
-<span><a href="map.html">지도</a></span>
+<span><a href="map.html">지도&nbsp;&nbsp;&nbsp;</a></span>
 <span><a href="deco.html">blog꾸미기</a></span></b>
 </div>
 
@@ -84,7 +109,8 @@ width="120px" length="200px"> <br>
 <p><a href="diary.html">일 <br> 기</a></p>·
 <p><a href="visitor.html">안 <br> 부</a></p>·
 <p><a href="book.html">서 <br> 재</a></p>·
-<p><a href="map.html">지 <br> 도</a></p>
+<p><a href="map.html">지 <br> 도</a></p>·
+<p><a href="deco.html">de <br> co</a></p>
 </div>
 
 </body>

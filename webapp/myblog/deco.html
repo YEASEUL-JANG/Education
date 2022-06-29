@@ -43,7 +43,7 @@ top: 780px;
 <span><a href="diary.html">Diary&nbsp;&nbsp;</a></span>
 <span><a href="visitor.html">안부게시판&nbsp;&nbsp;</a></span>
 <span><a href="book.html">서재&nbsp;&nbsp;</a></span>
-<span><a href="map.html">지도</a></span>
+<span><a href="map.html">지도&nbsp;&nbsp;&nbsp;</a></span>
 <span><a href="deco.html">blog꾸미기</a></span></b>
 </div>
 
@@ -69,14 +69,32 @@ function submit(){
 	blogname.style.fontSize="60px";
 	blogname.style.textDecoration="none";
 	blogname.style.fontWeight="bolder";
-	
+	//블로그이름색상변경
 	var length = document.getElementsByName("colorchange").length;
     for (var i=0; i<length; i++) {
         if (document.getElementsByName("colorchange")[i].checked == true) {
         	blogname.style.color= document.getElementsByName("colorchange")[i].value;
         }
     }
-}
+   //배경색상변경
+   document.body.style.backgroundColor=document.getElementById("backchange").value;
+   //폰트색상변경
+   document.body.style.color=document.getElementById("fontchange").value;
+   //폰트변경
+   for( var j=0; j<4; j++){
+	   if(document.getElementsByName("font")[j].checked == true) {
+		   var fontnum = document.getElementsByName("font")[j].value;
+	   }
+   }
+    switch(fontnum){
+    case "a": document.body.style.fontFamily= "굴림"; break;
+    case "b": document.body.style.fontFamily= "궁서"; break;
+    case "c": document.body.style.fontFamily= "바탕"; break;
+    case "d": document.body.style.fontFamily= "고딕"; break;
+    }
+   
+    
+}//submit
 
 </script>
 
@@ -94,31 +112,24 @@ function submit(){
 <p><b>폰트색상변경</b></p>
 <input type="color" id="fontchange"><br>
 <p><b>폰트변경</b></p>
-<select>
-<option value="굴림체">굴림체</option>
-<option value="궁서체">궁서체</option>
-<option value="신명조">신명조</option>
-<option value="바탕체">바탕체</option>
-</select>
-
+<input type="radio" name="font" value="a">굴림
+<input type="radio" name="font" value="b">궁서
+<input type="radio" name="font" value="c">바탕
+<input type="radio" name="font" value="d">고딕<br>
 <p align="right"><input type="button" onclick="submit()" value="변경"></p>
-
-
-<!-- <div class="top" align="right">
-<a href="#header">⬆ TOP</a>
 </div>
-<div class="search">
-<b>🔍SEARCH </b><input type="search" size="20px"></div> -->
+
 
 <div class="up"><a href="#header">⇧</a></div>
 <div class="banner"><a href="https://www.kbfg.com/Kor/pr/press/2022_19.htm">
 <img alt="이미지가 안보여요ㅠ" src="https://tpc.googlesyndication.com/simgad/7529414382496576195" width="165px" height="280px"></a></div>
-<div class="menu" align="center">
+<div class="menu" id="menu" align="center">
 <p><a href="introduce.html">소 <br> 개</a></p>·
 <p><a href="diary.html">일 <br> 기</a></p>·
 <p><a href="visitor.html">안 <br> 부</a></p>·
 <p><a href="book.html">서 <br> 재</a></p>·
-<p><a href="map.html">지 <br> 도</a></p>
+<p><a href="map.html">지 <br> 도</a></p>·
+<p><a href="deco.html">de <br> co</a></p>
 </div>
 
 </body>
