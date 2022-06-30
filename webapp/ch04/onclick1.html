@@ -8,7 +8,7 @@ function viewDate(){
 	var now = new Date();
 	var display = now.toLocaleString();//날짜를 한국어 포맷으로 변경
 	document.getElementById("time").innerHTML=display;
-	window.setTimeout("viewDate()",1000);//1초간격으로 재귀호출(자기자신을 부름)
+	window.setInterval("viewDate()",1000);//1초간격으로 재귀호출(자기자신을 부름)
 }
 function changeColor(color){
 	document.getElementById("target").style.backgroundColor=color;
@@ -19,7 +19,7 @@ function changeText(color){
 </script>
 </head>
 <!-- 페이지가 로딩되자마자 실행이 됨 -->
-<body onload="viewDate();" id="target">
+<body onload="viewDate()" id="target">
  <h2>배경색상 변경(click event)</h2>
  <div id="time"></div>
  <input type="button" value="green" onclick="changeColor('green');changeText('white')"> 

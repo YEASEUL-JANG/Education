@@ -5,7 +5,7 @@
 <title>Insert title here</title>
 <script type="text/javascript">
 function change(img){
-	document.body.style.backgroundImage="url('"+ img+ "')";
+	document.body.style.backgroundImage=img;
 }
 
 </script>
@@ -18,7 +18,7 @@ background-image: url("../images/bg4.jpg");
 </head>
 <body>
  <h2>배경이미지 바꾸기</h2>
- <input type="button" value="배경1" onclick="change('../images/bg3.jpg')">
- <input type="button" value="배경2" onclick="change('../images/bg4.jpg')">
+ <input type="button" value="배경1" onclick="change('url(../images/bg3.jpg)')">
+ <input type="button" value="배경2" onclick="change('url(../images/bg4.jpg)')">
 </body>
 </html>

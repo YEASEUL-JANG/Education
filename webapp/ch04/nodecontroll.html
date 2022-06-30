@@ -8,7 +8,7 @@ function addtext(s){
 	if(document.createTextNode){ //텍스트 노드 추가가 가능하다면
 		var br = document.createElement("br");//br태그 생성해줌
 		document.getElementById("target").appendChild(br);//div태그아래에 br태그 추가해줌
-		var btn=document.createElement("button");
+		var btn=document.createElement("button");//버튼태그 생성함.
 		var node = document.createTextNode(s);//텍스트노드 추가
 		btn.appendChild(node);
 		document.getElementById("target").appendChild(btn);

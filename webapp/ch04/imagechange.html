@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+function change(){
+	var img = document.getElementById("img").value;
+	document.getElementById("div1").innerHTML="<img src="+img+">";
+}
+
+</script>
+</head>
+<body>
+<table border="1" style="width: 400; background: orange; border-collapse: collapse;">
+ <tr align="center" valign="middle">
+  <td width="150px" bgcolor="gold">그림을 선택하세요<br>
+   <select name="img" id="img" onchange="change()">
+    <option value="../images/i0073.jpg">행이</option>
+    <option value="../images/i0074.jpg">복이</option>
+    <option value="../images/i0075.jpg">왕</option>
+    <option value="../images/i0076.jpg">왕비</option>
+   </select>
+   </td>
+   <td bgcolor="white">
+    <div id="div1"><img src="../images/i0073.jpg"> </div>
+   </td>
+ </tr>
+</table>
+</body>
+</html>

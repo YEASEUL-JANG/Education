@@ -21,8 +21,10 @@ top: 700px;}
 .search{
 top: 780px;
 }
+
 </style>
 </head>
+
 <body>
 
 <div id="music">
@@ -81,22 +83,12 @@ function submit(){
    //폰트색상변경
    document.body.style.color=document.getElementById("fontchange").value;
    //폰트변경
-   for( var j=0; j<4; j++){
-	   if(document.getElementsByName("font")[j].checked == true) {
-		   var fontnum = document.getElementsByName("font")[j].value;
-	   }
-   }
-    switch(fontnum){
-    case "a": document.body.style.fontFamily= "굴림"; break;
-    case "b": document.body.style.fontFamily= "궁서"; break;
-    case "c": document.body.style.fontFamily= "바탕"; break;
-    case "d": document.body.style.fontFamily= "고딕"; break;
-    }
-   
+   document.body.style.fontFamily = document.getElementById("font").value;
     
 }//submit
 
 </script>
+
 
 
 <div id="sec2" align="center">
@@ -112,10 +104,12 @@ function submit(){
 <p><b>폰트색상변경</b></p>
 <input type="color" id="fontchange"><br>
 <p><b>폰트변경</b></p>
-<input type="radio" name="font" value="a">굴림
-<input type="radio" name="font" value="b">궁서
-<input type="radio" name="font" value="c">바탕
-<input type="radio" name="font" value="d">고딕<br>
+<select id="font">
+ <option value="굴림">굴림</option>
+ <option value="궁서">궁서</option>
+ <option value="바탕">바탕</option>
+ <option value="고딕">고딕</option>
+</select>
 <p align="right"><input type="button" onclick="submit()" value="변경"></p>
 </div>
 
