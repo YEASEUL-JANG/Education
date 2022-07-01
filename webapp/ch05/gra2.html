@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body onload="test()">
+<canvas id="mycanvas" width="500" height="500" style="border: 1px solid black;">
+</canvas>
+<script type="text/javascript">
+function test(){
+	var canvas = document.getElementById("mycanvas");
+	var context = canvas.getContext("2d");
+	
+	context.arc(70,50,10,0,2.0*Math.PI,false);
+	context.arc(80,60,120,0,2.0*Math.PI,false);
+	context.stroke();
+	
+	var gradient = context.createRadialGradient(70,50,10,80,60,120);
+	gradient.addColorStop(0,"white");
+	gradient.addColorStop(1.0,"red");
+	context.fillStyle=gradient;
+	context.fillRect(0,0,200,200);//사각형에 arc적용
+	
+	
+}
+
+
+</script>
+
+</body>
+</html>

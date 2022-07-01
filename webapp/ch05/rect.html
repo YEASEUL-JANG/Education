@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body onload="test()">
+<canvas id="mycanvas" width="300" height="200" style="border: 1px solid black;">
+</canvas>
+<script type="text/javascript">
+function test(){
+	var canvas = document.getElementById("mycanvas");
+	var context = canvas.getContext("2d");
+	context.beginPath();
+	context.rect(10,10,100,100);
+	context.fillStyle="#00ff00";
+	context.fill();//색상채우기
+	
+	context.beginPath();
+	context.rect(50,50,100,100);
+	context.fillStyle="#ff0000";
+	context.fill();
+	
+}
+
+</script>
+
+
+</body>
+</html>

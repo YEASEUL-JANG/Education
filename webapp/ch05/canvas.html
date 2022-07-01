@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+body{
+margin: 0;}
+
+</style>
+</head>
+<body>
+<canvas id="myCanvas" sidth="200" height="100" style="border: 1px solid red; ">
+
+</canvas>
+<script type="text/javascript">//캔버스를 그릴땐 자바스크립트를 바로 밑에 
+var canvas = document.getElementById("myCanvas");
+var context = canvas.getContext("2d");
+context.fillStyle="#ffff00"; //컨텍스트=붓, 붓의 색상설정
+//사각형그리기
+context.fillRect(0,0,100,50);
+
+
+
+</script>
+</body>
+</html>
