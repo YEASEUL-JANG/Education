@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- 로컬방식 -->
+<script src="../include/jquery-3.3.1.min.js"></script>
+<!-- CDN방식
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
+<script type="text/javascript">
+$(document).ready(function(){//현재 문자가 로딩완료되면 자동실행(콜백함수)
+//<body onload="함수호출">과 비슷한 효과
+$("h2").click(function(){
+	$(this).hide();//클릭한 태그가 숨겨짐
+});
+	
+});
+
+
+</script>
+</head>
+<body>
+ <h2>첫번째 h2</h2>
+ <h2>두번째 h2</h2>
+ <h2>세번째 h2</h2>
+</body>
+</html>

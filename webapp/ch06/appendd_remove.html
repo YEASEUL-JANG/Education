@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../include/jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	$("#button1").click(function(){
+		$("ul").append("<li>레몬</li>");//요소의 마지막에 추가됨
+	});
+	$("#button2").click(function(){
+		$("ul").prepend("<li>레몬</li>");//요소의 시작부분에 추가됨
+	});
+	$("#button3").click(function(){
+		$("h2").after("<marquee>hellow</marquee>");//h2뒤에 추가됨
+	});
+	$("#button4").click(function(){
+		$("h2").before("<img src='../images/tomato.jpg'>");//h2앞에 추가됨
+	});
+	$("#button5").click(function(){
+		$("#div1").remove();//div를 모두 지움
+	});
+	$("#button6").click(function(){
+		$("#div1").empty();//div구조는 유지하나, 컨텐츠만 제거됨
+	});
+});
+
+
+</script>
+</head>
+<body>
+<div id="div1" style="border : 1px solid red; height: 300px;">
+ <h2>과일 목록</h2>
+  <ul>
+   <li>사과</li>
+   <li>포도</li>
+   <li>배</li>
+  
+  </ul>
+  <button id="button1">append</button>
+  <button id="button2">prepend</button>
+  <button id="button3">after</button>
+  <button id="button4">before</button>
+  <button id="button5">remove</button>
+  <button id="button6">empty</button>
+</div>
+</body>
+</html>

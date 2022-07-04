@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../include/jquery-3.3.1.min.js"></script>
+<style type="text/css">
+#img1{
+display : none;
+position: relative;
+}
+#img2{
+display: none; /* 숨김 */
+position: relative}
+</style>
+<script type="text/javascript">
+$(function(){
+	$("#btnshow").click(function(){
+		$("#img1").show("slow");//느리게보임
+	});
+	$("#btnhide").click(function(){
+		$("#img1").hide("slow");//느리게숨김
+	});
+	$("#btntoggle").click(function(){
+		$("#img1").toggle("slow");//show와 hide가 교대로 실행
+	});
+	$("#btnani").click(function(){
+		$("#img1").animate({
+			left : '500px',
+			top : '500px',
+			opacity : '0.5',
+		},5000);
+	});
+	$("#btnfadein").click(function(){
+		$("#img1").fadeIn(3000,function(){
+			$("#img2").fadeIn("slow");
+		});
+	});
+	$("#btnfadeout").click(function(){
+		$("#img1").fadeOut("slow");
+	});
+	$("#btndown").click(function(){
+		$("#img1").slideDown("slow");
+		});
+	
+	$("#btnup").click(function(){
+		$("#img1").slideUp("slow");
+		});
+	
+	$("#btnchain").click(function(){
+		$("#img1").show().fadeOut("slow").slideDown("slow");
+	});
+	
+	
+});
+
+</script>
+</head>
+<body>
+<button id="btnshow">표시</button>
+<button id="btnhide">숨김</button>
+<button id="btntoggle">토글</button>
+<button id="btnani">애니메이션</button>
+<button id="btnfadein">페이드인</button>
+<button id="btnfadeout">페이드아웃</button>
+<button id="btndown">슬라이드다운</button>
+<button id="btnup">슬라이드업</button>
+<button id="btnchain">여러효과</button>
+<hr>
+<img id="img1" src="../images/image.png">
+<img id="img2" src="../images/google.png">
+</body>
+</html>
