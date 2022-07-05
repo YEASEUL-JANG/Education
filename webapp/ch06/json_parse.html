@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../include/jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	$.getJSON("student.json",function(data,textStatus){
+		console.log("data: "+data);
+		console.log("textStatus: "+textStatus);
+		$("#students").append("<tr><td>번호</td><td>이름</td><td>전화번호</td></tr>");
+		$.each(data,function(){
+			$("#students").append("<tr><td>"+this.num+ "</td><td>" +this.name+ "</td><td>" +this.tel+ "</td></tr>")
+		});
+	});
+});
+
+
+</script>
+</head>
+<body>
+<table id="students" style="width: 500px;" border="1"></table>
+</body>
+</html>

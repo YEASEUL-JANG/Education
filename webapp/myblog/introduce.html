@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title>I'm Your Blog</title>
+<script src="../include/jquery-3.3.1.min.js"></script>
 <link rel = "stylesheet" type="text/css" href="blog_css.css">
 <style type="text/css">
 #sec2{
@@ -107,6 +108,25 @@ function check(){
 	document.input.submit(); 
 	
 }
+
+$(function(){
+	$("input").focus(function(){
+		$(this).css("background-color","yellow");
+		$(this).css("border","3px solid red");
+	});
+	$("textarea").focus(function(){
+		$(this).css("background-color","yellow");
+		$(this).css("border","3px solid red");
+	});
+	$("input").blur(function(){
+		$(this).css("background-color","white");
+		$(this).css("border","1px solid black");
+	});
+	$("textarea").blur(function(){
+		$(this).css("background-color","white");
+		$(this).css("border","1px solid black");
+	});
+});
 </script>
 
 </head>

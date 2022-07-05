@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../include/jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	$("#cal").click(function(){
+		var x = $("#x").val();
+		var y = $("#y").val();
+		var jsonData = {"x": x, "y":y}; //json데이터방식
+		$.ajax({
+			type: "post",
+			url: "ajaxRex.jsp",
+			data : jsonData,
+			success : function(data){
+				$("#result").html(data);
+			}
+		});
+	});
+});
+</script>
+</head>
+<body>
+<h2>두 수의 사칙연산</h2>
+x : <input id="x"> <br>
+y : <input id="y"> <br>
+<input type="button" id="cal" value="확인">
+
+<div id="result">결과 출력 영역</div>
+</body>
+</html>
