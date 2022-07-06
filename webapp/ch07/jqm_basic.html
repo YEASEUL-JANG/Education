@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>제목</title>
+<link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body>
+ <div data-role="page" id="page1">
+  <div data-role="header">
+   <h1>머리말영역(header)</h1>
+  </div>
+  <div data-role="content">
+   <p>안녕하세요 제이쿼리 모바일</p>
+   <!-- data-role: listview : 리스트뷰모드 -->
+   <ul data-role="listview" data-inset="true" data-filter="true">
+   <!-- data-filter="true": li검색기능을 만들어줌 
+   data-inset="true" : 모서리 라운드효과-->
+    <li><a href="#">Benz</a></li>
+    <li><a href="#">BMW</a></li>
+    <li><a href="#">아우디</a></li>
+    <li><a href="#">현대</a></li>
+    <li><a href="#">기아</a></li>
+   </ul>
+  </div>
+  <div data-role="footer" data-position="fixed">
+   <h4>꼬리말영역(footer)</h4>
+  </div>
+ </div>
+</body>
+</html>

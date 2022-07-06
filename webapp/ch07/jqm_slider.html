@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Insert title here</title>
+<link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body>
+<div data-role="page" id="page1">
+  <div data-role="header">
+   <h1>머리말영역(header)</h1>
+  </div>
+  <div data-role="content">
+  <!--컨텐츠영역에서 a태그로 버튼을 만들때는 data-role="button" 필수  -->
+   <form>
+    <label for="slider-0">슬라이더 : </label>
+    <input type="range" name="slider" id="slider-0" value="25" min="0" max="100">
+    <a href="#" data-role="button" data-icon="star">버튼1</a>
+    <a href="#" data-role="button" data-icon="heart">버튼2</a>
+    <a href="#" data-role="button" data-icon="home">버튼3</a>
+    <a href="#" data-role="button" data-icon="comment">버튼4</a>
+    <a href="#" data-role="button" data-icon="check">버튼5</a>
+   </form>
+  </div>
+  <div data-role="footer" data-position="fixed">
+   <h4>꼬리말영역(footer)</h4>
+  </div>
+ </div>
+</body>
+</html>

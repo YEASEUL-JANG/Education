@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Insert title here</title>
+<link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body>
+<div data-role="page" id="page1">
+  <div data-role="header">
+   <h1>첫번째 페이지</h1>
+  </div>
+  <div data-role="content">
+   <p>본문영역(content)</p>
+   <!-- 내부페이지/내부링크방식 : ajax가 적용(애니메이션적용), link가 잘됨.-->
+   <a href="#page2" data-role="button">페이지2</a>
+  </div>
+  <div data-role="footer" data-position="fixed">
+   <h4>꼬리말영역(footer)</h4>
+  </div>
+ </div>
+ 
+ <div data-role="page" id="page2">
+  <div data-role="header">
+   <h1>두번째 페이지</h1>
+  </div>
+  <div data-role="content">
+   <p>페이지전환 애니메이션 효과</p>
+   <a href="#page1" data-direction="reverse"data-role="button">페이지1</a><br>
+   <!-- data-direction="reverse" : 뒤로가기 -->
+   <a href="#page3"data-role="button">페이지3 기본 전환효과 사용</a><br>
+   <a href="#page3" data-transition="slide"data-role="button">페이지3 slide 적용 </a><br>
+   <a href="#page3" data-transition="slideup"data-role="button">페이지3 slideup 적용 </a><br>
+   <a href="#page3" data-transition="slidedown"data-role="button">페이지3 slidedown 적용 </a><br>
+   <a href="#page3" data-transition="flip"data-role="button">페이지3 flip 적용 </a><br>
+   <a href="#page3" data-transition="fade"data-role="button">페이지3 "fade" 적용 </a><br>
+   <a href="#page3" data-transition="pop"data-role="button">페이지3 pop 적용 </a><br>
+   <a href="#page3" data-transition="none"data-role="button">페이지3 none 적용 </a><br>
+   
+  </div>
+  <div data-role="footer" data-position="fixed">
+   <h4>꼬리말영역(footer)</h4>
+  </div>
+ </div>
+ 
+ <div data-role="page" id="page3">
+  <div data-role="header">
+   <h1>세번째 페이지</h1>
+  </div>
+  <div data-role="content">
+   <p>본문영역(content)</p>
+   <!-- 내부페이지/내부링크방식 -->
+   <a href="#page1" data-role="button">페이지1</a>
+   <a href="#page2" data-rel="back" data-role="button">페이지2</a>
+   <!-- data-rel="back", data-direction="reverse" 차이 : 
+    전자는 웹브라우저 뒤로가기기능과 같음(이전페이지 상태를 그대로 복구)
+    후자는 이전페이지 상태를 복원하지 않고 단순 페이지 이동만 함. -->
+  </div>
+  <div data-role="footer" data-position="fixed">
+   <h4>꼬리말영역(footer)</h4>
+  </div>
+ </div>
+ 
+</body>
+</html>
