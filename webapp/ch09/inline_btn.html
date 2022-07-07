@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Insert title here</title>
+<link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<style type="text/css">
+.ui-icon-my-icon:after{
+	background-image: url("../images/buttonicon1.png");
+	background-size: 18px 18px;
+}
+</style>
+</head>
+<body>
+<div data-role="page" id="page1">
+  <div data-role="header">
+   <h1>머리말영역(header)</h1>
+  </div>
+  <div data-role="content">
+   <p>본문영역</p>
+   <a href="#page2" data-role="button" data-inline="true"data-icon="arrow-u" data-iconpos="top">첫번째페이지</a>
+   <a href="#page2" data-role="button" data-inline="true"data-icon="arrow-l" data-iconpos="left">첫번째페이지</a>
+   <a href="#page2" data-role="button" data-inline="true"data-icon="arrow-r" data-iconpos="right">첫번째페이지</a>
+   <a href="#page2" data-role="button" data-inline="true"data-icon="arrow-d" data-iconpos="bottom">첫번째페이지</a>
+   <a href="#page2" data-role="button" data-inline="true" data-icon="my-icon" data-iconpos="bottom">첫번째페이지</a>
+   <button><img src="../images/buttonimg.png"></button>
+   <input type="image" src="../images/buttonimg.png" data-role="button">
+   <a href="#" data-role="button"><img src="../images/buttonimg.png"></a>
+   <a href="#" data-role="button"><img src="../images/jqmlogo.png"></a>
+  </div>
+  <div data-role="footer" data-position="fixed">
+   <h4>꼬리말영역(footer)</h4>
+  </div>
+ </div>
+ 
+ <div data-role="page" id="page2">
+  <div data-role="header">
+   <h1>머리말영역(header)</h1>
+  </div>
+  <div data-role="content">
+   <p>여백제거버튼</p>
+   <a href="#page2" data-role="button" data-inline="true">두번째페이지</a>
+  </div>
+  <div data-role="footer" data-position="fixed">
+   <h4>꼬리말영역(footer)</h4>
+  </div>
+ </div>
+ 
+</body>
+</html>

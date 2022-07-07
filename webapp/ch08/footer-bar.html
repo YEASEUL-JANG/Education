@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Insert title here</title>
+<link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body>
+<div data-role="page" id="page1">
+  <div data-role="header" data-add-back-btn="true">
+   <h1>머리말영역(header)</h1>
+   <a href="#page2" class="ui-btn-right">페이지2</a>
+  </div>
+  <div data-role="content">
+   <p>본문영역(content)</p>
+   <h1>첫번째 페이지</h1>
+  </div>
+  <!-- 1. class="ui-btn" : 가운데정렬
+       2. data-role="controlgroup" data-type="horizontal" : 붙어있는 둥근 바형태 (버튼들을 그룹화),class="ui-bar"속성도 써야함-->
+  <div data-role="footer" class="ui-bar" style="text-align: center;" data-position="fixed">
+   <div data-role="controlgroup" data-type="horizontal">
+   <a href="#">바 버튼1</a>
+   <a href="#">바 버튼2</a>
+   <a href="#">바 버튼3</a>
+   <a href="#">바 버튼4</a>
+   </div>
+  </div>
+ </div>
+ 
+ <div data-role="page" id="page2">
+  <div data-role="header" data-add-back-btn="true" data-add-back-text="이전으로">
+   <h1>머리말영역(header)</h1>
+   <a href="#page2">페이지2</a>
+  </div>
+  <div data-role="content">
+   <p>본문영역(content)</p>
+    <h1>두번째 페이지</h1>
+  </div>
+  <div data-role="footer" class="ui-btn" data-position="fixed">
+   <a href="#page1">페이지1</a>
+   <a href="#page2">페이지2</a>
+   </div>
+  </div>
+</body>
+</html>
