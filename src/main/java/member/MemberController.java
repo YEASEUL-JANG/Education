@@ -36,6 +36,62 @@ public class MemberController extends HttpServlet {
 			String page = "/ch06/member_list.jsp";
 			RequestDispatcher rd = request.getRequestDispatcher(page);
 			rd.forward(request, response);
+		}else if(uri.indexOf("join.do") != -1) {
+			String userid = request.getParameter("userid");//값 받아오기
+			String name = request.getParameter("name");
+			String passwd = request.getParameter("passwd");
+			String email = request.getParameter("email");
+			String hp = request.getParameter("hp");
+			String zipcode = request.getParameter("zipcode");
+			String address1 = request.getParameter("address1");
+			String address2 = request.getParameter("address2");
+			
+			MemberDTO dto = new MemberDTO();
+			dto.setUserid(userid); //dto의 setter를 통한 자료 저장
+			dto.setHp(hp);
+			dto.setPasswd(passwd);
+			dto.setName(name);
+			dto.setEmail(email);
+			dto.setZipcode(zipcode);
+			dto.setAddress1(address1);
+			dto.setAddress2(address2);
+			dao.insert(dto);
+		}else if(uri.indexOf("view.do") != -1) {
+			String userid = request.getParameter("userid");
+			MemberDTO dto = dao.memberDetail(userid);
+			//웹영역에 저장(request)
+			request.setAttribute("dto", dto);
+			
+			String page = "/ch06/member_view.jsp";
+			RequestDispatcher rd = request.getRequestDispatcher(page);
+			rd.forward(request, response);
+		}else if(uri.indexOf("update.do") != -1) {
+			String userid = request.getParameter("userid");//값 받아오기
+			String name = request.getParameter("name");
+			String passwd = request.getParameter("passwd");
+			String email = request.getParameter("email");
+			String hp = request.getParameter("hp");
+			String zipcode = request.getParameter("zipcode");
+			String address1 = request.getParameter("address1");
+			String address2 = request.getParameter("address2");
+			MemberDTO dto = new MemberDTO();
+			dto.setUserid(userid); //dto의 setter를 통한 자료 저장
+			dto.setHp(hp);
+			dto.setPasswd(passwd);
+			dto.setName(name);
+			dto.setEmail(email);
+			dto.setZipcode(zipcode);
+			dto.setAddress1(address1);
+			dto.setAddress2(address2);
+			dao.update(dto);
+			//페이지 이동
+			response.sendRedirect(context+"/ch06/member.jsp");//컨텍스트 값 같이 입력되야함.
+		}else if(uri.indexOf("delete.do") != -1) {
+			String userid = request.getParameter("userid");//값 받아오기
+			//레코드 삭제처리
+			dao.delete(userid);
+			//페이지 이동
+			response.sendRedirect(context+"/ch06/member.jsp");
 		}
 	
 	}
