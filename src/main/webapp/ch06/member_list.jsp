@@ -52,7 +52,7 @@ int count = (int)map.get("count");
 </table>
 
 <form name="form1" method="post" action="/jsp02/member_servlet/view.do">
- <input type="hidden" name="userid"><!--사용자 몰래 중요한 정ㅂ조를 보냄  -->
+ <input type="hidden" name="userid"><!--사용자 몰래 중요한 정보를 보냄  -->
 </form>
 
 

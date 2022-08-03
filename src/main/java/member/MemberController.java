@@ -56,6 +56,7 @@ public class MemberController extends HttpServlet {
 			dto.setAddress1(address1);
 			dto.setAddress2(address2);
 			dao.insert(dto);
+			
 		}else if(uri.indexOf("view.do") != -1) {
 			String userid = request.getParameter("userid");
 			MemberDTO dto = dao.memberDetail(userid);
@@ -92,6 +93,129 @@ public class MemberController extends HttpServlet {
 			dao.delete(userid);
 			//페이지 이동
 			response.sendRedirect(context+"/ch06/member.jsp");
+			
+		}else if(uri.indexOf("login.do") != -1) {
+			String userid = request.getParameter("userid");
+			String passwd = request.getParameter("passwd");
+			System.out.println("아이디 : "+userid+", 패스워드 : "+passwd);
+			
+			MemberDTO dto = new MemberDTO();
+			dto.setUserid(userid);
+			dto.setPasswd(passwd);
+			String result = dao.loginCheck(dto);
+			System.out.println(result);
+			request.setAttribute("result", result);
+			String page = "/ch06/login_result.jsp";
+			RequestDispatcher rd = request.getRequestDispatcher(page);
+			rd.forward(request, response);
+			
+			
+		}else if(uri.indexOf("join_oracle_secret.do") != -1) {
+
+			String userid = request.getParameter("userid");//값 받아오기
+			String name = request.getParameter("name");
+			String passwd = request.getParameter("passwd");
+			String email = request.getParameter("email");
+			String hp = request.getParameter("hp");
+			String zipcode = request.getParameter("zipcode");
+			String address1 = request.getParameter("address1");
+			String address2 = request.getParameter("address2");
+			
+			MemberDTO dto = new MemberDTO();
+			dto.setUserid(userid); //dto의 setter를 통한 자료 저장
+			dto.setHp(hp);
+			dto.setPasswd(passwd);
+			dto.setName(name);
+			dto.setEmail(email);
+			dto.setZipcode(zipcode);
+			dto.setAddress1(address1);
+			dto.setAddress2(address2);
+			dao.insertCrypt(dto);
+			
+		}else if(uri.indexOf("login_oracle_secret.do") != -1) {
+
+			String userid = request.getParameter("userid");
+			String passwd = request.getParameter("passwd");
+			System.out.println("아이디 : "+userid+", 패스워드 : "+passwd);
+			
+			MemberDTO dto = new MemberDTO();
+			dto.setUserid(userid);
+			dto.setPasswd(passwd);
+			String result = dao.loginCheckOracle(dto);
+			System.out.println(result);
+			request.setAttribute("result", result);
+			String page = "/ch06/login_result.jsp";
+			RequestDispatcher rd = request.getRequestDispatcher(page);
+			rd.forward(request, response);
+		}else if(uri.indexOf("join_sha.do") != -1) {
+			String userid = request.getParameter("userid");//값 받아오기
+			String name = request.getParameter("name");
+			String passwd = request.getParameter("passwd");
+			String email = request.getParameter("email");
+			String hp = request.getParameter("hp");
+			String zipcode = request.getParameter("zipcode");
+			String address1 = request.getParameter("address1");
+			String address2 = request.getParameter("address2");
+			
+			MemberDTO dto = new MemberDTO();
+			dto.setUserid(userid); //dto의 setter를 통한 자료 저장
+			dto.setHp(hp);
+			dto.setPasswd(passwd);
+			dto.setName(name);
+			dto.setEmail(email);
+			dto.setZipcode(zipcode);
+			dto.setAddress1(address1);
+			dto.setAddress2(address2);
+			dao.insertSha256(dto);
+		}else if(uri.indexOf("login_sha.do") != -1) {
+
+			String userid = request.getParameter("userid");
+			String passwd = request.getParameter("passwd");
+			System.out.println("아이디 : "+userid+", 패스워드 : "+passwd);
+			
+			MemberDTO dto = new MemberDTO();
+			dto.setUserid(userid);
+			dto.setPasswd(passwd);
+			String result = dao.loginCheckSha256(dto);
+			System.out.println(result);
+			request.setAttribute("result", result);
+			String page = "/ch06/login_result.jsp";
+			RequestDispatcher rd = request.getRequestDispatcher(page);
+			rd.forward(request, response);
+		}else if(uri.indexOf("join_bcrypt.do") != -1) {
+			String userid = request.getParameter("userid");//값 받아오기
+			String name = request.getParameter("name");
+			String passwd = request.getParameter("passwd");
+			String email = request.getParameter("email");
+			String hp = request.getParameter("hp");
+			String zipcode = request.getParameter("zipcode");
+			String address1 = request.getParameter("address1");
+			String address2 = request.getParameter("address2");
+			
+			MemberDTO dto = new MemberDTO();
+			dto.setUserid(userid); //dto의 setter를 통한 자료 저장
+			dto.setHp(hp);
+			dto.setPasswd(passwd);
+			dto.setName(name);
+			dto.setEmail(email);
+			dto.setZipcode(zipcode);
+			dto.setAddress1(address1);
+			dto.setAddress2(address2);
+			dao.insertBcrypt(dto);
+		}else if(uri.indexOf("login_bcrypt.do") != -1) {
+			String userid = request.getParameter("userid");
+			String passwd = request.getParameter("passwd");
+			System.out.println("아이디 : "+userid+", 패스워드 : "+passwd);
+			
+			MemberDTO dto = new MemberDTO();
+			dto.setUserid(userid);
+			dto.setPasswd(passwd);
+			String result = dao.loginCheckBcrypt(dto);
+			System.out.println(result);
+			request.setAttribute("result", result);
+			String page = "/ch06/login_result.jsp";
+			RequestDispatcher rd = request.getRequestDispatcher(page);
+			rd.forward(request, response);
 		}
 	
 	}

@@ -36,17 +36,17 @@ MemberDTO dto = (MemberDTO)request.getAttribute("dto");
  <td>아이디</td>
  <td><%= dto.getUserid() %></td>
  </tr>
-  <tr>
+ <tr>
  <td>비밀번호</td>
  <td><input type="password" name="passwd" value="<%= dto.getPasswd() %>"></td>
- </tr>
- <tr>
- <td>이름</td>
- <td><input name="name" value="<%= dto.getName() %>"></td>
  </tr>
   <tr>
  <td>회원가입일자</td>
  <td><%= dto.getJoin_date() %></td>
+ </tr>
+ <tr>
+ <td>이름</td>
+ <td><input name="name" value="<%= dto.getName() %>"></td>
  </tr>
   <tr>
  <td>이메일</td>
