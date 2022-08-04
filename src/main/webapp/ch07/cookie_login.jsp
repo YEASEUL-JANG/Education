@@ -7,22 +7,22 @@
 <title>cookie_login</title>
 <script src="../include/jquery-3.3.1.min.js"></script>
 <script type="text/javascript">
-//저장된 쿠키를 검사
+//저장된 쿠키를 검사(저장된 여러개 쿠키중 들어오는 이름의 값 찾기 메서드)
 function getCookie(cname) {
 	console.log(cname);
-	var cookie = document.cookie + ";";
+	let cookie = document.cookie + ";";
 	console.log(cookie);
-	var idx = cookie.indexOf(cname, 0);
+	let idx = cookie.indexOf(cname);//이름을 찾지못하면 -1반환, 찾으면 이름의 첫번째 인덱스 반환
 	console.log(idx);
-	var val = "";
-	if (idx != -1){
+	let val = "";
+	if (idx != -1){//이름이 저장되어 있으면
 		console.log(idx + "," + cookie.length);
-		//showCookies=값; userid=이름; 을 substring으로 발췌함
-		cookie = cookie.substring(idx, cookie.length);
-		begin = cookie.indexOf("=", 0) + 1;
-		end = cookie.indexOf(";", begin);
+		//showCookies=값; userid=값; 을 substring으로 발췌함
+		cookie = cookie.substring(idx, cookie.length);//이름=값;
+		begin = cookie.indexOf("=") + 1;//값의 첫번째 인덱스
+		end = cookie.indexOf(";", begin);//값의 첫번째 인덱스부터 시작하여 ;을 찾는다.
 		console.log(begin + ","+ end);
-		val = cookie.substring(begin, end);
+		val = cookie.substring(begin, end);//찾는 이름의 값만 저장됨.
 	}
 	return val;
 }
@@ -33,21 +33,22 @@ function setCookie(name, value, days){
 	//쿠키의 유효시간 설정
 	today.setDate(today.getDate() + days);
 	//쿠키변수명=쿠키값;path=저장경로;expires=쿠키유효기간;
-	document.cookie = name + "=" + value + ";path=/jsp02;expires="+today.toGMTString()+";";
+	document.cookie = name + "=" + value + ";path=/jsp02;expires="+today.toUTCString()+";";
 }
 
 function saveCookie(id){
-	if(id != ""){
+	if(id != ""){//아이디저장체크
 		setCookie("userid", id, 7);//7일
-	}else{
+	}else{//아이디저장 미체크
 		setCookie("userid", id, -1);//삭제
 	}
 }
 
+//메인
 $(function(){
 	//팝업창 열기
 	var show = getCookie("showCookies");
-	if(show != "N"){
+	if(show != "Y"){//N일때
 		window.open("popup.jsp", "", "width=300,height=400");
 	}
 	//저장된 쿠키 조회
@@ -78,6 +79,9 @@ $(function(){
 		if($("#chkSave").is(":checked")){//체크박스에 체크가 되어있다면
 			if(!confirm("로그인 정보를 저장하시겠습니까?")){
 				$("#chkSave").prop("checked", true);//자바스크립트방식으로 체크박스에 체크상태로 기억
+				//.prop( propertyName, value ) : 속성값을 추가한다.
+				//.prop()는 지정한 선택자를 가진 첫번째 요소의 속성값을 가져오거나 속성값을 추가한다.
+				//주의할 점은 HTML 입장에서의 속성(attribute)이 아닌 JavaScript 입장에서의 속성(property)이라는 것.
 			}
 		}
 	});

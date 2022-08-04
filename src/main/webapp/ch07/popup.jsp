@@ -12,23 +12,23 @@
    3) 날짜 지정 : date.setDate(설정할 날짜) 또는 date.setTime(설정 초)
  */
 function setCookie(cname, cvalue, days){
-	   var d = new Date();
-	   //만료시간 설정 : (현재시간 + 만료시간)
-	   d.setTime(d.getTime()+(days * 24 * 60 * 60 * 1000));//초로 설정
+	   let d = new Date();
+	   d.setTime(d.getTime()+(days * 24 * 60 * 60 * 1000));//초로 설정(현재시간+만료시간)
+	   //d.setHours(24);//시간으로 설정하는 방법
 	   //d.setDate(d.getDate()+days);//날짜로 설정하는 방법
-	   var expires = "expires=" + d.toGMTString();//쿠키유효시간값
-	   document.cookie = cname + "=" + cvalue + ";" + expires;
+	   let expires = "expires=" + d.toUTCString();//설정한 시간을 쿠키유효시간값으로 설정
+	   document.cookie = cname + "=" + cvalue + ";" + expires;//showCookies="Y"; expires=만료일자;
 	   window.close();//현재 창 닫기
 }
  
 $(function() {
-	$("#nopopup").click(function() {
-		var now = new Date();
-		var val = "";
-		if(this.checked == true){//체크 상태이면
-			val = "N";//7일간 팝업 안함
+	$("#close").click(function() {
+		let now = new Date();
+		let val = "";
+		if($("#nopopup").is(":checked")){//체크 상태이면
+			val = "Y";//7일간 팝업 안함
 		}else{
-			val = "Y";
+			val = "N";
 		}
 		setCookie("showCookies", val, 7);
 	});
@@ -38,5 +38,6 @@ $(function() {
 </head>
 <body>
  <input type="checkbox" id="nopopup"> 7일간 보이지 않기
+ <input type="button" id="close" value="닫기">
 </body>
 </html>
