@@ -33,7 +33,7 @@ public class MemberController extends HttpServlet {
 			request.setAttribute("map", map);
 			
 			//포워딩
-			String page = "/ch06/member_list.jsp";
+			String page = "/ch06/member_list2.jsp";
 			RequestDispatcher rd = request.getRequestDispatcher(page);
 			rd.forward(request, response);
 		}else if(uri.indexOf("join.do") != -1) {
