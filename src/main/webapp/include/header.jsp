@@ -9,4 +9,6 @@ jsp웹페이지에서 java코드를 써야할때가 많다. 이를 최소화하�
 4) core tag(핵심태그, 제일 자주사용되는 태그들)
   -->
  <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"  %>
+ <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"  %>
+ <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"  %>
   <c:set var="path" value="${pageContext.request.contextPath}"/>
