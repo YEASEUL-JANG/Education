@@ -15,10 +15,23 @@
 	where ${searchkey} like '%'|| #{search} || '%'
 	order by idx asc
  </select>
+ <select id="view" parameterType="int" resultType="memo.dto.MemoDTO">
+  	select * from memo where idx=#{idx}
+ </select>
+ 
  <!--parameterType 생략가능 -->
  <insert id="insert" parameterType="memo.dto.MemoDTO">
   insert into memo ( idx, writer, memo )
   values ( (select nvl( max(idx)+1, 1) from memo), #{writer},  #{memo})
  </insert>
  
+ <update id="update" parameterType="memo.dto.MemoDTO" >
+  update memo set writer=#{writer}, memo=#{memo} 
+  where idx=#{idx}
+ </update>
+ 
+ <delete id="delete" parameterType="int">
+  delete from memo
+  where idx=#{idx}
+ </delete>
 </mapper>

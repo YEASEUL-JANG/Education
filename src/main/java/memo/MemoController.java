@@ -1,6 +1,7 @@
 package memo;
 
 import java.io.IOException;
+import java.lang.ProcessBuilder.Redirect;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -43,6 +44,30 @@ public class MemoController extends HttpServlet {
 			dto.setMemo(memo);
 			//dao에 레코드 저장처리요청
 			dao.insertMemo(dto);
+		}else if(uri.indexOf("view.do") != -1) {
+			int idx = Integer.parseInt(request.getParameter("idx"));
+			System.out.println("글번호 : "+idx);
+			MemoDTO dto = dao.viewMemo(idx);
+			request.setAttribute("dto", dto);
+			String page = "/memo/memo_view.jsp";
+			RequestDispatcher rd = request.getRequestDispatcher(page);
+			rd.forward(request, response);
+		}else if(uri.indexOf("update.do") != -1) {
+			int idx = Integer.parseInt(request.getParameter("idx"));
+			String writer = request.getParameter("writer");
+			String memo = request.getParameter("memo");
+			MemoDTO dto = new MemoDTO();
+			dto.setIdx(idx);
+			dto.setWriter(writer);
+			dto.setMemo(memo);
+			dao.updateMemo(dto);
+			//페이지 이동
+			response.sendRedirect(request.getContextPath()+"/memo/memo.jsp");
+		}else if(uri.indexOf("delete.do") != -1) {
+			int idx = Integer.parseInt(request.getParameter("idx"));
+			dao.deleteMemo(idx);
+			//페이지 이동
+			response.sendRedirect(request.getContextPath()+"/memo/memo.jsp");
 		}
 	}
 
