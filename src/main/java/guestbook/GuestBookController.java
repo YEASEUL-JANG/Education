@@ -21,12 +21,79 @@ public class GuestBookController extends HttpServlet {
 		GuestBookDAO dao=new GuestBookDAO();
 		//방명록 리스트 전체조회
 		if(uri.indexOf("list.do") != -1 ){
-			List<GuestBookDTO> items = dao.getList();
+			//검색옵션이 들어올 때
+			String searchkey=request.getParameter("searchkey");
+			String search=request.getParameter("search");
+			//검색옵션과 검색키워드에 기본값 할당
+			if(searchkey==null) searchkey="name";
+			if(search==null) search="";
+			System.out.println("searchkey: "+searchkey+",search: "+search);
+			
+			List<GuestBookDTO> items = dao.getList(searchkey, search);
 			request.setAttribute("list", items);
 			request.setAttribute("count", items.size());
+			
+			request.setAttribute("searchkey", searchkey);
+			request.setAttribute("search", search);
+			
 			String page = "/guestbook/list.jsp";
 			RequestDispatcher rd = request.getRequestDispatcher(page);
 			rd.forward(request, response);
+		}else if(uri.indexOf("insert.do") != -1 ) {
+			String name=request.getParameter("name");
+			String email=request.getParameter("email");
+			String passwd=request.getParameter("passwd");
+			String content=request.getParameter("content");
+			GuestBookDTO dto = new GuestBookDTO();
+			dto.setName(name);
+			dto.setEmail(email);
+			dto.setPasswd(passwd);
+			dto.setContent(content);
+			dao.gbInsert(dto);
+			//방명록 목록 갱신
+			String url = "/guestbook_servlet/list.do";
+			response.sendRedirect(request.getContextPath()+url);
+		}else if(uri.indexOf("passwd_check.do") != -1 ) {
+			int idx=Integer.parseInt(request.getParameter("idx"));
+			String passwd = request.getParameter("passwd");
+			System.out.println("게시물번호 : "+idx+ ", 입력비밀번호 : "+passwd);
+			boolean result=dao.passwdCheck(idx, passwd);
+			//비번이 맞으면 true, 틀리면 false값이 리턴되게
+			System.out.println("결과 : "+result);
+			String url="";
+			if(result) {
+				url="/guestbook/edit.jsp";//수정용 출력페이지
+				//게시물 내용을 dto로 리턴받음
+				GuestBookDTO dto = dao.gbDatail(idx);
+				request.setAttribute("dto", dto);
+			}else {
+				url="guestbook_servlet/list.do";
+			}
+			//화면이동
+			RequestDispatcher rd = request.getRequestDispatcher(url);
+			rd.forward(request, response);
+		}else if(uri.indexOf("update.do") != -1 ) {
+			int idx=Integer.parseInt(request.getParameter("idx"));
+			String name=request.getParameter("name");
+			String email=request.getParameter("email");
+			String passwd=request.getParameter("passwd");
+			String content=request.getParameter("content");
+			GuestBookDTO dto = new GuestBookDTO();
+			dto.setIdx(idx);
+			dto.setName(name);
+			dto.setEmail(email);
+			dto.setPasswd(passwd);
+			dto.setContent(content);
+			dao.gbUpdate(dto);
+			//방명록 목록 갱신
+			String url = "/guestbook_servlet/list.do";
+			response.sendRedirect(request.getContextPath()+url);
+		}else if(uri.indexOf("delete.do") != -1 ) {
+			int idx=Integer.parseInt(request.getParameter("idx"));
+			dao.gbDelete(idx);
+			//방명록 목록 갱신
+			String url = "/guestbook_servlet/list.do";
+			response.sendRedirect(request.getContextPath()+url);
 		}
 		
 	}
