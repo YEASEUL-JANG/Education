@@ -3,7 +3,7 @@
 <configuration>
 <!-- 리턴되는 타입(알리아스) 설정 -->
  <typeAliases>
-  
+  <typeAlias type="page.EmpDTO" alias="e"/>
  </typeAliases>
  
  <environments default="">
@@ -18,6 +18,8 @@
  <mappers>
   <mapper resource="/memo/mapper/memo.xml"/>
   <mapper resource="/guestbook/mapper/guestbook.xml"/>
+  <mapper resource="/page/mapper/emp.xml"/>
+  <mapper resource="/board/mapper/board.xml"/>
  </mappers>
  
 </configuration>
