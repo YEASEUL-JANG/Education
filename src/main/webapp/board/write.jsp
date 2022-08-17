@@ -38,7 +38,7 @@ $(function(){
 </head>
 <body>
 <h2>글쓰기</h2>
-<form name="form1" method="post" action="${path}/board_servlet/insert.do">
+<form name="form1" method="post" enctype="multipart/form-data" action="${path}/board_servlet/insert.do">
 <table>
  <tr>
   <td>이름</td>

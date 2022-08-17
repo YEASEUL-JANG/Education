@@ -17,4 +17,38 @@ values
  ,1,0,#{content},#{ip},#{filename},#{filesize})
  </insert>
  
+ <select id="getFileName" resultType="String">
+  	select filename
+	from board
+	where num=#{num}
+ </select>
+ 
+ <update id="plusDown">
+  update board 
+  set down = down+1
+  where num = #{num}
+ </update>
+ 
+ <select id="view" resultType="board.dto.BoardDTO">
+  select * from board
+  where num=#{num}
+ </select>
+ 
+ <update id="plusReadCount">
+  update board set readcount=readcount+1
+  where num = #{num}
+ </update>
+ 
+ <select id="commentList" resultType="board.dto.BoardCommentDTO">
+  select * from board_comment
+  where board_num = #{num}
+ </select>
+ 
+ <insert id="commentAdd">
+  insert into board_comment
+(comment_num,board_num,writer,content) values
+((select nvl(max(comment_num)+1,1) from board_comment)
+, #{board_num}, #{writer}, #{content})
+ </insert>
+ 
 </mapper>

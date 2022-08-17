@@ -35,10 +35,19 @@ $(function(){
  <tr>
  <td>${dto.num}</td>
  <td>${dto.writer}</td>
- <td>${dto.subject}</td>
+ <td><a href="${path }/board_servlet/view.do?num=${dto.num}">${dto.subject}</a></td>
  <td>${dto.reg_date}</td>
  <td>${dto.readcount}</td>
- <td>${dto.filename}</td>
+ <td align="center">
+  <c:if test="${dto.filesize >0 }">
+    <a href="${path }/board_servlet/download.do?num=${dto.num}">
+    <img src = "../images/file.gif"></a>
+    <script>
+     //setTimeout('location.reload()',1000);//다운로드 횟수를 1초마다 새로고침
+    </script>
+  </c:if>
+ </td>
+<%--  <td>${dto.filename}</td> --%>
  <td>${dto.filesize}</td>
  <td>${dto.down}</td>
  <td>${dto.ip}</td>
