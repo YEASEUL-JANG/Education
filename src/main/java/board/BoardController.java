@@ -157,6 +157,132 @@ public class BoardController extends HttpServlet {
 			dto.setWriter(writer);
 			dto.setContent(content);
 			dao.commentAdd(dto);
+		}else if(url.indexOf("reply.do") != -1) {
+			int num = Integer.parseInt(request.getParameter("num"));
+			BoardDTO dto = dao.view(num);
+			dto.setContent("===게시물의 내용===\n"+dto.getContent());
+			request.setAttribute("dto", dto);
+			String page = "/board/reply.jsp";
+			RequestDispatcher rd = request.getRequestDispatcher(page);
+			rd.forward(request, response);
+		}else if(url.indexOf("insertReply.do") != -1) {
+			int num = Integer.parseInt(request.getParameter("num"));
+			BoardDTO dto = dao.view(num);
+			int ref = dto.getRef();//답변 그룹번호 
+			int re_step=dto.getRe_step();//출력 순번처리
+			int re_level = dto.getRe_level();//답변 단계처리 (댓글이면 2, 대댓글이면 3)
+			String writer = request.getParameter("writer");
+			String subject = request.getParameter("subject");
+			String content = request.getParameter("content");
+			String passwd = request.getParameter("passwd");
+			dto.setWriter(writer);
+			dto.setSubject(subject);
+			dto.setContent(content);
+			dto.setPasswd(passwd);
+			dto.setRef(ref);
+			dto.setRe_step(re_step);
+			dto.setRe_level(re_level);
+			//첨부파일 관련 정보(없지만)
+			dto.setFilename("-");
+			dto.setFilesize(0);
+			dto.setDown(0);
+			//답글 순서조정
+			dao.updateStep(ref, re_step);
+			//답글 쓰기
+			dao.reply(dto);
+			//목록이동
+			String page = "/board_servlet/list.do";
+			response.sendRedirect(contextPath+page);
+			
+		}else if(url.indexOf("pass_check.do") != -1) {
+			int num = Integer.parseInt(request.getParameter("num"));
+			String passwd = request.getParameter("passwd");
+			//비밀번호 대조비교
+			String result = dao.passwdCheck(num,passwd);
+			String page="";
+			if(result != null) {//값이 맞으면
+				page="/board/edit.jsp";
+				request.setAttribute("dto", dao.view(num));
+				RequestDispatcher rd = request.getRequestDispatcher(page);
+				rd.forward(request, response);
+			}else {//비번이 틀리면
+				page = contextPath+"/board_servlet/view.do?num="+num+"&message=error";
+				response.sendRedirect(page);
+			}
+		}else if(url.indexOf("update.do") != -1) {
+			//파일 업로드 처리
+			File uploadDir = new File(Constants.UPLOAD_PATH);
+			if(!uploadDir.exists()) {//업로드 디렉토리가 존재하지 않으면
+				uploadDir.mkdir();//디렉토리를 만듦
+			}
+			//request를 확장시킨 multipartRequest를 생성
+			MultipartRequest multi = new MultipartRequest(request,Constants.UPLOAD_PATH,
+					Constants.MAX_UPLOAD, "utf-8", new DefaultFileRenamePolicy());
+			int num = Integer.parseInt(multi.getParameter("num"));
+			String writer = multi.getParameter("writer");
+			String subject = multi.getParameter("subject");
+			String content = multi.getParameter("content");
+			String passwd = multi.getParameter("passwd");
+			//클라이언트 ip주소 가져오기
+			String ip = request.getRemoteAddr();
+			String filename=" ";//공백한개
+			int filesize= 0;
+			try {
+				//첨부파일처리
+				Enumeration files = multi.getFileNames();
+				//다음요소가 있으면
+				while (files.hasMoreElements()) {
+					String file1 = (String) files.nextElement();
+					filename = multi.getFilesystemName(file1);
+					File f1 = multi.getFile(file1);
+					if(f1 != null) {
+						filesize=(int)f1.length();//파일사이즈 저장
+					}
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			BoardDTO dto = new BoardDTO();
+			dto.setNum(num);
+			dto.setWriter(writer);
+			dto.setSubject(subject);
+			dto.setContent(content);
+			dto.setPasswd(passwd);
+			dto.setIp(ip);
+			
+			if(filename == null || filename.trim().equals("")) {
+				//새로운 첨부파일이 없을 때(테이블의 기존 정보를 가져와야함)
+				BoardDTO dto2 = dao.view(num);
+				String fName=dto2.getFilename();
+				int fSize=dto2.getFilesize();
+				int fDown = dto2.getDown();
+				dto.setFilename(fName);
+				dto.setFilesize(fSize);
+				dto.setDown(fDown);
+			}else {//새로운 첨부파일이 있을 때
+				dto.setFilename(filename);
+				dto.setFilesize(filesize);
+			}
+			//첨부파일 삭제처리
+			String fileDel = multi.getParameter("fileDel");
+			//체크가 되어있으면(삭제), value없이 썼기 때문에 on이 디폴트값
+			if(fileDel != null && fileDel.equals("on")) {
+				String fileName = dao.getFileName(num);
+				File f = new File(Constants.UPLOAD_PATH+fileName);
+				f.delete();//파일삭제처리
+				//첨부파일정보를 지움
+				dto.setFilename("-");
+				dto.setFilesize(0);
+				dto.setDown(0);
+			}
+			//레코드 수정
+			dao.update(dto);
+			//페이지이동
+			String page = "/board_servlet/list.do";
+			response.sendRedirect(contextPath+page);
+			
+		}else if(url.indexOf("delete.do") != -1) {
+			
 		}
 		
 		

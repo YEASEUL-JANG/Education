@@ -1,6 +1,8 @@
 package board.dao;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 
@@ -76,6 +78,10 @@ public class BoardDAO {
 		try {
 			session=MybatisManager.getInstance().openSession();
 			dto = session.selectOne("board.view",num);
+			//줄바꿈 처리
+			String content = dto.getContent();
+			content = content.replace("\n", "<br>");
+			dto.setContent(content);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}finally {
@@ -126,6 +132,67 @@ public class BoardDAO {
 			session=MybatisManager.getInstance().openSession();
 			session.insert("board.commentAdd",dto);
 			session.commit();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			if(session != null) session.close();
+		}
+	}
+	//답글 순서조정
+	public void updateStep(int ref, int re_step) {
+		SqlSession session = null;
+		try {
+			session=MybatisManager.getInstance().openSession();
+			//두개 값을 하나로 묶어 보내려고 들어온 정보값을 dto에 저장한다.
+			BoardDTO dto = new BoardDTO();
+			dto.setRef(ref);
+			dto.setRe_step(re_step);
+			
+			session.update("board.updateStep",dto);
+			session.commit();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			if(session != null) session.close();
+		}
+		
+	}
+	//답글쓰기
+	public void reply(BoardDTO dto) {
+		SqlSession session = null;
+		try {
+			session=MybatisManager.getInstance().openSession();
+			session.insert("board.reply",dto);
+			session.commit();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			if(session != null) session.close();
+		}
+	}
+	//글수정 비번체크
+	public String passwdCheck(int num, String passwd) {
+		String result = null;
+		SqlSession session = null;
+		try {
+			session=MybatisManager.getInstance().openSession();
+			Map<String, Object> map = new HashMap<>();
+			map.put("num", num);
+			map.put("passwd", passwd);
+			result = session.selectOne("board.pass_check",map);
+			session.commit();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			if(session != null) session.close();
+		}
+		return result;
+	}
+	public void update(BoardDTO dto) {
+		SqlSession session = null;
+		try {
+			session=MybatisManager.getInstance().openSession();
+			session.selectOne("board.update",dto);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}finally {

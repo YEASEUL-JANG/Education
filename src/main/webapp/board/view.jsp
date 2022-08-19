@@ -16,6 +16,14 @@ $(function(){
 	$("#btnList").click(function(){
 		location.href="${path}/board_servlet/list.do";
 	});
+	$("#btnReply").click(function(){
+		document.form1.action="${path}/board_servlet/reply.do";
+		document.form1.submit();
+	});
+	$("#btnEdit").click(function(){
+		document.form1.action="${path}/board_servlet/pass_check.do";
+		document.form1.submit();
+	});
 });
 
 function comment_add(){
@@ -33,8 +41,6 @@ function comment_add(){
 	});
 }
 
-
-
 function comment_list(){
 	$.ajax({
 		type: "post",
@@ -46,6 +52,7 @@ function comment_list(){
 	});
 }
 
+funct
 </script>
 </head>
 <body>
@@ -91,6 +98,7 @@ function comment_list(){
   <td>
    <input type="hidden" name="num" value="${dto.num }">
    <input type="button" value="수정/삭제" id="btnEdit">
+   <input type ="button" value="답변" id="btnReply">
    <input type="button" value="목록" id="btnList">
   </td>
   </tr>
