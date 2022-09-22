@@ -93,12 +93,14 @@ public class MainController {
 	//변환이 필요하며 마찬가지로 response 시에도 java object에서 json으로 변환이 필요하다.
 	//이러한 작업들을 해주는 어노테이션이 바로 @ResponseBody 와 @RestController 이다.
 	//@RestController //스프링 4.0이상 부터 사용 가능(호환성 주의)
-	@ResponseBody //자바객체인 dto를 json으로 변환(호환성 상관없음)
-	@RequestMapping("test/doF")
-	public ProductDTO doF() {
-		return new ProductDTO("냉장고", 5000000);
-		
-	}
+	/*
+	 * @ResponseBody //자바객체인 dto를 json으로 변환(호환성 상관없음)
+	 * 
+	 * @RequestMapping("test/doF") public ProductDTO doF() { return new
+	 * ProductDTO("냉장고", 5000000);
+	 * 
+	 * }
+	 */
 	
 
 }
