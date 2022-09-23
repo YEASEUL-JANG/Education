@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<typeInfoHistroy>
+<typeInfo handle="=spring01/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.example.spring01.model.dao{MemberDAO.java[MemberDAO" modifiers="513" timestamp="1663830857049"/>
+<typeInfo handle="=spring01/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.example.spring01.service{MemberService.java[MemberService" modifiers="513" timestamp="1663831211159"/>
+<typeInfo handle="=spring01/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.example.spring01.service{DeptService.java[DeptService" modifiers="513" timestamp="1663853371919"/>
+<typeInfo handle="=spring02/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.example.spring02.service.memo{MemoService.java[MemoService" modifiers="513" timestamp="1663922843282"/>
+</typeInfoHistroy>

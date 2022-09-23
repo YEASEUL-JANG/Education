@@ -1,0 +1,10 @@
+package com.example.spring02.model.memo.dto;
+
+import java.util.Date;
+
+public class MemoDTO {
+	private int number;
+	private String writer;
+	private String memo;
+	private Date post_date;
+}

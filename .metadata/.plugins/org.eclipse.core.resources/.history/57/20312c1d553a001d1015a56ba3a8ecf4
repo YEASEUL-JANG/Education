@@ -1,0 +1,15 @@
+package com.example.spring01.service;
+
+import java.util.List;
+
+import com.example.spring01.model.dto.DeptVO;
+
+public class DeptServiceImpl implements DeptService {
+
+	@Override
+	public List<DeptVO> deptList() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

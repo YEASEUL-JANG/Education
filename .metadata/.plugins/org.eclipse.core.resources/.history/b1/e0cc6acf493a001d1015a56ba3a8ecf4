@@ -1,0 +1,22 @@
+package com.example.spring01.controller;
+
+import javax.inject.Inject;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.example.spring01.service.MemberService;
+
+@Controller
+public class MemberController {
+	//MemberService 인스턴스를 주입
+	@Inject
+	MemberService memberService;
+	
+	@RequestMapping("member/list.do")
+	public String memberList(Model model) {
+		
+		return "member/member_list"; //views/member/member_list.jsp로 포워딩하겠다.
+	}
+}

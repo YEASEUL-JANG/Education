@@ -1,0 +1,6 @@
+package com.example.spring01.model.dao;
+
+@Repository
+public class DeptDAO {
+
+}
