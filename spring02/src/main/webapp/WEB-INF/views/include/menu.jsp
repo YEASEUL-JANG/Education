@@ -5,5 +5,8 @@
 <div style="text-align: center;">
  <a href="${path}">Home</a> |
  <a href="${path}/memo/list.do">메모장</a> |
+ <a href="${path}/upload/uploadForm">업로드 테스트</a> |
+ <a href="${path}/shop/product/list.do">상품목록</a> |
+ 
 </div>
 <hr>
