@@ -10,6 +10,5 @@
 <body>
 파일이 업로드 되었습니다.<br>
 파일명 : ${savedName }
-
 </body>
 </html>

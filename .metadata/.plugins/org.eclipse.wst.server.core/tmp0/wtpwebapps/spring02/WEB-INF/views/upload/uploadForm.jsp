@@ -27,7 +27,5 @@ method="post" enctype="multipart/form-data" target="iframe1" >
 </form>
 <!-- iframe에 업로드 결과 출력 -->
 <iframe name="iframe1"></iframe>
-
 </body>
-
 </html>

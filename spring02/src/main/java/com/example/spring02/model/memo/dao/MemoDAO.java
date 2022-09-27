@@ -24,8 +24,8 @@ public interface MemoDAO {
 	@Select("select * from memo where idx=#{idx}")
 	public MemoDTO memo_view(@Param("idx") int idx);
 
-	@Update("update memo set writer=#{writer}, memo=#{memo} where idx=#{idx}")
-	public void update(MemoDTO dto);
+	@Update("update memo set writer=#{dto.writer}, memo=#{dto.memo} where idx=#{dto.idx}")
+	public void update(@Param("dto")MemoDTO dto);
 	
 	@Delete("delete from memo where idx=#{idx}")
 	public void delete(@Param("idx") int idx);

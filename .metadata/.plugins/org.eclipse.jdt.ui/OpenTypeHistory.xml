@@ -4,4 +4,6 @@
 <typeInfo handle="=spring01/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.example.spring01.service{MemberService.java[MemberService" modifiers="513" timestamp="1663831211159"/>
 <typeInfo handle="=spring01/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.example.spring01.service{DeptService.java[DeptService" modifiers="513" timestamp="1663853371919"/>
 <typeInfo handle="=spring02/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.example.spring02.service.memo{MemoService.java[MemoService" modifiers="513" timestamp="1663922843282"/>
+<typeInfo handle="=spring02/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.example.spring02.model.shop.dao{ProductDAO.java[ProductDAO" modifiers="513" timestamp="1664181540866"/>
+<typeInfo handle="=spring02/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.example.spring02.service.shop{ProductService.java[ProductService" modifiers="513" timestamp="1664182007925"/>
 </typeInfoHistroy>
