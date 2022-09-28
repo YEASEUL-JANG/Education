@@ -39,7 +39,7 @@ public class CartServiceImpl implements CartService {
 
 	@Override
 	public void deleteAll(String userid) {
-		// TODO Auto-generated method stub
+		cartDao.deleteAll(userid);
 
 	}
 
@@ -69,8 +69,7 @@ public class CartServiceImpl implements CartService {
 
 	@Override
 	public void modifyCart(CartDTO dto) {
-		// TODO Auto-generated method stub
-
+		cartDao.modifyCart(dto);
 	}
 
 }

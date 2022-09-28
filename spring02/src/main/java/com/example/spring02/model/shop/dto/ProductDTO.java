@@ -3,16 +3,16 @@ package com.example.spring02.model.shop.dto;
 import org.springframework.web.multipart.MultipartFile;
 
 public class ProductDTO {
-	private String product_id;
+	private int product_id;
 	private String product_name;
 	private int price;
 	private String description;
 	private String picture_url;
 	private MultipartFile file1; //첨부파일 처리
-	public String getProduct_id() {
+	public int getProduct_id() {
 		return product_id;
 	}
-	public void setProduct_id(String product_id) {
+	public void setProduct_id(int product_id) {
 		this.product_id = product_id;
 	}
 	public String getProduct_name() {

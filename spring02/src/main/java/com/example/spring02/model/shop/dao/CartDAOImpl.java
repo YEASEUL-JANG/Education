@@ -36,7 +36,7 @@ public class CartDAOImpl implements CartDAO {
 
 	@Override
 	public void deleteAll(String userid) {
-
+		sqlsession.delete("cart.deleteAll",userid);
 	}
 
 	@Override
@@ -61,7 +61,7 @@ public class CartDAOImpl implements CartDAO {
 
 	@Override
 	public void modifyCart(CartDTO dto) {
-
+		sqlsession.update("cart.modifyCart",dto);
 	}
 
 }

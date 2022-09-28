@@ -42,10 +42,10 @@ public class CartController {
 				map.put("count",list.size());
 				mav.setViewName("shop/cart_list");
 				mav.addObject("map",map);
+				return mav;
 		}else {
 			return new ModelAndView("member/login", "", null);
 		}
-		return mav;
 	}
 	
 	@RequestMapping("insert.do")
@@ -69,6 +69,35 @@ public class CartController {
 		return "redirect:/shop/cart/list.do";
 	}
 	
+	@RequestMapping("deleteAll.do")
+	public String deleteAll(HttpSession session) {
+		//세션변수 조회(로그인 여부 검사)
+		String userid = (String)session.getAttribute("userid");
+		if(userid != null) {
+			cartService.deleteAll(userid);
+		}
+		return "redirect:/shop/cart/list.do";
+	}
+	@RequestMapping("update.do")
+	//수량정보 여러개가 한꺼번에 들어온다.-> 배열을 사용
+	public String update(@RequestParam int[] amount,@RequestParam int[] cart_id, HttpSession session) {
+		String userid = (String)session.getAttribute("userid");
+		if(userid != null) {
+			//hidden으로 넘어오는 cart_id는 배열처리
+			for(int i=0;i<cart_id.length;i++) {
+				if(amount[i]==0) {//수량이 0이면 레코드 삭제
+					cartService.delete(cart_id[i]);//상품 삭제
+				}else {//0이아니면 수정
+					 CartDTO dto = new CartDTO();
+					 dto.setUserid(userid);
+					 dto.setCart_id(cart_id[i]);
+					 dto.setAmount(amount[i]);
+					 cartService.modifyCart(dto);
+				}
+			}
+		}
+		return "redirect:/shop/cart/list.do";
+	}
 	
 	
 }

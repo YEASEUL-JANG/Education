@@ -3,7 +3,11 @@
 <typeInfo handle="=spring01/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.example.spring01.model.dao{MemberDAO.java[MemberDAO" modifiers="513" timestamp="1663830857049"/>
 <typeInfo handle="=spring01/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.example.spring01.service{MemberService.java[MemberService" modifiers="513" timestamp="1663831211159"/>
 <typeInfo handle="=spring01/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.example.spring01.service{DeptService.java[DeptService" modifiers="513" timestamp="1663853371919"/>
-<typeInfo handle="=spring02/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.example.spring02.service.memo{MemoService.java[MemoService" modifiers="513" timestamp="1663922843282"/>
-<typeInfo handle="=spring02/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.example.spring02.model.shop.dao{ProductDAO.java[ProductDAO" modifiers="513" timestamp="1664181540866"/>
+<typeInfo handle="=spring02/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.example.spring02.model.shop.dao{ProductDAO.java[ProductDAO" modifiers="513" timestamp="1664182003565"/>
 <typeInfo handle="=spring02/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.example.spring02.service.shop{ProductService.java[ProductService" modifiers="513" timestamp="1664182007925"/>
+<typeInfo handle="=spring02/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.example.spring02.model.member.dao{MemberDAO.java[MemberDAO" modifiers="513" timestamp="1664262146035"/>
+<typeInfo handle="=spring02/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.example.spring02.service.memo{MemoService.java[MemoService" modifiers="513" timestamp="1663922843282"/>
+<typeInfo handle="=spring02/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.example.spring02.service.member{MemberService.java[MemberService" modifiers="513" timestamp="1664262991765"/>
+<typeInfo handle="=spring02/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.example.spring02.model.shop.dao{CartDAO.java[CartDAO" modifiers="513" timestamp="1664266022732"/>
+<typeInfo handle="=spring02/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.example.spring02.service.shop{CartService.java[CartService" modifiers="513" timestamp="1664266617279"/>
 </typeInfoHistroy>

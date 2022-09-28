@@ -1,7 +1,7 @@
 package com.example.spring02.model.shop.dto;
 
 public class CartDTO {
-	private String cart_id;//cart테이블
+	private int cart_id;//cart테이블
 	private String userid;//cart테이블, member테이블
 	private String name;//member테이블
 	private String product_id;//cart테이블, product테이블
@@ -43,10 +43,10 @@ public class CartDTO {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getCart_id() {
+	public int getCart_id() {
 		return cart_id;
 	}
-	public void setCart_id(String cart_id) {
+	public void setCart_id(int cart_id) {
 		this.cart_id = cart_id;
 	}
 	public String getUserid() {
