@@ -1,0 +1,9 @@
+package com.example.spring02.controller.chart;
+
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController //ajax => json으로 리턴하는 전용 컨트롤러(스프링버전 4.0부터 지원)
+@RequestMapping("chart/*")
+public class ChartController {
+
+}

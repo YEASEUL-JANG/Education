@@ -10,4 +10,7 @@
 <typeInfo handle="=spring02/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.example.spring02.service.member{MemberService.java[MemberService" modifiers="513" timestamp="1664262991765"/>
 <typeInfo handle="=spring02/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.example.spring02.model.shop.dao{CartDAO.java[CartDAO" modifiers="513" timestamp="1664266022732"/>
 <typeInfo handle="=spring02/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.example.spring02.service.shop{CartService.java[CartService" modifiers="513" timestamp="1664266617279"/>
+<typeInfo handle="=spring02/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.example.spring02.model.admin{AdminDAO.java[AdminDAO" modifiers="513" timestamp="1664349439868"/>
+<typeInfo handle="=spring02/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.example.spring02.service.admin{AdminService.java[AdminService" modifiers="513" timestamp="1664349669831"/>
+<typeInfo handle="=spring02/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.example.spring02.service.pdf{PdfService.java[PdfService" modifiers="513" timestamp="1664445462479"/>
 </typeInfoHistroy>

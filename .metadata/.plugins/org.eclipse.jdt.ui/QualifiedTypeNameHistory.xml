@@ -13,11 +13,24 @@
 <fullyQualifiedTypeName name="org.slf4j.LoggerFactory"/>
 <fullyQualifiedTypeName name="java.util.UUID"/>
 <fullyQualifiedTypeName name="org.springframework.util.FileCopyUtils"/>
-<fullyQualifiedTypeName name="java.io.File"/>
 <fullyQualifiedTypeName name="org.slf4j.Logger"/>
 <fullyQualifiedTypeName name="java.util.Date"/>
 <fullyQualifiedTypeName name="com.example.spring02.model.member.dao.MemberDAO"/>
 <fullyQualifiedTypeName name="org.springframework.stereotype.Repository"/>
-<fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="org.springframework.web.servlet.ModelAndView"/>
+<fullyQualifiedTypeName name="org.apache.ibatis.session.SqlSession"/>
+<fullyQualifiedTypeName name="com.example.spring02.model.admin.AdminDAO"/>
+<fullyQualifiedTypeName name="java.io.File"/>
+<fullyQualifiedTypeName name="com.itextpdf.text.Document"/>
+<fullyQualifiedTypeName name="com.itextpdf.text.pdf.PdfWriter"/>
+<fullyQualifiedTypeName name="java.io.FileOutputStream"/>
+<fullyQualifiedTypeName name="com.itextpdf.text.pdf.BaseFont"/>
+<fullyQualifiedTypeName name="com.itextpdf.text.Font"/>
+<fullyQualifiedTypeName name="com.itextpdf.text.pdf.PdfPTable"/>
+<fullyQualifiedTypeName name="com.itextpdf.text.Chunk"/>
+<fullyQualifiedTypeName name="com.itextpdf.text.Paragraph"/>
+<fullyQualifiedTypeName name="com.itextpdf.text.Element"/>
+<fullyQualifiedTypeName name="com.itextpdf.text.pdf.PdfPCell"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="com.example.spring02.service.chart.ChartService"/>
 </qualifiedTypeNameHistroy>

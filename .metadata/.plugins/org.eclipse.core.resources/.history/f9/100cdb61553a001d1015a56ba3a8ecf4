@@ -1,8 +1,0 @@
-package com.example.spring01.model.dao;
-
-import org.springframework.stereotype.Repository;
-
-@Repository("deptDao")
-public class DeptDAO {
-
-}
