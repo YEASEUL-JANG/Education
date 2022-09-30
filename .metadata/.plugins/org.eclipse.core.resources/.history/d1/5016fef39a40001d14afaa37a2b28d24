@@ -1,0 +1,11 @@
+package com.example.spring02.model.message.dao;
+
+public class PointDAOImpl implements PointDAO {
+
+	@Override
+	public void updatePoint(String userid, int point) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

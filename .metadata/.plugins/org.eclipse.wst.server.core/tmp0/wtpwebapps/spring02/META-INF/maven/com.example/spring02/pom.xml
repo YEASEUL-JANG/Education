@@ -12,7 +12,7 @@
 		<java-version>1.8</java-version>
 		<!-- 스프링버전 5.0.3, 에러가 날 경우 호환성을 위해 버전조정 가능 -->
 		<org.springframework-version>5.2.22.RELEASE</org.springframework-version>
-		<org.aspectj-version>1.8.10</org.aspectj-version>
+		<org.aspectj-version>1.9.1</org.aspectj-version>
 		<org.slf4j-version>1.7.25</org.slf4j-version>
 	</properties>
 	<repositories>
@@ -30,7 +30,13 @@
 			<version>2.9.8</version>
 		</dependency>
 		<!-- 외부 라이브러리 설정 -->
-		<!-- 외부 라이브러리 설정 -->
+		<!-- AOP 관련 라이브러리 -->
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjweaver</artifactId>
+			<version>${org.aspectj-version}</version>
+		</dependency>
+
 		<!-- 구글 차트 관련 라이브러리 -->
 		<dependency>
 			<groupId>com.googlecode.json-simple</groupId>

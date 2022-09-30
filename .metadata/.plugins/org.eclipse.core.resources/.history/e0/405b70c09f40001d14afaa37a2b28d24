@@ -1,0 +1,35 @@
+package com.example.spring02.service.message;
+
+import javax.inject.Inject;
+
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.example.spring02.model.message.dao.MessageDAO;
+import com.example.spring02.model.message.dao.PointDAO;
+import com.example.spring02.model.message.dto.MessageDTO;
+@Service
+public class MessageServiceImpl implements MessageService {
+
+	@Inject
+	MessageDAO messageDao;
+	
+	@Inject
+	PointDAO pointDao;
+	
+	@Override
+	public MessageDTO readMessage(int mid) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	//트랜잭션 처리대상 메소드
+	@Transactional//둘중 하나가 실패하면 처리가 안됨(둘다 처리되어야 둘다 성공)
+	@Override
+	public void addMessage(MessageDTO dto) {
+		//두식이 동시에 잘 성공되어야 함.
+		messageDao.create(dto);
+		pointDao.updatePoint(dto.getSender(), 10);
+	}
+
+}

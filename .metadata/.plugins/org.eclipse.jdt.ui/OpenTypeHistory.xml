@@ -13,4 +13,7 @@
 <typeInfo handle="=spring02/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.example.spring02.model.admin{AdminDAO.java[AdminDAO" modifiers="513" timestamp="1664349439868"/>
 <typeInfo handle="=spring02/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.example.spring02.service.admin{AdminService.java[AdminService" modifiers="513" timestamp="1664349669831"/>
 <typeInfo handle="=spring02/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.example.spring02.service.pdf{PdfService.java[PdfService" modifiers="513" timestamp="1664445462479"/>
+<typeInfo handle="=spring02/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.example.spring02.model.message.dao{MessageDAO.java[MessageDAO" modifiers="513" timestamp="1664525864616"/>
+<typeInfo handle="=spring02/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.example.spring02.model.message.dao{PointDAO.java[PointDAO" modifiers="513" timestamp="1664526818932"/>
+<typeInfo handle="=spring02/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.example.spring02.service.message{MessageService.java[MessageService" modifiers="513" timestamp="1664527304506"/>
 </typeInfoHistroy>
