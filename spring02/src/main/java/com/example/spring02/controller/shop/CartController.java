@@ -52,9 +52,10 @@ public class CartController {
 	public String insert(HttpSession session, @ModelAttribute CartDTO dto) {
 		//세션에 userid가 존재하는지 확인
 		String userid=(String)session.getAttribute("userid");
-		if(userid==null) {//아이디가 없다면
-			return "redirect:/member/login.do";//로그인 페이지로 이동
-		}
+		/*
+		 * if(userid==null) {//아이디가 없다면 return "redirect:/member/login.do";//로그인 페이지로 이동
+		 * }
+		 */
 		dto.setUserid(userid);
 		cartService.insert(dto);
 		//장바구니에 insert 처리 후 장바구니 목록으로 이동

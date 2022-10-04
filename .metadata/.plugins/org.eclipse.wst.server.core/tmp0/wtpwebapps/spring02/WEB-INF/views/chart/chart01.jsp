@@ -6,6 +6,8 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <%@ include file="../include/header.jsp" %>
+<%-- <%@ include file="../include/session_check.jsp" %>
+ --%><!-- 각페이지마타 위처럼 세션체크페이지를 include하지 말고 인터셉터로 대체하면 좋다. -->
 <!-- 구글 차트 호출을 위한 js 파일 -->
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <script type="text/javascript">

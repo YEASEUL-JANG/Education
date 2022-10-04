@@ -9,6 +9,7 @@
  <c:if test="${sessionScope.admin_userid == null }">
 	 <a href="${path}/memo/list.do">메모장</a> |
 	 <a href="${path}/upload/uploadForm">업로드 테스트</a> |
+	 <a href="${path}/upload/uploadAjax">업로드(Ajax)</a> |
 	 <a href="${path}/shop/product/list.do">상품목록</a> |
  </c:if>
  <c:if test="${sessionScope.userid != null && sessionScope.admin_userid == null }"> 
