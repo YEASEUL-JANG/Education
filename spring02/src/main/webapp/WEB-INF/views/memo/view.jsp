@@ -8,6 +8,13 @@
 <%@ include file="../include/header.jsp" %>
 <script type="text/javascript">
 $(function(){
+	$("#memo").summernote({
+		width: 500,
+		height: 200
+	});
+	
+});
+$(function(){
 	$("#btnUpdate").click(function(){
 		document.form1.action="${path}/memo/update/${dto.idx}";
 		document.form1.submit();
@@ -24,6 +31,14 @@ $(function(){
 </head>
 <body>
 <%@ include file="../include/menu.jsp" %>
+<!-- include libraries(jQuery, bootstrap) -->
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<!-- include summernote css/js -->
+<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
 <h2>메모 보기</h2>
 <form name="form1" method="post">
 <table border="1">
@@ -37,7 +52,7 @@ $(function(){
 	</tr>
 	<tr>
 		<td>메모</td>
-		<td><input name="memo" value="${dto.memo}" size="50"></td>
+		<td><textarea rows="5" cols="60" name="memo" id="memo">${dto.memo }</textarea></td>
 	</tr>
 	<tr align="center">
 		<td colspan="2">
