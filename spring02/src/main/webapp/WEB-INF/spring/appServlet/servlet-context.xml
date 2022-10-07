@@ -27,6 +27,8 @@
 	<resources mapping="/images/**"
 		location="/WEB-INF/views/images/" />
 	<resources location="/WEB-INF/views/json/" mapping="/json/**"></resources>
+	<resources location="/WEB-INF/views/ckeditor/" mapping="/ckeditor/**"></resources>
+	
 
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources 
 		in the /WEB-INF/views directory -->
@@ -69,7 +71,11 @@
       <mapping path="/shop/**"/>
       <beans:ref bean="sampleInterceptor"/>
      </interceptor>
-      <interceptor>
+      <interceptor><!-- 로그인을 해야만 처리될 수 있는 인터셉터 맵핑 -->
+      <mapping path="/board/write.do"/>
+      <mapping path="/board/insert.do"/>
+      <mapping path="/board/update.do"/>
+      <mapping path="/board/delete.do"/>
       <mapping path="/shop/cart/list.do"/>
       <mapping path="/shop/cart/insert.do"/>
       <beans:ref bean="loginInterceptor"/>

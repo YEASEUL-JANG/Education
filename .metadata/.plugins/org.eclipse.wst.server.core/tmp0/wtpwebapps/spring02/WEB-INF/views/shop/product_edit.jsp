@@ -6,6 +6,8 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <%@ include file="../include/header.jsp" %>
+<!-- ckeditor js파일 연결 -->
+<script src="${path }/ckeditor/ckeditor.js"></script>
 <script type="text/javascript">
 function product_delete(){
 	/* if(confirm("삭제하시겠습니까?")){
@@ -79,6 +81,13 @@ function product_update(){
   <td>상품설명</td>
   <td>
    <textarea rows="5" cols="60" name="description" id="description">${dto.description}</textarea>
+  <script type="text/javascript">
+   //id가 description인 태그에 ckeditor를 적용하겠다.
+   CKEDITOR.replace("description",{
+	   filebrowserUploadUrl: "${path}/imageUpload.do"
+   });
+   
+   </script>
   </td>
  </tr>
  <tr>

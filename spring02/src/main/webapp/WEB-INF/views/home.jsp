@@ -19,6 +19,6 @@
 </h1>
 <P>  The time on the server is ${serverTime}. </P>
 <!--실제로 서비스 되는 디렉토리  -->
-<%= application.getRealPath("/") %>
+<%= application.getRealPath("/resources/images/") %>
 </body>
 </html>

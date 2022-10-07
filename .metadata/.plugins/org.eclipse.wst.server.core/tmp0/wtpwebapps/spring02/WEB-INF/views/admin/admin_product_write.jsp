@@ -6,6 +6,10 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <%@ include file="../include/header.jsp" %>
+<!-- ckeditor js파일 연결 -->
+<script src="${path }/ckeditor/ckeditor.js"></script>
+
+
 <script type="text/javascript">
 function product_write(){
 	//태그를 name으로 조회할 경우(계층구조로 접근)
@@ -23,11 +27,6 @@ function product_write(){
 	if(price==""){
 		alert("가격을 입력하세요");
 		$("#price").focus();//입력포커스 이동
-		return;//리턴값없이 함수 종료
-	}
-	if(description==""){
-		alert("상품설명을 입력하세요");
-		$("#description").focus();//입력포커스 이동
 		return;//리턴값없이 함수 종료
 	}
 	document.form1.action="${path}/shop/product/insert.do";
@@ -52,6 +51,13 @@ function product_write(){
   <td>상품설명</td>
   <td>
    <textarea rows="5" cols="60" name="description" id="description"></textarea>
+   <script type="text/javascript">
+   //id가 description인 태그에 ckeditor를 적용하겠다.
+   CKEDITOR.replace("description",{
+	   filebrowserUploadUrl: "${path}/imageUpload.do"
+   });
+   
+   </script>
   </td>
  </tr>
  <tr>
