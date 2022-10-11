@@ -1,8 +1,0 @@
-package com.example.spring02.aop;
-
-import org.springframework.stereotype.Component;
-
-@Component
-public class MessageAdvice {
-
-}

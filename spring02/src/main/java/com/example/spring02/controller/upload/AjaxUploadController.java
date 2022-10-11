@@ -5,6 +5,7 @@ import java.io.FileInputStream;
 import java.io.InputStream;
 
 import javax.annotation.Resource;
+import javax.inject.Inject;
 
 import org.apache.commons.io.IOUtils;
 import org.slf4j.Logger;
@@ -19,6 +20,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.example.spring02.service.board.BoardService;
 import com.example.spring02.util.MediaUtils;
 import com.example.spring02.util.UploadFileUtils;
 
@@ -27,6 +29,10 @@ public class AjaxUploadController {
 	//로깅
 	private static final Logger logger
 	=LoggerFactory.getLogger(AjaxUploadController.class);
+	
+	@Inject
+	BoardService boardService;
+	
 	
 	//업로드 디렉토리
 	@Resource(name = "uploadPath")
@@ -96,8 +102,9 @@ public class AjaxUploadController {
 		}
 		//기타종류 원본 파일 삭제
 		new File(uploadPath+fileName.replace('/', File.separatorChar)).delete();
-		
-		return new ResponseEntity<String>("deleted",HttpStatus.OK);
+		//레코드 삭제
+		boardService.deleteFile(fileName);
+		return new ResponseEntity<String>("deleted",HttpStatus.OK);//uploadAjax.jsp의 if(result==delete)와 연결
 	}
 	
 

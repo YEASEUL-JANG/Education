@@ -1,6 +1,8 @@
 package com.example.spring02.model.board.dao;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.inject.Inject;
 
@@ -16,22 +18,25 @@ public class BoardDAOImpl implements BoardDAO {
 	
 	@Override
 	public void deleteFile(String fullName) {
-
+		sqlSession.delete("board.deleteFile",fullName);
 	}
 
 	@Override
 	public List<String> getAttach(int bno) {
-		return null;
+		return sqlSession.selectList("board.getAttach",bno);
 	}
 
 	@Override
 	public void addAttach(String fullName) {
-
+		sqlSession.insert("board.addAttach",fullName);
 	}
 
 	@Override
 	public void updateAttach(String fullName, int bno) {
-
+		Map<String,Object> map=new HashMap<>();
+		map.put("fullName", fullName);
+		map.put("bno", bno);
+		sqlSession.insert("board.updateAttach",map);
 	}
 
 	@Override
@@ -41,7 +46,7 @@ public class BoardDAOImpl implements BoardDAO {
 
 	@Override
 	public void update(BoardDTO dto) throws Exception {
-
+		sqlSession.update("board.update",dto);
 	}
 
 	@Override
@@ -50,23 +55,26 @@ public class BoardDAOImpl implements BoardDAO {
 	}
 
 	@Override
-	public List<BoardDTO> listAll() throws Exception {
-		return sqlSession.selectList("board.listAll");
+	public List<BoardDTO> listAll(int start, int end) throws Exception {
+		Map<String,Object> map = new HashMap<>();
+		map.put("start", start);
+		map.put("end", end);
+		return sqlSession.selectList("board.listAll",map);
 	}
 
 	@Override
 	public void increaseViewcnt(int bno) throws Exception {
-
+		sqlSession.update("board.increaseViewcnt",bno);
 	}
 
 	@Override
 	public int countArticle() throws Exception {
-		return 0;
+		return sqlSession.selectOne("board.countArticle");
 	}
 
 	@Override
 	public BoardDTO read(int bno) throws Exception {
-		return null;
+		return sqlSession.selectOne("board.read",bno);
 	}
 
 }
