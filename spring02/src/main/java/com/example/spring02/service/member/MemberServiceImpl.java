@@ -1,5 +1,7 @@
 package com.example.spring02.service.member;
 
+import java.util.List;
+
 import javax.inject.Inject;
 import javax.servlet.http.HttpSession;
 
@@ -33,6 +35,11 @@ public class MemberServiceImpl implements MemberService {
 	@Override
 	public MemberDTO viewMember(String userid) {
 		return memberDao.viewMember(userid);
+	}
+
+	@Override
+	public List<MemberDTO> list() {
+		return memberDao.list();
 	}
 
 }

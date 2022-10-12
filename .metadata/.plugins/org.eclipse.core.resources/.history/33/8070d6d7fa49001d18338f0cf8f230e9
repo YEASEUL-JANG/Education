@@ -1,0 +1,24 @@
+package com.example.spring02.model.board.dao;
+
+import java.util.List;
+
+import com.example.spring02.model.board.dto.ReplyDTO;
+
+public class ReplyDAOImpl implements ReplyDAO {
+
+	@Override
+	public List<ReplyDTO> list(int bno) {
+		return null;
+	}
+
+	@Override
+	public int count(int bno) {
+		return 0;
+	}
+
+	@Override
+	public void create(ReplyDTO dto) {
+
+	}
+
+}

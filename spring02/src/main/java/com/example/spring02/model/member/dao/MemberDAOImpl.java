@@ -1,5 +1,7 @@
 package com.example.spring02.model.member.dao;
 
+import java.util.List;
+
 import javax.inject.Inject;
 
 import org.apache.ibatis.session.SqlSession;
@@ -22,6 +24,11 @@ public class MemberDAOImpl implements MemberDAO {
 	@Override
 	public MemberDTO viewMember(String userid) {
 		return sqlSession.selectOne("member.viewMember",userid);
+	}
+
+	@Override
+	public List<MemberDTO> list() {
+		return sqlSession.selectList("member.memberlist");
 	} 
 
 }

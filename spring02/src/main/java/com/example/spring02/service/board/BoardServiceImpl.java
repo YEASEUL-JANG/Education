@@ -61,16 +61,17 @@ public class BoardServiceImpl implements BoardService {
 			boardDao.updateAttach(name,dto.getBno());
 		}
 	}
-
+	@Transactional
 	@Override
 	public void delete(int bno) throws Exception {
-		// TODO Auto-generated method stub
-
+		//reply레코드, attach, board쪽 모두 삭제되어야 함 (완전삭제는 아님)
+		boardDao.delete(bno);
+		
 	}
 
 	@Override
-	public List<BoardDTO> listAll(int start, int end) throws Exception {
-		return boardDao.listAll(start,end);
+	public List<BoardDTO> listAll(int start, int end, String search_option, String keyword) throws Exception {
+		return boardDao.listAll(start,end,search_option,keyword);
 	}
 	//조회수 증가처리
 	@Override

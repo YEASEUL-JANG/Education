@@ -5,7 +5,45 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2022-10-11T07:32:00Z</updated>
+  <updated>2022-10-12T11:45:11Z</updated>
+  <entry>
+    <title>Spring Framework 6.0 goes RC1</title>
+    <link rel="alternate" href="https://spring.io/blog/2022/10/12/spring-framework-6-0-goes-rc1" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Juergen Hoeller</name>
+    </author>
+    <id>tag:spring.io,2022-10-12:4942</id>
+    <updated>2022-10-12T11:45:11Z</updated>
+    <content type="html">&lt;p&gt;Dear Spring community,&lt;/p&gt;
+&lt;p&gt;It is my pleasure to announce that a feature-complete Spring Framework 6.0 release candidate is &lt;a href="https://repo.spring.io/"&gt;available&lt;/a&gt; now! We are expecting a further release candidate in time for the first Spring Boot 3.0 release candidate next week, and then our final releases for general availability in November.&lt;/p&gt;
+&lt;p&gt;As a major revision of the core framework, 6.0 RC1 comes with a Java 17+ baseline, a move to Jakarta EE 9+ (in the &lt;code&gt;jakarta&lt;/code&gt; namespace superseding the former &lt;code&gt;javax&lt;/code&gt; based EE APIs), and a broader infrastructure revision. This provides access to the latest web containers such as &lt;a href="https://tomcat.apache.org/whichversion.html"&gt;Tomcat 10&lt;/a&gt; / &lt;a href="https://www.eclipse.org/jetty/download.php"&gt;Jetty 11&lt;/a&gt; and the latest persistence providers such as &lt;a href="https://hibernate.org/orm/releases/6.1/"&gt;Hibernate ORM 6.1&lt;/a&gt; - all of which are exclusively available with the jakarta-namespaced variants of the Servlet API and JPA. It also sets the stage for the further evolution of those APIs and providers, as well as the further evolution of the JDK itself.&lt;/p&gt;
+&lt;p&gt;Most importantly, this release completes our foundation for &lt;a href="https://spring.io/blog/2022/03/22/initial-aot-support-in-spring-framework-6-0-0-m3"&gt;Ahead-Of-Time transformations&lt;/a&gt; and the corresponding AOT processing support for Spring application contexts. This opens up a wide range of optimized deployment arrangements, from fine-tuned JVM deployments to first-class support for GraalVM native images (see the &lt;a href="https://spring.io/blog/2022/09/26/native-support-in-spring-boot-3-0-0-m5"&gt;related Spring Boot 3 blog post&lt;/a&gt;). Stay tuned for Spring Boot 3.0 RC1!&lt;/p&gt;
+&lt;p&gt;On a timely note, there is also an opportunity to explore virtual threads (the &amp;ldquo;Project Loom&amp;rdquo; preview in JDK 19) with Spring-based applications: See &lt;a href="https://spring.io/blog/2022/10/11/embracing-virtual-threads"&gt;&amp;ldquo;Embracing Virtual Threads&amp;rdquo;&lt;/a&gt; for an overview. At this point, we provide customization options to plug in virtual-thread based &lt;code&gt;Executor&lt;/code&gt; implementations; we aim to provide first-class configuration options when Project Loom goes out of preview.&lt;/p&gt;
+&lt;p&gt;There are many further features and refinements available in Spring Framework 6.0, e.g. an &lt;a href="https://docs.spring.io/spring-framework/docs/6.0.0-RC1/reference/html/integration.html#rest-http-interface"&gt;HTTP interface client&lt;/a&gt; based on &lt;code&gt;@HttpExchange&lt;/code&gt; service interfaces, support for &lt;a href="https://docs.spring.io/spring-framework/docs/6.0.0-RC1/reference/html/web.html#mvc-ann-rest-exceptions"&gt;RFC 7807 problem details&lt;/a&gt;, and Micrometer-based observability for Spring&amp;rsquo;s HTTP clients. Please see our &lt;a href="https://github.com/spring-projects/spring-framework/wiki/What%27s-New-in-Spring-Framework-6.x/"&gt;What&amp;rsquo;s New page&lt;/a&gt; for a comprehensive overview and give 6.0 an early try!&lt;/p&gt;
+&lt;p&gt;Cheers,&lt;br/&gt;Juergen&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://projects.spring.io/spring-framework/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-framework/milestones"&gt;GitHub&lt;/a&gt; | &lt;a href="https://docs.spring.io/spring-framework/docs/6.0.0-RC1/reference/html/"&gt;Documentation&lt;/a&gt;&lt;/p&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
+  <entry>
+    <title>The State of Spring Survey 2022 Is Here!</title>
+    <link rel="alternate" href="https://spring.io/blog/2022/10/11/the-state-of-spring-survey-2022-is-here" />
+    <category term="news" label="News and Events" />
+    <author>
+      <name>Michael Minella</name>
+    </author>
+    <id>tag:spring.io,2022-10-11:4941</id>
+    <updated>2022-10-11T17:00:00Z</updated>
+    <content type="html">&lt;p&gt;The State of Spring survey is here! Please give us your feedback by going to &lt;a href="https://spring.io/survey"&gt;spring.io/survey&lt;/a&gt;. Spread the word by sharing these posts on &lt;a href="https://twitter.com/springcentral/status/1577314901525204992"&gt;Twitter&lt;/a&gt;, &lt;a href="https://www.linkedin.com/posts/vmware-tanzu_we-want-to-hear-from-you-share-your-feedback-activity-6983123705023406080-pwRM/"&gt;LinkedIn&lt;/a&gt;, and any other social platform you use! &lt;/p&gt;
+&lt;hr/&gt;
+&lt;p&gt;Spring fans, our annual survey of the Spring community is back! Last year, we dived into the biggest projects and the most popular app patterns built with Spring, and a whole lot more! You told us your views about Spring Native, Data, and what matters to you when you start using a new Spring project.&lt;/p&gt;
+&lt;p&gt;The survey is back for 2022, and we¡¯re really excited to learn again from you. What matters to you when you build with Spring? What types of apps are you building with Spring? What can we change, and what should remain the same?&lt;/p&gt;
+&lt;p&gt;Completing the survey should take about 15 minutes. If you want to be among the first to get the report, feel free to leave your email at the end of the survey.&lt;/p&gt;
+&lt;p&gt;Ok, if you¡¯re ready, &lt;strong&gt;head over to &lt;a href="https://spring.io/survey"&gt;spring.io/survey&lt;/a&gt; now!&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;One last thing - we&amp;rsquo;d really appreciate it if you share the survey with others in the Spring community. You can share the link spring.io/survey, or our &lt;a href="https://twitter.com/springcentral/status/1577314901525204992"&gt;Twitter&lt;/a&gt; and &lt;a href="https://www.linkedin.com/posts/vmware-tanzu_we-want-to-hear-from-you-share-your-feedback-activity-6983123705023406080-pwRM/"&gt;LinkedIn&lt;/a&gt; posts. Thank you!&lt;/p&gt;
+&lt;p&gt;The Spring Team&lt;/p&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
   <entry>
     <title>Embracing Virtual Threads</title>
     <link rel="alternate" href="https://spring.io/blog/2022/10/11/embracing-virtual-threads" />
@@ -1054,143 +1092,6 @@ class MyJobConfiguration extends DefaultBatchConfiguration {&#xD;
 &lt;p&gt;I would like to thank all contributors who had a role in this release! As we continue our work on Spring Batch 5, we look forward to your feedback on &lt;a href="https://github.com/spring-projects/spring-batch/issues"&gt;Github&lt;/a&gt;, &lt;a href="https://twitter.com/springbatch"&gt;Twitter&lt;/a&gt;, and &lt;a href="https://stackoverflow.com/questions/tagged/spring-batch"&gt;StackOverflow&lt;/a&gt;.&lt;/p&gt;
 &lt;hr/&gt;
 &lt;p&gt;&lt;a href="https://spring.io/projects/spring-batch"&gt;Spring Batch Home&lt;/a&gt;|&lt;a href="https://github.com/spring-projects/spring-batch"&gt;Source on Github&lt;/a&gt;|&lt;a href="https://docs.spring.io/spring-batch/docs/5.0.0-M6/reference/html/index-single.html"&gt;Reference documentation&lt;/a&gt;&lt;/p&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Integration 6.0.0-M5 and 5.5.15 Available</title>
-    <link rel="alternate" href="https://spring.io/blog/2022/09/21/spring-integration-6-0-0-m5-and-5-5-15-available" />
-    <category term="releases" label="Releases" />
-    <author>
-      <name>Artem Bilan</name>
-    </author>
-    <id>tag:spring.io,2022-09-21:4921</id>
-    <updated>2022-09-21T17:55:30Z</updated>
-    <content type="html">&lt;div class="paragraph"&gt;
-&lt;p&gt;Dear Spring community,&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;I&amp;#8217;d like to share with you an availability of the latest &lt;code&gt;Milestone 5&lt;/code&gt; of new Spring Integration &lt;code&gt;6.0&lt;/code&gt; generation.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;It can be obtained from &lt;a href="https://repo.spring.io/milestone"&gt;Spring Milestone repository&lt;/a&gt;:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="listingblock"&gt;
-&lt;div class="content"&gt;
-&lt;pre class="prettyprint highlight"&gt;&lt;code data-lang="groovy"&gt;dependencyManagement {
-    imports {
-        mavenBom 'org.springframework.integration:spring-integration-bom:6.0.0-M5'
-    }
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Also, Spring Integration &lt;code&gt;5.5.15&lt;/code&gt; has been released with some critical bug fixed and upstream dependencies deprecation resolutions.
-It is recommended to upgrade if you have missed some intermediate releases before or just pull it transitively from upcoming Spring Boot &lt;code&gt;2.6.12&lt;/code&gt; or &lt;code&gt;2.7.4&lt;/code&gt;!&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;With the whole Spring portfolio move to Java &lt;code&gt;17&lt;/code&gt; and Jakarta EE, it was a tremendous internal framework refactoring to support new Java language level and &lt;code&gt;jakarta&lt;/code&gt; namespace.
-Plus this includes an upgrade to the latest dependencies which are Jakarta EE compatible or have some breaking changes we couldn&amp;#8217;t move to before.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;The notable changes throughout the whole Spring Integration &lt;code&gt;6.0&lt;/code&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="ulist"&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Spring AOT support - a lot was reworked internally in the framework to satisfy native images expectations and some reflection, proxy and serialization hints are exposed.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;GraphQL support - a new &lt;code&gt;spring-integration-graphql&lt;/code&gt; module has been added.
-It is fully based on a new in portfolio &lt;a href="https://spring.io/projects/spring-graphql"&gt;Spring for GraphQL&lt;/a&gt; project and its &lt;code&gt;GraphQlMessageHandler&lt;/code&gt; is a reactive implementation of the outbound gateway and can perform all &lt;code&gt;query&lt;/code&gt;, &lt;code&gt;mutation&lt;/code&gt; &amp;amp; &lt;code&gt;subscription&lt;/code&gt; GraphQL operations.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;The MQTT module now provides a &lt;code&gt;ClientManager&lt;/code&gt; abstraction to allow to share the same MQTT client for different channel adapters.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;The &lt;code&gt;spring-integration-smb&lt;/code&gt; and &lt;code&gt;spring-integration-hazelcast&lt;/code&gt; &lt;a href="https://github.com/spring-projects/spring-integration-extensions"&gt;extensions&lt;/a&gt; have been migrated to the core project for better community visibility.
-We are planing to migrate more extensions to achieve a better developer experience and maintenance goals.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;A &lt;code&gt;PostgresSubscribableChannel&lt;/code&gt; has been introduced to rely on the native PostgreSQL push notifications feature.
-This way an interaction with a &lt;code&gt;JdbcChannelMessageStore&lt;/code&gt; is not pollable, but rather a plain subscription where we pull a message from the DB whenever a notification happens from PostgreSQL.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Micrometer Observability - an &lt;code&gt;ObservationRegistry&lt;/code&gt; instrumentation infrastructure has been added.
-The &lt;code&gt;AbstractMessageHandler&lt;/code&gt; now emits a &lt;code&gt;CONSUMER&lt;/code&gt; observations instead of just &lt;code&gt;Timer&lt;/code&gt; when an &lt;code&gt;ObservationRegistry&lt;/code&gt; is injected.
-An &lt;code&gt;ObservationPropagationChannelInterceptor&lt;/code&gt; must be used on async and distributed message channels where we would like to propagate an &lt;code&gt;Observation&lt;/code&gt; from the producer to consumer to continue a trace.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;The &lt;code&gt;IntegrationFlows&lt;/code&gt; factory is now deprecated in favor of the same functionality migrated directly to the &lt;code&gt;IntegrationFlow&lt;/code&gt; interface.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;The RMI module is completely removed in favor of other, more secure network protocols.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Apache Camel support - a new &lt;code&gt;spring-integration-camel&lt;/code&gt; module has been added.
-Its &lt;code&gt;CamelMessageHandler&lt;/code&gt; implementation is aimed for easier calls of Apache Camel routes from Spring Integration flows.
-It is based on a Camel&amp;#8217;s &lt;code&gt;ProducerTemplate&lt;/code&gt; and can perform &lt;code&gt;InOnly&lt;/code&gt;, &lt;code&gt;InOut&lt;/code&gt; and &lt;code&gt;InOptionalOut&lt;/code&gt; exchanges carrying Spring Integration messages to/from Apache Camel routes.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;All the messaging annotations (&lt;code&gt;@ServiceActivator&lt;/code&gt;,&lt;code&gt;@Transformer&lt;/code&gt;, &lt;code&gt;@Splitter&lt;/code&gt; etc.) are now &lt;code&gt;@Repeatable&lt;/code&gt;, so you can use the same POJO method in different integration flows.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;The &lt;code&gt;log()&lt;/code&gt; operator of the &lt;code&gt;IntegrationFlow&lt;/code&gt; is now non-terminal - its ambiguity in the end of flow has been resolved and now the behavior of the flow remains the same if there was no &lt;code&gt;log()&lt;/code&gt; operator.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;The &lt;code&gt;RedisLockRegistry&lt;/code&gt; can now work in pub-sub mode to mitigate a busy-spin concern whenever it is possible and lock can be obtained immediately on pub-sub notification.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Also, see a &lt;a href="https://github.com/spring-projects/spring-integration/wiki/Spring-Integration-5.x-to-6.0-Migration-Guide"&gt;Migration Guide&lt;/a&gt; for breaking changes in the framework and its modules.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Give it a try before we go a release candidate in October and you are welcome with any feedback!&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;See you in person this December at &lt;a href="https://springone.io/2022/sessions/whats-new-in-spring-integration-60"&gt;SpringOne&lt;/a&gt; to discuss these and other Spring Integration features!&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Cheers,&amp;#160;&lt;br&gt;
-Artem&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;&lt;a href="http://projects.spring.io/spring-integration/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-integration/issues"&gt;GitHub Issues&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-integration/blob/master/CONTRIBUTING.adoc"&gt;Contributing&lt;/a&gt; | &lt;a href="http://stackoverflow.com/questions/tagged/spring-integration"&gt;Help&lt;/a&gt; | &lt;a href="https://gitter.im/spring-projects/spring-integration"&gt;Chat&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Authorization Server 1.0.0-M2 available now</title>
-    <link rel="alternate" href="https://spring.io/blog/2022/09/21/spring-authorization-server-1-0-0-m2-available-now" />
-    <category term="releases" label="Releases" />
-    <author>
-      <name>Joe Grandja</name>
-    </author>
-    <id>tag:spring.io,2022-09-20:4920</id>
-    <updated>2022-09-21T14:00:00Z</updated>
-    <content type="html">&lt;div class="paragraph"&gt;
-&lt;p&gt;On behalf of the team and everyone who has contributed, it is my pleasure to announce the general availability of Spring Authorization Server 1.0.0-M2.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;You can download it from &lt;a href="https://repo.spring.io/milestone"&gt;repo.spring.io&lt;/a&gt; milestone repository by using the module coordinates:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="listingblock"&gt;
-&lt;div class="content"&gt;
-&lt;pre class="prettyprint highlight"&gt;&lt;code&gt;implementation 'org.springframework.security:spring-security-oauth2-authorization-server:1.0.0-M2'&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;See the &lt;a href="https://github.com/spring-projects/spring-authorization-server/releases/tag/1.0.0-M2"&gt;release notes&lt;/a&gt; for complete details.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;To get started using Spring Authorization Server, see the &lt;a href="https://docs.spring.io/spring-authorization-server/docs/current/reference/html/getting-started.html"&gt;Getting Started&lt;/a&gt; chapter of the reference documentation and the &lt;a href="https://github.com/spring-projects/spring-authorization-server/tree/main/samples"&gt;samples&lt;/a&gt; to become familiar with setup and configuration.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;We would love to gather your feedback as we strive to improve and build upon this release.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;&lt;a href="https://spring.io/projects/spring-authorization-server"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-authorization-server/issues"&gt;GitHub Issues&lt;/a&gt; | &lt;a href="https://app.zenhub.com/workspaces/authorization-server-5e8f3182b5e8f5841bfc4902/board?repos=248032165"&gt;ZenHub Board&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
   </entry>
 </feed>

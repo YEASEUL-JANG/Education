@@ -16,6 +16,8 @@
 <typeInfo handle="=spring02/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.example.spring02.model.message.dao{MessageDAO.java[MessageDAO" modifiers="513" timestamp="1664525864616"/>
 <typeInfo handle="=spring02/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.example.spring02.model.message.dao{PointDAO.java[PointDAO" modifiers="513" timestamp="1664526818932"/>
 <typeInfo handle="=spring02/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.example.spring02.service.message{MessageService.java[MessageService" modifiers="513" timestamp="1664527304506"/>
-<typeInfo handle="=spring02/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.example.spring02.model.board.dao{BoardDAO.java[BoardDAO" modifiers="513" timestamp="1665130780002"/>
-<typeInfo handle="=spring02/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.example.spring02.service.board{BoardService.java[BoardService" modifiers="513" timestamp="1665131998603"/>
+<typeInfo handle="=spring02/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.example.spring02.model.board.dao{BoardDAO.java[BoardDAO" modifiers="513" timestamp="1665474641997"/>
+<typeInfo handle="=spring02/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.example.spring02.service.board{BoardService.java[BoardService" modifiers="513" timestamp="1665475640037"/>
+<typeInfo handle="=spring02/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.example.spring02.service.board{ReplyService.java[ReplyService" modifiers="513" timestamp="1665557456943"/>
+<typeInfo handle="=spring02/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.example.spring02.model.board.dao{ReplyDAO.java[ReplyDAO" modifiers="513" timestamp="1665557582520"/>
 </typeInfoHistroy>

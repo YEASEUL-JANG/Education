@@ -3,16 +3,14 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:set var="path" value="${pageContext.request.contextPath}" />
 <div style="text-align: center;">
- <a href="${path}"><img src="resources/images/logo.png" width="100" height="40"></a>
  <a href="${path}">Home</a> |
- 
- <c:if test="${sessionScope.admin_userid == null }">
+ <a href="${path}/member/address.do">도로명주소</a> |
 	 <a href="${path}/memo/list.do">메모장</a> |
 	 <a href="${path}/board/list.do">게시판</a> |
 	 <a href="${path}/upload/uploadForm">업로드 테스트</a> |
 	 <a href="${path}/upload/uploadAjax">업로드(Ajax)</a> |
 	 <a href="${path}/shop/product/list.do">상품목록</a> |
- </c:if>
+	 
  <c:if test="${sessionScope.userid != null && sessionScope.admin_userid == null }"> 
   <a href="${path}/shop/cart/list.do">장바구니</a> |
  </c:if>

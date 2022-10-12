@@ -1,11 +1,14 @@
 package com.example.spring02.controller.member;
 
+import java.util.List;
+
 import javax.inject.Inject;
 import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -22,6 +25,10 @@ public class MemberController {
 	@Inject
 	MemberService memberService;
 	
+	@RequestMapping("address.do")
+	public String address() {
+		return "member/join";
+	}
 	
 	@RequestMapping("login.do")
 	public String login() {
@@ -49,6 +56,12 @@ public class MemberController {
 		mav.addObject("message","logout");
 		return mav;
 		
-		
 	}
+	@RequestMapping("list.do")
+	public String memberList(Model model) {
+		List<MemberDTO> list = memberService.list();
+		model.addAttribute("list", list);
+		return "member/member_list";
+	}
+	
 }

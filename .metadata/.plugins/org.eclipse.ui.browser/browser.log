@@ -58,3 +58,27 @@
 10월 11, 2022 20:09:54.621 
 10월 11, 2022 20:09:54.623 
 10월 11, 2022 20:39:43.869 [16132:15244:1011/203943.867:ERROR:interface_endpoint_client.cc(689)] Message 1 rejected by interface blink.mojom.WidgetHost
+
+10월 12, 2022 15:45:22.623 NEW SESSION
+10월 12, 2022 15:45:22.623 [11460:9036:1012/154522.620:ERROR:util.cc(129)] Can't create base directory: C:\Program Files\Google\GoogleUpdater
+10월 12, 2022 16:05:23.59 [14312:13232:1012/160523.059:ERROR:device_event_log_impl.cc(214)] [16:05:23.058] USB: usb_device_handle_win.cc:1048 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+10월 12, 2022 16:06:19.115 [14312:8880:1012/160619.114:ERROR:util.cc(129)] Can't create base directory: C:\Program Files\Google\GoogleUpdater
+10월 12, 2022 16:19:42.698 [14312:12284:1012/161942.698:ERROR:cert_verify_proc_builtin.cc(670)] CertVerifyProcBuiltin for e2c29.gcp.gvt2.com failed:
+10월 12, 2022 16:19:42.699 ----- Certificate i=0 (CN=*.gcp.gvt2.com) -----
+10월 12, 2022 16:19:42.700 ERROR: Time is after notAfter
+10월 12, 2022 16:19:42.701 
+10월 12, 2022 16:19:42.701 
+10월 12, 2022 16:25:22.173 [14312:1056:1012/162522.173:ERROR:cert_verify_proc_builtin.cc(670)] CertVerifyProcBuiltin for e2cs37.gcp.gvt2.com failed:
+10월 12, 2022 16:25:22.174 ----- Certificate i=0 (CN=*.gcp.gvt2.com) -----
+10월 12, 2022 16:25:22.174 ERROR: Time is after notAfter
+10월 12, 2022 16:25:22.175 
+10월 12, 2022 16:25:22.175 
+10월 12, 2022 20:37:11.907 [14312:13232:1012/203711.907:ERROR:interface_endpoint_client.cc(689)] Message 1 rejected by interface blink.mojom.WidgetHost
+10월 12, 2022 20:45:26.51 [14312:8956:1012/204526.051:ERROR:cert_verify_proc_builtin.cc(670)] CertVerifyProcBuiltin for e2c49.gcp.gvt2.com failed:
+10월 12, 2022 20:45:26.52 ----- Certificate i=0 (CN=*.gcp.gvt2.com) -----
+10월 12, 2022 20:45:26.52 ERROR: Time is after notAfter
+10월 12, 2022 20:45:26.52 
+10월 12, 2022 20:45:26.53 
+10월 12, 2022 20:51:20.680 [1596:18912:1012/205120.680:ERROR:device_event_log_impl.cc(214)] [20:51:20.680] USB: usb_device_handle_win.cc:1048 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+10월 12, 2022 20:52:18.238 [1596:15656:1012/205218.238:ERROR:util.cc(129)] Can't create base directory: C:\Program Files\Google\GoogleUpdater
+10월 12, 2022 21:41:08.743 [1596:18912:1012/214108.743:ERROR:interface_endpoint_client.cc(689)] Message 1 rejected by interface blink.mojom.WidgetHost

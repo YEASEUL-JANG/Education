@@ -51,14 +51,16 @@ public class BoardDAOImpl implements BoardDAO {
 
 	@Override
 	public void delete(int bno) throws Exception {
-
+		sqlSession.delete("board.delete",bno);
 	}
 
 	@Override
-	public List<BoardDTO> listAll(int start, int end) throws Exception {
+	public List<BoardDTO> listAll(int start, int end, String search_option, String keyword) throws Exception {
 		Map<String,Object> map = new HashMap<>();
 		map.put("start", start);
 		map.put("end", end);
+		map.put("search_option", search_option);
+		map.put("keyword", "%"+keyword+"%");
 		return sqlSession.selectList("board.listAll",map);
 	}
 

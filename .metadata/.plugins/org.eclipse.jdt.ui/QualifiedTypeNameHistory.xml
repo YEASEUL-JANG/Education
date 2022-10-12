@@ -12,7 +12,6 @@
 <fullyQualifiedTypeName name="org.apache.ibatis.annotations.Insert"/>
 <fullyQualifiedTypeName name="com.example.spring02.model.member.dao.MemberDAO"/>
 <fullyQualifiedTypeName name="org.springframework.stereotype.Repository"/>
-<fullyQualifiedTypeName name="org.springframework.web.servlet.ModelAndView"/>
 <fullyQualifiedTypeName name="org.apache.ibatis.session.SqlSession"/>
 <fullyQualifiedTypeName name="com.example.spring02.model.admin.AdminDAO"/>
 <fullyQualifiedTypeName name="com.itextpdf.text.Document"/>
@@ -50,5 +49,6 @@
 <fullyQualifiedTypeName name="java.util.Date"/>
 <fullyQualifiedTypeName name="org.slf4j.LoggerFactory"/>
 <fullyQualifiedTypeName name="org.slf4j.Logger"/>
+<fullyQualifiedTypeName name="org.springframework.web.servlet.ModelAndView"/>
 <fullyQualifiedTypeName name="java.util.List"/>
 </qualifiedTypeNameHistroy>
