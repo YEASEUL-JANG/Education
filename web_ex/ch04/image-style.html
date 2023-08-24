@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>image</title>
+<style type="text/css">
+div{
+border: 2px solid black;
+width: 400px;
+height: 100px;
+margin: 10px;
+}
+#id1 {
+background-image: url("../images/flower1.jpg");
+background-position: right center; /* x축방향 오른쪽 , y축방향 가운데 위치 */
+background-repeat: no-repeat;
+background-size: 20% 60%; /* 원본사이즈에 비해 가로길이 20% 세로길이 60% 축약 */
+}
+
+#id2 {
+background-image: url("../images/flower2.jpg");
+background-repeat: repeat-x; /* x축방향으로 반복 */
+background-size: 20% 60%;
+color: white;
+}
+#id3 {
+background-image: url("../images/flower2.jpg");
+background-size: auto; /* 원본크기 유지 */
+color: white;
+}
+
+#id4 {
+background-image: url("../images/flower2.jpg");
+background-position: 50% 50%;
+background-repeat: no-repeat;
+}
+</style>
+
+</head>
+<body>
+
+<div id="id1">스타일1</div>
+<div id="id2">스타일2</div>
+<div id="id3">스타일3</div>
+<div id="id4">스타일4</div>
+
+</body>
+</html>

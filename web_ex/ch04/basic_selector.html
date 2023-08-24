@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+*{
+margin: 5px;
+padding: 5px;
+}
+#id1{
+border: dashed red;
+}
+.class2{
+border: dotted blue;
+color: purple;
+}
+span{
+font-weight: bold;
+}
+#id1 > span { /* 직계자손 */
+color: green;
+}
+#id2 span { /* 모든자손 */
+color: pink;
+}
+#id1 > ul > li {
+color: blue;
+}
+#id1 > ul li {
+background : yellow;
+}
+
+#id1 li{
+border : double;
+}
+
+#id2 > .class2 > h3 {
+color: red;
+}
+
+#id2 h4 {
+color: orange;
+}
+/*h3바로 다음 h4형제태그에 적용  */
+h3 + h4 { 
+ text-align: center;
+}
+/*h3 다음 모든 h4형제태그에 적용  */
+h3 ~ h4 {
+background: gray;
+}
+
+</style>
+</head>
+<body>
+
+<div id="id1">div 스타일1
+ <span>span스타일1</span>
+ <span>span스타일2</span>
+ <p>p스타일1
+  <span>span스타일 3</span>
+ </p>
+ <ul class="class1">
+  <li>하늘</li>
+  <li>바다</li>
+ </ul>
+</div>
+
+<div id="id2">div스타일2
+ <span>span스타일4</span>
+ <span>span스타일5</span>
+ <p>p스타일2
+  <span>span스타일 6</span>
+ </p>
+ <div class="class2">
+  <h4>전나무</h4>
+  <h3>소나무</h3>
+  <h4>개나리</h4>
+  <h5>밤나무</h5>
+  <h4>진달래</h4>
+ </div>
+
+</div>
+</body>
+</html>

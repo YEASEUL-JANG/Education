@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+div{
+background: green;
+height: 150px;
+width: 150px;
+} 
+.container{
+background: yellow;
+border: 1px solid black;
+}
+.transformed{
+transform-origin: 50% 42%; /* 변환 원점 설정 */
+transform: perspective(500px) rotateY(59deg) rotateX(0deg);
+/* perspective: 원근 변환에서 거리를 설정
+rotateY: Y출을 중심으로 하는 변환 
+rotateX: X축을 중심으로 하는 변환 */
+
+}
+
+</style>
+
+</head>
+<body>
+<div id="container">
+ <div id="transformed"></div>
+
+</div>
+</body>
+</html>

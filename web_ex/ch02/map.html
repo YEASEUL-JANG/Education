@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>이미지맵 예제</title>
+</head>
+<body>
+<!--이미지맵, usemap="#맵이름  -->
+<img alt="" src="../images/kids.jpg" usemap="#toymap">
+<map name="toymap">
+<!-- oords="원점의x좌표, y좌표, 반지름" -->
+ <area shape="circle" coords="100,100,50" href="http://google.com">
+ <!-- 좌표계는 왼쪽 위가 (0,0)오른쪽, 아래로 갈수록 + -->
+ <!-- coords="x원점, y원점, x길이값, y길이값 -->
+ <area shape="rect" coords="200,10,380,200" href="http://naver.com">
+</map>
+</body>
+</html>

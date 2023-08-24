@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+ul{
+display: table;
+margin:auto;
+}
+ul.navi li{
+list-style-type: none;
+display: block;
+width: 8em;
+height: 3em;
+float: left;
+text-align: center;
+background: white;
+font-family: "Lucida Calligraphy Italic"  Arial;
+border: 1px gray solid;
+box-shadow: 5px 5px 10px gray;
+}
+ul.navi li a{
+display: block;
+padding: .8em .5em .5em .5em;
+text-decoration: none;
+color: black;
+text-shadow: 1px 1px 0px gray;
+}
+ul.navi li:hover{
+background-color: black;}
+ul.navi li:hover>a { /*직계자손인 a 태그  */
+color: aqua;
+text-shadow: 0px 1px 0px #fff;
+}
+ul.navi li:first-child{
+ border-top-left-radius: 1em;
+ border-bottom-left-radius: 1em;
+}
+ul.navi li:last-child{/* 마지막항목 */
+ border-top-right-radius: 1em;
+ border-bottom-right-radius: 1em;
+}
+
+</style>
+</head>
+<body>
+
+<div>
+ <ul class="navi">
+  <li class="home"><a href="#">Home</a></li>
+  <li id="HTML"><a href="#">HTML</a></li>
+  <li id="CSS"><a href="#">CSS</a></li>
+  <li id="JQuery"><a href="#">JQuery</a></li>
+ </ul>
+</div>
+
+<div>
+<ul>
+ <li>짜장면</li>
+ <li>짬뽕</li>
+ <li>우동</li>
+</ul>
+</div>
+
+
+
+</body>
+</html>

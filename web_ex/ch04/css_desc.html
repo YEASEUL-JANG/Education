@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+h1 em { /* h1태그안의 자손 em태그 */
+color: red;
+}
+h1  > em { /* h1의 직계자손 em태그 */
+color: aqua;
+}
+body h1{
+color: blue;
+}
+</style>
+</head>
+<body>
+<h1>
+헤딩 <em>태그1</em>
+<span><em>태그2</em></span>
+<div><em>태그3</em></div>
+</h1>
+
+<em>강조할 내용</em>
+<div><h1>제목</h1></div>
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+body{
+background: yellow;
+}</style>
+<script type="text/javascript">
+function dwn(){
+	let bar=document.getElementById("bar");
+	let leaded=0;
+	let pro=function(){//자바스크립트의 무명함수를 pro라는 변수에 값을 초기화.
+		loaded+=5;
+		bar.value= loaded;
+		if(leaded == 100){
+			clearInterval(dummyLoad);//타이머해제
+		}
+	};
+	//0.5초마다 load함수 실행
+	let dummyLoad=setInterval(pro,500);//(함수이름, 시간)
+}
+
+</script>
+</head>
+<body>
+
+<input type="button" value="시작" onclick="dwn()">
+<progress id="bar" value="0" max="100"></progress>
+
+
+</body>
+</html>
