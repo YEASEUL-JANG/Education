@@ -1,1 +1,2 @@
-# kotlin_testPractice
+# Education
+국비학원을 통해 교육받은 내용을 실습한 자료입니다.
