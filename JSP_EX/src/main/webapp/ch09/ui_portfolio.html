@@ -1,0 +1,210 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>회원가입</title>
+<style type="text/css">
+.div1 {
+	width: 800px;
+	height: 550px;
+	background-color: #DEEAF6;
+	display: flex;
+	justify-content: center;
+	padding-top: 50px;
+	border: 1px solid #7190ad;
+}
+
+.div2 {
+	width: 480px;
+	height: 500px;
+	background-color: #EDEDED;
+}
+
+.pwd1_box, .pwd2_box, .email_box, .address_box {
+	padding-left: 50px;
+	padding-top: 20px;
+}
+
+.id_box {
+	padding-left: 50px;
+	padding-top: 80px;
+}
+
+#user_id, #email1 {
+	display: inline;
+	margin-left: 80px; 
+	border-bottom: 1px dashed;
+	border-left: none;
+	border-right: none;
+	border-top: none;
+	background-color: #EDEDED;
+}
+
+#email2 {
+ 	display: inline;
+	border-bottom: 1px dashed;
+	border-left: none;
+	border-right: none;
+	border-top: none;
+	background-color: #EDEDED;
+}
+
+#pwd1 {
+	display: inline;
+	margin-left: 65px; 
+	border-bottom: 1px dashed;
+	border-left: none;
+	border-right: none;
+	border-top: none;
+	background-color: #EDEDED;
+}
+
+#pwd2 {
+	display: inline;
+	margin-left: 25px; 
+	border-bottom: 1px dashed;
+	border-left: none;
+	border-right: none;
+	border-top: none;
+	background-color: #EDEDED;
+}
+
+#address {
+	display: inline;
+	margin-left: 95px; 
+	border-bottom: 1px dashed;
+	border-left: none;
+	border-right: none;
+	border-top: none;
+	background-color: #EDEDED;
+}
+
+#address2 {
+	display: inline;
+	margin-left: 128px; 
+	border-bottom: 1px dashed;
+	border-left: none;
+	border-right: none;
+	border-top: none;
+	background-color: #EDEDED;
+	margin-top: 25px;
+}
+
+#submit {
+	width: 400px;
+	height: 50px;
+	margin-top: 50px;
+	margin-left: 40px;
+	border: 1px solid #DAE7D6;
+	background-color: #C1D9B0;
+	font-size: 16px;
+	font-weight: bold;
+}
+</style>
+<script src="../include/jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+	$("#pwd1").one('click', function(){
+		$(".pwd1_box").append(
+				"<span style='padding-left: 125px; font-size: 12px; color:#afafaf;'>영문자 대/소문자 특수문자, 숫자 포함 8~32자</span><br>");
+	});
+});
+
+
+$(function() {
+	$('.check1').one('focusin', function(){
+		var userid = $("#user_id");
+		if(userid.val() == ""){
+			$(".id_box").append("<span style= 'padding-left: 125px; color:#afafaf; font-size: 12px'>필수 입력 항목입니다</span><br>");
+			userid.focus();
+			return;
+		}
+	});
+});
+	
+$(function() {
+	$('.check2').one('focusin', function(){
+		var pwd1 = $("#pwd1");
+		if(pwd1.val() == ""){
+			$(".pwd1_box").append("<span style= 'padding-left: 125px; color:#afafaf; font-size: 12px'>필수 입력 항목입니다</span><br>");
+			pwd1.focus();
+			return;
+		}
+	});
+});
+
+$(function() {
+	$('.check3').one('focusin', function(){
+		var pwd2 = $("#pwd2");
+		if(pwd2.val() == ""){
+			$(".pwd2_box").append("<span style= 'padding-left: 125px; color:#afafaf; font-size: 12px'>필수 입력 항목입니다</span><br>");
+			pwd2.focus();
+		}
+	});
+});
+function check(){
+	var userid=$("#user_id").val();
+	if (userid == ""){
+		alert("아이디는 필수 입력입니다.");
+		userid.focus();
+		return;
+	}
+	var pwd1 = $("#pwd1").val();
+	var pwd2 = $("#pwd2").val();
+	
+	if (pwd1 == ""){
+		alert("비밀번호는 필수 입력입니다.");
+		pwd1.focus();
+		return;
+	}
+	var exp = /(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^*+=-])(?=.*\d){8,32}/;
+	
+	if(!exp.test(pwd1)){
+		alert("비밀번호는 영문대/소문자,숫자,특수문자를 모두 사용해서 8~32자리로 입력하세요.");
+		pwd1.focus();
+		return;
+	}
+	if (pwd1 != pwd2){
+		alert("비밀번호가 일치하지 않습니다.");
+		pwd2.focus();
+		return;
+	}
+	alert("정상적으로 제출되었습니다.");
+	$("#user_id").val("");
+	$("#pwd1").val("");
+	$("#pwd2").val("");
+	$("#email1").val("");
+	$("#email2").val("");
+	$("#address").val("");
+	$("#address2").val("");
+}
+</script>
+</head>
+<body>
+<span style="padding-left: 125px; font-size: 10px"></span>
+ <div class="div1">
+ <form>
+  <div class="div2">
+   <div class="id_box">
+  	<b>아이디</b><input type="text" size=32 id="user_id"><br>
+   </div>
+   <div class="pwd1_box">
+  	<b>패스워드</b><input type="password" class="check1" size=32 id="pwd1"><br>
+   </div>
+   <div class="pwd2_box">
+  	<b>패스워드 확인</b><input type="password" class="check2" size=32 id="pwd2"><br>
+   </div>
+   <div class="email_box">
+  	<b>이메일</b><input type="text" class="check3" size=10 id="email1">@<input type="text" size=15 id="email2"><br>
+   </div>
+   <div class="address_box">
+  	<b>주소</b><input type="text" size=32 id=address><br>
+  	<input type="text" size=32 id=address2>
+   </div>
+   <input id="submit" type="button" onclick="check()" value="가 입">
+  </div>
+  </form>
+ </div>
+</body>
+</html>
