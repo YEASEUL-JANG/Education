@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+let fruits = new Array();//배열 선언
+fruits[0]="사과";
+fruits[1]="바나나";
+fruits[2]="오렌지";
+
+for(i=0; i<fruits.length; i++){
+	document.write(fruits[i]+"<br>");
+}
+document.write("===================="+"<br>")
+var textFruits = new Array();
+//자바와 달리 숫자 인덱스 외에도 문자열 인덱스 사용가능.
+textFruits["a"]="수박";
+textFruits["b"]="멜론";
+textFruits["c"]="체리";
+//향상된 for문 (숫자 인덱스가 아닌경우는 무조건 써야함.)
+for(var f in textFruits){
+	document.write(textFruits[f]+"<br>");
+}
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

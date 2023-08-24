@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+function greeting(name){
+	alert('반갑습니다'+name);//6.
+}
+function processInput(call){//2.
+	alert(call);//3.
+	var name=prompt("이름을 입력해주세요", "");//4.
+	call(name);//5.함수호출(call=greeting)
+}
+
+processInput(greeting);//1.호출
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

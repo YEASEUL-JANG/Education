@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>I'm Your Blog</title>
+<script src="../include/jquery-3.3.1.min.js"></script>
+<link rel = "stylesheet" type="text/css" href="blog_css.css">
+<style type="text/css">
+#sec2{
+border-radius: 10px;
+background: white;
+padding: 40px 40px;
+position: absolute;
+left: 390px;
+top: 400px;
+width: 960px;
+border : 3px solid gray;
+}
+.profile{
+text-align:right;
+font-size: 8px;
+}
+.top{top: 1050px;}
+
+.search{top: 1130px;}
+</style>
+
+<script type="text/javascript">
+function check(){
+	let name=document.input.name;
+	let id=document.input.id;
+	let password=document.input.password;
+	let phone=document.input.phone;
+	let hobby1=document.input.hobby1;
+	let hobby2=document.input.hobby2;
+	let hobby3=document.input.hobby3;
+	let MBTI=document.input.MBTI;
+	let food=document.input.food;
+	let feeling=document.input.feeling;
+	let date=document.input.date;
+	if(name.value == ""){
+		alert("닉네임을 입력하세요."); 
+		name.focus();return; 
+	}
+	if(id.value == ""){
+		alert("아이디를 입력하세요.");
+		id.focus();return;
+	}
+	let exp1 = /^[A-Za-z0-9]{2,12}$/;
+	if(!exp1.test(id.value)){
+		alert("ID는 영문,숫자구성 2-12글자이내로 설정하세요.");
+		id.focus();return;
+	}
+	if(password.value == ""){
+		alert("비밀번호를 입력하세요.");
+		password.focus();return;
+	}
+	let exp2= /^(?=.*[A-Za-z])(?=.*[!@#$%^&*_+])(?=.*\d){8,12}/;
+	if(!exp2.test(password.value)){
+		alert("비밀번호는 영문,숫자,특수문자 포함 8-12글자이내로 설정하세요.");
+		password.focus();return;
+	}
+	if(phone.value == ""){
+		alert("전화번호를 입력하세요.");
+		phone.focus();return;
+	}
+	let exp3= /^[0-9]+$/;
+	if(!exp3.test(phone.value)){
+		alert("전화번호는 '-'를 제외하고 입력하세요");
+		phone.focus();return;
+	}
+	if(hobby1.value == ""){
+		alert("취미를 입력하세요.");
+		hobby1.focus();
+		return;
+	}
+	if(hobby2.value == ""){
+		alert("취미를 입력하세요.");
+		hobby2.focus();
+		return;
+	}
+	if(hobby3.value == ""){
+		alert("취미를 입력하세요.");
+		hobby3.focus();
+		return;
+	}
+	if(MBTI.value == ""){
+		alert("MBTI를 입력하세요.");
+		MBTI.focus();
+		return;
+	}
+	if(food.value == ""){
+		alert("좋아하는 음식을 입력하세요.");
+		food.focus();
+		return;
+	}
+	if(feeling.value == ""){
+		alert("오늘의 감정을 입력하세요.");
+		feeling.focus();
+		return;
+	}
+	if(date.value == ""){
+		alert("오늘의 날짜을 입력하세요.");
+		date.focus();
+		return;
+	}
+	document.input.action="index_result.jsp";
+	document.input.submit(); 
+	
+}
+
+$(function(){
+	$("input").focus(function(){
+		$(this).css("background-color","yellow");
+		$(this).css("border","3px solid red");
+	});
+	$("textarea").focus(function(){
+		$(this).css("background-color","yellow");
+		$(this).css("border","3px solid red");
+	});
+	$("input").blur(function(){
+		$(this).css("background-color","white");
+		$(this).css("border","1px solid black");
+	});
+	$("textarea").blur(function(){
+		$(this).css("background-color","white");
+		$(this).css("border","1px solid black");
+	});
+});
+</script>
+
+</head>
+<body>
+
+<div id="music">
+<audio autoplay controls> 
+ <source src="https://drive.google.com/uc?export=download&id=1qDTFcIx21YbFmlfcJL4FMimFKq4_R9-L" 
+ type="audio/mpeg">
+브라우저에서 오디오 파일을 지원하지 않습니다.<br>
+</audio>
+</div>
+
+<div id="header" align="center">
+<h1><a href="index.html">&nbsp;&#9998;&nbsp;My Blog 😀</h1></a>
+</div>
+
+<div id="nav" align="right">
+<b>
+<span><a href="introduce.html">소개&nbsp;&nbsp;</a></span>
+<span><a href="diary.html">Diary&nbsp;&nbsp;</a></span>
+<span><a href="visitor.html">안부게시판&nbsp;&nbsp;</a></span>
+<span><a href="book.html">서재&nbsp;&nbsp;</a></span>
+<span><a href="map.html">지도&nbsp;&nbsp;&nbsp;</a></span>
+<span><a href="deco.html">blog꾸미기</a></span></b>
+</div>
+
+<div id="sec1">
+<img alt="프로필" src="https://www.nicepng.com/png/detail/105-1053345_comment-from-dj-buck-
+perfil-anonimo.png"
+width="120px" length="200px"> <br>
+<div class="profile"><a href="introduce.html"><b>프로필 설정</b></a></div>
+ <div class="feeling">
+  <i><strong>Today's feeling...</strong></i><br>
+  <br>
+ </div>
+ <b><a href="diary.html">✍글쓰기</a></b>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ <b><a href="statics.html">📃통계</a></b>
+</div>
+
+
+<div id="sec2" align="left">
+<h3><u>&#9998;Information</u></h3>
+<h5>Please write down your information.&#10000;</h5>
+<br>
+<br>
+<form name="input" method="post" >
+<table>
+<tr>
+<td>Nickname</td>
+<td><input type="text" name="name" title="Blog에서 사용할 닉네임을 설정하세요."></td>
+</tr>
+<tr>
+<td>ID</td>
+<td><input type="text" name="id" title="영문,숫자구성 12글자이내"></td>
+</tr>
+<tr>
+<td>Password</td>
+<td><input type="password" name="password" title="영문,숫자,특수문자 포함 8-12글자이내"></td>
+</tr>
+<tr>
+<td>Phone</td>
+<td><input type="text" name="phone" title="'-'제외" placeholder="01012345678"></td>
+</tr>
+<tr>
+<td>Hobby1</td>
+<td><input type="text" name="hobby1"></td>
+</tr>
+<tr>
+<td>Hobby2</td>
+<td><input type="text" name="hobby2"></td>
+</tr>
+<tr>
+<td>Hobby3</td>
+<td><input type="text" name="hobby3"></td>
+</tr>
+<tr>
+<td>Favorite Food</td>
+<td><input type="text" name="food"></td>
+</tr>
+<tr>
+<td>MBTI</td>
+<td>
+<select name="MBTI">
+ <option value="INTJ" selected>INTJ</option>
+ <option value="INFJ">INFJ</option>
+ <option value="ISTJ">ISTJ</option>
+ <option value="ISTP">ISTP</option>
+ <option value="INTP">INTP</option>
+ <option value="INFP">INFP</option>
+ <option value="ISFJ">ISFJ</option>
+ <option value="ISFP">ISFP</option>
+ <option value="ENTJ">ENTJ</option>
+ <option value="ENFJ">ENFJ</option>
+ <option value="ESTJ">ESTJ</option>
+ <option value="ESTP">ESTP</option>
+ <option value="ENTP">ENTP</option>
+ <option value="ENFP">ENFP</option>
+ <option value="ESFJ">ESFJ</option>
+ <option value="ESFP">ESFP</option>
+</select></td>
+</tr>
+<tr>
+<td>Feeling</td>
+<td><textarea rows="6" cols="25" placeholder="Today is..." name="feeling"></textarea></td>
+</tr>
+<tr>
+<td>Date</td>
+<td><input type="date" name="date">
+ <input type="button" value="완료" onclick="check()"></td>
+</tr>
+</table>
+<p><p>
+</div>
+
+
+<div class="top" align="right">
+<a href="#header">⬆ TOP</a>
+</div>
+
+<div class="search">
+<b>🔍SEARCH </b><input type="search" size="20px">
+<div class="up"><a href="#header">⇧</a></div>
+
+
+
+<div class="menu" align="center">
+<p><a href="introduce.html">소 <br> 개</a></p>·
+<p><a href="diary.html">일 <br> 기</a></p>·
+<p><a href="visitor.html">안 <br> 부</a></p>·
+<p><a href="book.html">서 <br> 재</a></p>·
+<p><a href="map.html">지 <br> 도</a></p>
+</div>
+</body>
+</html>

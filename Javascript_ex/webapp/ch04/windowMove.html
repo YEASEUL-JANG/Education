@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+var w;//전역변수
+function openWindow(){
+	//w : 팝업창의 참조변수
+	w= window.open("","","width=300,height=400,top=50,left=50");
+	//팝업창에 출력
+	w.document.write("<h2>팝업창 테스트</h2>");
+	w.document.write("<img src=../images/tomato.jpg>");
+	w.moveTo(100,200);//절대좌표로 이동(x100,y200)
+}
+function moveWindow(){
+	w.moveBy(100,100); //상대좌표로 이동(이전좌표+100)
+}
+function maxWindow(){
+	console.log("가로 : "+screen.availWidth);
+	console.log("세로 : "+screen.availHeight);
+	w.resizeTo(screen.availWidth, screen.availHeight);
+}
+
+
+</script>
+</head>
+<body>
+<input type="button" value="윈도우 생성" onclick="openWindow()">
+<input type="button" value="윈도우 이동" onclick="moveWindow()">
+<input type="button" value="전제화면보기" onclick="maxWindow()">
+</body>
+</html>

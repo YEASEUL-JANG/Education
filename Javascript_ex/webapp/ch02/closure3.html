@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+function hello(name){
+	var _name=name;
+	return function(){
+		console.log('Hello, '+_name);
+	};
+}
+
+var hello1= hello('철수');
+var hello2= hello('영수');
+var hello3= hello('장근');
+
+hello1();
+hello2();
+hello3();
+
+//메모리제거(변수의 저장값을 지움)
+//클로저는 각자의 환경값을 기억하기 위해 메모리를 차지함. 
+hello1=null;
+hello2=null;
+hello3=null;
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

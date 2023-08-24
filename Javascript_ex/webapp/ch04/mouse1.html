@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+function mouseIn(element){
+	element.style.border = "2px solid red";
+	element.style.fontSize = "30px";
+	
+}
+function mouseOut(element){
+	element.style.border = "";//초기화
+	element.style.fontSize="12px";
+	//element.style.backgroundColor="blue";
+}
+
+</script>
+</head>
+<body>
+<!-- onmouseover: 요소위에 마우스가 올라갈때 작동
+onmouseout : 커서가 요소에서 빠져나갈때 
+(this)는 현재 태그 (여기선 div)를 지칭-->
+<div style="background: yellow; width: 200px;" onmouseover="mouseIn(this)" 
+onmouseout="mouseOut(this)"> 마우스 이벤트 </div>
+</body>
+</html>

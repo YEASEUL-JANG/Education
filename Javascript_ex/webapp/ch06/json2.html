@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../include/jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	var students = [{name: "김유신",age:21},{name: "이순신",age:25},{name: "사임단",age:23}];
+	console.log(students);
+	var name ="";
+	var age="";
+	for(i=0; i<students.length; i++){
+		name += students[i].name+" ";
+		age += students[i].age+" ";
+	}
+	$("#name").html(name);
+	$("#age").html(age);
+});
+
+</script>
+</head>
+<body>
+<h4>학생명단</h4>
+<p style="background: yellow;">
+이름 : <span id="name"></span>&nbsp; 나이 : <span id="age"></span>
+
+
+</p>
+</body>
+</html>

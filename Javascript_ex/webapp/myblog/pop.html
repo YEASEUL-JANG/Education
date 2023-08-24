@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+function setCookie(name, value, expiredays) {
+    var date = new Date();
+    date.setDate(date.getDate() + expiredays);
+    document.cookie = escape(name) + "=" + escape(value) + "; expires=" + date.toUTCString();
+}
+
+function closePopup() {
+    if (document.getElementById("check").value) {
+        setCookie("popupYN", "N", 1);
+        self.close();
+    }
+}
+</script>
+</head>
+<body>
+<div id="pop">
+ <img alt="웹브라우저에서 이미지를 불러올 수 없습니다" src="https://jobable.seoul.go.kr/jobable/images/popup/img200304.jpg"
+ width="350px" height="500px"><br>
+ <div id="text" align="right">
+ <input type="checkbox" id="check" onclick="closePopup();">
+ <b style="font-size: 3px;">하루에 한번만 보기</b>
+ </div>
+ 
+ 
+</div>
+</body>
+</html>

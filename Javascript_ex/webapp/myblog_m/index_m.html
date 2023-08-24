@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My blog</title>
+<link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<script src="https://kit.fontawesome.com/fdfee59c02.js" crossorigin="anonymous"></script>
+<style type="text/css">
+#page1{
+background-image: url("https://blog.kakaocdn.net/dn/o8h7K/btrGHmnc4ty/oMyEXp0zqyA9Zjf9CzTMg0/img.png");
+background-repeat: no-repeat;
+background-position:center bottom;
+background-size:100% 100%;
+}
+#header{
+background-image: url("https://blog.kakaocdn.net/dn/o8h7K/btrGHmnc4ty/oMyEXp0zqyA9Zjf9CzTMg0/img.png");
+background-repeat: no-repeat;
+background-size: 100%;
+height: 200px;
+color: white;
+padding: 50px 15px 5px 15px;
+}
+#header p{
+font-size: 35px;
+text-decoration: blink;
+}
+table{
+border-spacing: 12px;
+border-collapse: separate;
+border-color: white;
+font-size: 12px;
+font-weight: lighter;
+}
+table td{
+padding: 7px 5px;}
+.content{
+background: white;
+margin: 5px;
+border: 1px solid gray;
+border-radius: 5px;}
+#footer{
+background: white;
+background-size:100%;
+width: 100%;
+}
+#footer_nav{
+color: black;
+display: flex;
+justify-content: space-around;
+font-size: 22px;
+padding: 15px;
+}
+#nav{
+background:  #e2b7c3;}
+#login{
+background:  #f6f6f6;}
+#login_con{
+margin: 20px;
+text-align: center;}
+#header a:link{text-decoration: none;color:white;}
+#header a:visited{text-decoration: none;color:white;}
+#header a:hover{text-decoration: none;color:white;} 
+#nav a:link{text-decoration: none; color:gray; background:white; }
+#nav a:visited{text-decoration: none;color:gray; background:white; }
+#nav a:hover{text-decoration: none;color:white; background:gray; }
+#login a:link{text-decoration: none; color:black; }
+#login a:visited{text-decoration: none;color:black;}
+#login a:hover{color:#04cf5c; text-decoration: underline; }
+#footer_nav a:link{text-decoration: none;color:#404040;}
+#footer_nav a:visited{text-decoration: none;color:#404040;}
+#footer_nav a:hover{text-decoration: none;color:#404040;} 
+</style>
+</head>
+<body>
+<div data-role="page" id="page1">
+  <div data-role="header"  id="header">
+  <a href="#nav" data-role="none" data-transition="slide" style="margin: 10px;" class="ui-btn-right" >
+  <i class="fa-solid fa-bars" style="font-size: 20px;"></i></a>
+   <p>My Blog <i class="fa-solid fa-cat"></i></p>
+   <table border="1" frame="void" >
+    <tr>
+    <td><a href="stats.html" data-transition="slideup"><i class="fa-solid fa-gear"></i>관리</a></td>
+    <td><a href="write.html" rel="external"><i class="fa-solid fa-pen"></i> 글쓰기</a></td>
+    <td><a href="#"></a><i class="fa-solid fa-calendar"></i>달력</td>
+    <td><a href="#"><i class="fa-solid fa-user-group"></i>이웃</a></td>
+    <td><a href="mailto:changys1212@naver.com">&#128386; 메일</a></td>
+    </tr>
+   </table>
+  </div>
+
+  <div data-role="content" id="intro" class="content" data-inset="true">
+   <p><b>소개</b></p>
+   <p>안녕하세요. 블로그입니다.</p>
+  </div>
+  <div data-role="content" id="popular" class="content" data-inset="true">
+  <p><b>인기글</b></p>
+  <p>인기글 영역입니다.</p>
+  </div>
+  <div data-role="content" id="contect" class="content" data-inset="true">
+   <p><b>전체글</b></p>
+   <hr>
+   <p>전체글 영역입니다.전체글 영역입니다.전체글 영역입니다.전체글 영역입니다.</p>
+   <p>전체글 영역입니다.전체글 영역입니다.전체글 영역입니다.전체글 영역입니다.</p>
+   <p>전체글 영역입니다.전체글 영역입니다.전체글 영역입니다.전체글 영역입니다.</p>
+   <p>전체글 영역입니다.전체글 영역입니다.전체글 영역입니다.전체글 영역입니다.</p>
+   <p>전체글 영역입니다.전체글 영역입니다.전체글 영역입니다.전체글 영역입니다.</p>
+   <p>전체글 영역입니다.전체글 영역입니다.전체글 영역입니다.전체글 영역입니다.</p>
+   <p>전체글 영역입니다.전체글 영역입니다.전체글 영역입니다.전체글 영역입니다.</p>
+  </div>
+  
+  
+  <div data-role="footer" id="footer" data-position="fixed" align="center">
+  <div id="footer_nav">
+   <span><a href="#page1"><i class="fa-solid fa-house"></i></a></span>
+   <span><a href="#"><i class="fa-solid fa-thumbs-up"></i></a></span>
+   <span><a href="write.html" rel="external" ><i class="fa-solid fa-pencil"></i></a></span>
+   <span><a href="#"><i class="fa-solid fa-bell"></i></a></span>
+   <span><a href="#login" data-transition="slide"><i class="fa-solid fa-user"></i></a></span></div>
+  </div>
+ </div>
+ 
+
+ <div id="nav">
+   <p><b>카테고리</b></p>
+   <ul data-role="listview" data-inset="true" data-filter="true" data-inset="true">
+    <li><a href="#page1">홈</a></li>
+    <li><a href="write.html" data-transition="slide">글쓰기</a></li>
+    <li><a href="#" >안부게시판</a></li>
+    <li><a href="#" >서재</a></li>
+    <li><a href="https://www.google.co.kr/maps?hl=ko" rel="external" >지도</a></li>
+    <li><a href="#" >blog꾸미기</a></li>
+   </ul>
+ </div>
+ 
+ <div id="login">
+  <span style="margin: 10px;"><a data-rel="back"><i class="fa-solid fa-arrow-left" style="font-size: 25px;"></i></a></span>
+  <div style="height: 150px; vertical-align: middle; background: #f6f6f6;" align="center">
+   <p style="color:#04cf5c;font-size: 50px; font-weight:900; ">NAVER</p></div>
+   <div id="login_con">
+   <input name="id" placeholder="아이디"><br>
+   <input type="password" name="password" placeholder="비밀번호"><br>
+   <button style="color:white; background:#04cf5c; ">로그인</button><br>
+   <a href="#">아이디 찾기</a> | <a href="#">비밀번호 찾기</a> | <a href="#">회원가입</a></div>
+  <div data-role="footer" data-position="fixed" align="center" style="background: #f6f6f6;">
+   <br><br>
+   <p><a href="#">이용약관</a>| <a href="#">개인정보처리방침</a></p>
+   <p>ⓒ NAVER Corp. <a href="#">회원정보 고객센터</a></p>
+  </div>
+ </div>
+ 
+ 
+ 
+</body>
+</html>

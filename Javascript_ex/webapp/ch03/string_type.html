@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+let s1= true;
+let s2=123;
+document.write(typeof(String(s1))+", "+String(s1)+"<br>");//"true"라는 글자로 변환
+document.write(typeof(String(s2))+",  "+String(s2)+"<br>");
+//boolean형과 숫자를 String함수에 넣으면 문자열로 변환됨.
+document.write("======================================================="+"<br>")
+document.write("boolean(0): "+Boolean(0)+"<br>");//false
+document.write("boolean(''): "+Boolean('')+"<br>");//false
+document.write("boolean(undefined): "+Boolean(undefined)+"<br>");//false
+document.write("boolean(null): "+Boolean(null)+"<br>");//false
+document.write("boolean(NaN): "+Boolean(NaN)+"<br>");//false
+document.write("======================================================="+"<br>")
+document.write("boolean(1): "+Boolean(1)+"<br>");//true
+document.write("boolean(3.14): "+Boolean(3.14)+"<br>");//true
+document.write("boolean(-15): "+Boolean(-15)+"<br>");//true
+document.write("boolean('0'): "+Boolean('0')+"<br>");//true
+document.write("boolean('false'): "+Boolean('false')+"<br>");//true
+document.write("boolean(10<20): "+Boolean(10<20)+"<br>");//true
+document.write("boolean('가나다'): "+Boolean('가나다')+"<br>");//true
+document.write("======================================================="+"<br>")
+document.write("12+34: "+12+34+"<br>"); //1234
+document.write("'12'+34: "+'12'+34+"<br>"); //1234 , +는 계산안됨
+document.write("'12'/2: "+'12'/2+"<br>"); //6, 문자열처리했는데도 계산이 됨.
+document.write("12*'2': "+12*'2'+"<br>"); //24, 문자열처리했는데도 계산이 됨.
+document.write("12-'2': "+(12-'2')+"<br>"); //10
+//자바스크립트는 자동으로 자료형을 변환하게 되는데 주의할 점은 
+//+ : 숫자로 변경시 문자열이 우선시 됨.
+//*, /, - 은 숫자가 우선됨. 
+// 연산자 우선순위 : 세부지정이나 호출 > 단항연산자> *,/,% > +,- > 비교연산자 > 일치연산자(==)> 논리곱>논리합 
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

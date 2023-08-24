@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+function add(){
+	var output='';
+	var sum=0;
+	for(var i=0;i<arguments.length; i++){
+		output += arguments[i]+' ';
+		sum += arguments[i]; //sum에 해당 값들을 더함.sum의 변수가 number라서 합산계산이 됨.
+	}
+	output ='입력된 매개변수'+output+'을 더한 값은\n'+sum+'입니다.';
+	return output;
+}
+
+var out = add(1,2,3,4,5,6);
+alert(out);
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

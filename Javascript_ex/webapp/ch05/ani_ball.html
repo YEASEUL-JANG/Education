@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+canvas{
+background: yellow;
+border: 1px dotted black;
+}
+
+</style>
+<script type="text/javascript">
+var context;
+var dx=5; //x방향으로의 증가값
+var dy=5; //y방향 증가값
+var y=100;//시작좌표
+var x = 100;//시작좌표
+function draw(){
+	var convas= document.getElementById("my");
+	var context=convas.getContext("2d");
+	context.clearRect(0,0,300,200);//사각형의 영역 지우기
+	context.beginPath();
+	context.fillStyle="green";
+	context.arc(x,y,10,0,2*Math.PI,true);
+	context.closePath();
+	context.fill();
+	if(x<(0+10) || x >(300-10)){//좌우 벽처리. 가로사이즈 300기준
+		dx= -dx;//방향전환효과
+	}
+	if(y<(0+10) || y >(200-10)){//상하 벽처리. 사이즈 200기준
+		dy= -dy;//방향전환효과
+	}
+	x += dx;//x좌표 5씩 좌표이동
+	y += dy;
+}
+	setInterval(draw,10);
+	
+
+function change(){
+	var dx = Number(document.getElementById("hspeed").value);
+	var dy = Number(document.getElementById("vspeed").value);
+	
+}
+
+</script>
+</head>
+<body>
+<canvas id="my" width="300" height="200"></canvas>
+<form id="form1">
+x축 이동거리 <input type="number" id="hspeed" value="5" min="1" max="10"><br>
+y축 이동거리 <input type="number" id="vspeed" value="5" min="1" max="10"><br>
+ <input type="button" value="확인" onclick="change();draw();">
+
+
+
+</form>
+</body>
+</html>

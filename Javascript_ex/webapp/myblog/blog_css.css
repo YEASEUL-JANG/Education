@@ -1,0 +1,131 @@
+@charset "UTF-8";
+body
+{background-color: #f5f5dc;
+margin: 20px;
+padding: 0px 0px 0px 30px;
+}
+h1{
+font-size:50px;}
+strong{
+font-size:10px;
+}
+#music{
+float: right;
+}
+#header{
+padding: 50px 0px;
+margin: 0px;
+text-decoration: underline;
+}
+#header a{
+transition: transform 0.5s;	
+}
+#nav{
+border: 2px dashed #065535;
+padding: 20px;
+position: absolute;
+left: 200px;
+top: 280px;
+width: 1200px;
+font-size:20px;
+text-decoration: underline;
+color: #065535;
+}
+#sec1{
+border-radius: 10px;
+background: white;
+padding: 15px 20px;
+position: absolute;
+left: 200px;
+top: 400px;
+width: 125px;
+border : 1px dashed black;
+}
+
+.feeling{
+border-radius: 10px;
+border : 1px dashed #065535;
+background: white;
+width: 120px;
+height: 170px;
+font-size: 12px;
+}
+#sec1>b{
+font-size: 8px;
+}
+.search{
+border-radius: 10px;
+background: white;
+border : 1px dashed black;
+position: absolute;
+left: 390px;
+padding: 10px;}
+.search b {
+font-size: 13px;}
+.top{
+border-radius: 10px;
+background: white;
+border: 1px dashed black;
+font-size : 13px;
+font-weight: bold;
+color: gray;
+padding : 20px;
+width: 1010px;
+position: absolute;
+left: 390px;
+}
+.write{
+font-weight: bold;
+border: 1px solid #e0e0eb;
+padding: 7px;
+display: inline;
+}
+.banner{
+position: absolute;
+left: 200px;
+top: 800px;	
+}
+.up{
+width: 50px; height: 50px;
+box-shadow: 3px 3px 5px gray;
+background: white;
+border-radius: 25px;
+position: fixed;
+right: 50px; bottom: 50px;
+font-size: 32px; 
+text-align: center;
+vertical-align: center;
+border: 2px dashed gray;
+transition: transform 0.5s;
+}
+.menu{
+position: fixed;
+bottom: 150px;
+right: 50px;
+width: 35px;
+height: 550px;	
+background: white;
+border-radius: 35px;
+padding: 20px 10px;
+line-height: 20px;
+color: gray;
+font-size: 16px; font-weight: bolder;
+box-shadow: 3px 3px 7px gray;
+border: 2px dashed gray;
+}
+.up a:link{text-decoration: none;}
+.up a:visited{text-decoration: none;}
+.up a:hover{text-decoration: none; color: rgb(128, 255, 0); font-weight: bolder; transform: translate(0px, -10px); }
+
+#header a:link{text-decoration: none;color:black;}
+#header a:visited{text-decoration: none;color:black;}
+#header a:hover{text-decoration: none;color:black; font-size:55px;}
+
+.menu a:link{text-decoration: none;}
+.menu a:visited{text-decoration: none;}
+.menu a:hover{text-decoration: none; color: lightgray; font-weight: bolder;}
+
+a:link{text-decoration: none;color: #065535;}
+a:visited {color: #065535; }
+a:hover{text-decoration: underline; color: lime;}
+

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+function viewDate(){
+	var now = new Date();
+	var display = now.toLocaleString();//날짜를 한국어 포맷으로 변경
+	document.getElementById("time").innerHTML=display;
+	window.setInterval("viewDate()",1000);//1초간격으로 재귀호출(자기자신을 부름)
+}
+function changeColor(color){
+	document.getElementById("target").style.backgroundColor=color;
+}
+function changeText(color){
+	document.getElementById("target").style.color=color;
+}
+</script>
+</head>
+<!-- 페이지가 로딩되자마자 실행이 됨 -->
+<body onload="viewDate()" id="target">
+ <h2>배경색상 변경(click event)</h2>
+ <div id="time"></div>
+ <input type="button" value="green" onclick="changeColor('green');changeText('white')"> 
+ <input type="button" value="yellow" onclick="changeColor('yellow');changeText('#ff0000')"> 
+ <input type="button" value="blue" onclick="changeColor('#0000ff');changeText('#ffff00')"> 
+ <!-- 세미콜론으로 두 식을 동시에 호출가능 -->
+ 
+</body>
+</html>

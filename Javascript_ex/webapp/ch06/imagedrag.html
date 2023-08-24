@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../include/jquery-3.3.1.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	$("#img1").draggable({//드래그할때
+		opacity: "0.3"
+	});
+	$("#div1").droppable({//드롭시
+		accept: "#img1",
+		drop: function(){
+			$(this).text("이미지가 드래그 되었습니다.");
+		}
+	});
+});
+</script>
+<style type="text/css">
+#div1{
+position: absolute;
+left: 300px;
+top: 50px;
+width : 300px;
+height: 300px;
+border: 1px solid gray;
+}
+
+</style>
+</head>
+<body>
+<h2>
+이미지 드래그</h2>
+<img id="img1" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FPP1qD%2FbtrGqJx41FR%2F42j5UuC1DcKSmPVjLLsvZ1%2Fimg.jpg">
+<div id="div1">이미지를 여기로 드래그 하세요</div>
+</body>
+</html>

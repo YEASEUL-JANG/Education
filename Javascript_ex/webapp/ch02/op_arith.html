@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+function test(x,y){
+	document.write(typeof(x)+"<br>");//들어오는 숫자들은 모두 string값
+	document.write(typeof(x)+"<br>");
+	x=parseInt(x);//parseInt()도 사용가능하나, Number()를 권장한다.
+	y=Number(y);
+	document.write(typeof(x)+"<br>");
+	document.write(typeof(y)+"<br>");
+	document.write(x+y+"<br>");
+	document.write(x-y+"<br>");
+	document.write(x*y+"<br>");
+	document.write(x/y+"<br>");
+	document.write(x%y+"<br>");
+}
+
+
+</script>
+</head>
+<body>
+<form name="form1">
+a: <input type="text"name="a" size="10">
+b: <input type="text"name="b" size="10">
+<input type="button" value="확인" onclick="test(document.form1.a.value,document.form1.b.value)">
+
+</form>
+
+
+
+</body>
+</html>

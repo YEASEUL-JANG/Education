@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+function outerFunction(){
+	var a=10;
+	var innerFunction= function(){
+		var b=30;
+		alert(a);
+		alert(b);
+	};
+	return innerFunction; // 함수를 호출하는게 아님.
+}
+// outerFunction(); 결과값이 안나옴
+var out= outerFunction();
+out();//변수에 함수를 담으면 함수호출기호();를 덧붙이면 out변수가 기억하고 있는 innerFunction 익명함수를 호출한다.
+// 종료된(return) 외부함수의 변수를 참조하는 out()과 같은 함수를 클로저(closure)라고 함.
+/*<클로저>
+ * 1. 종료된 외부함수의 변수를 참조하는 함수
+   2. 지역변수를 남겨두는 현상
+   3. 자신의 환경을 기억한다(메모리차지). -> ();를 붙이면 바로 실행
+ */
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

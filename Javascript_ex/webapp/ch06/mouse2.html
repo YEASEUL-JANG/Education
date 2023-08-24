@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../include/jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	var i=0;//전역변수
+	$("div.out").mouseover(function(){
+		$("p:first").html("<marquee>mouse over</marquee>");
+		$("p:last").text(++i);//두번째 p태그 0값이 1씩증가
+		//text("값") : 글자처리(변경), innerText (html을 해석하지 않음)
+		//html("내용") : html 내용해석, innerHTML(html을 해석)
+	});
+	
+	$("div.out").mouseout(function(){
+		$("p:first").text("마우스를 여기로 움직이세요.")
+	});
+	
+});
+
+
+</script>
+</head>
+<body>
+ <div class="out">
+  <p>마우스를 여기로 움직이세요.</p>
+  <p>0</p>
+ </div>
+ <div>두번째 div(기능없는 비교용문자)</div>
+</body>
+</html>

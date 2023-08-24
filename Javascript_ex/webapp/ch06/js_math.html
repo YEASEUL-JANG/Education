@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../include/jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+var nGuesses=0;
+var computerNumber = 0;
+
+$(function(){
+	computerNumber = Math.floor(Math.random()*10)+1;
+	console.log("랜덤값 : "+computerNumber);
+	$("#computerNumber").val(computerNumber);//값을 집어넣음
+});
+function guess(){
+ var result = "";
+ var number =Number($("#user").val());
+ nGuesses++; //횟수세기
+ if(number == computerNumber){
+	 result = "일치합니다!";
+	 
+ }else if(number < computerNumber){
+	 result="값이 부족합니다."
+ }else{
+	 result="값이 큽니다."
+ }//end if
+ $("#result").val(result); //document.getElementById("result").value=result;
+ $("#guesses").val(nGuesses);
+ return true; //계속진행
+ 
+}
+
+</script>
+</head>
+<body>
+<h2>숫자맞추기 게임</h2>
+<form >
+숫자(1~10): <input id="user" size="5">
+<input type="button" value="확인" onclick="guess()"><br>
+추측횟수 : <input id="guesses" size="5"> <br>
+힌트 : <input id="result" size="15"><br>
+정답 : <input type="hidden" id="computerNumber" size="15"> <br>
+
+</form>
+
+</body>
+</html>

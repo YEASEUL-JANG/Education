@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+//*href속성 : 뒤로가기 가능, replace : 뒤로가기 불가능
+function juso(){
+	//location.href="링크" 는 .href라는 프로퍼티를 사용함 이땐, 뒤로가기 할 땐 이전페이지 주소가 기록됨.
+	location.replace("http://google.com");//replace는 뒤로가기 시, 이전페이지 주소 기록안됨.
+	
+}
+
+</script>
+</head>
+<body>
+<h1>[1]내부 자바스크립트 호출기법</h1>
+<!-- 하이퍼링크로 이동할 경우 -->
+<h3>1) replace()함수적용이 안된다.(뒤로가기 기능)</h3>
+<a href="#" onclick="juso()">이동</a><br>
+
+<!-- 버튼으로 이동할 경우 -->
+<h3>2) replace()함수적용이 된다.(뒤로가기 불가)</h3>
+<button onclick="juso()">이동</button>
+<hr>
+<h1>[2]인라인 자바스크립트 기법</h1>
+<button onclick="location.href='http://google.com'">현재페이지에서 이동</button>
+<button onclick="location.replace('http://google.com')">현재페이지에서 뒤로가기안됨</button>
+<button onclick="window.open('http://google.com')">새창에서</button>
+<button onclick="window.open('http://google.com','구글','width=430,height=500,location=no, status=no, scrollbars=yes');">팝업으로</button>
+<button onclick="parent.location.href='http://google.com'">상위프레임에서</button>
+</body>
+</html>

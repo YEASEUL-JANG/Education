@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+function greeting(){
+	var name = document.getElementById("name").value;
+	var position = document.getElementById("position").value;
+	var department = document.getElementById("department").value;
+	if(name == ""){
+		alert("이름을 입력해주세요");
+		document.getElementById("name").focus();
+		return;
+	}
+	if(position ==""){
+		alert("직급을 입력해주세요");
+		document.getElementById("position").focus();
+		return;
+	}
+	if(department ==""){
+		alert("부서를 입력해주세요");
+		document.getElementById("department").focus();
+	}
+	document.getElementById("form1").submit();
+	}
+</script>
+</head>
+<body>
+
+<form id="form1" method="post" action="func2_result.jsp" >
+name : <input id="name" name="name"><br>
+position : <input id="position" name="position"><br>
+department : <select id="department" name="department">
+<option value="영업부">영업부</option>
+<option value="전산부">전산부</option>
+<option value="인사부">인사부</option>
+<option value="구매부">구매부</option>
+</select><br>
+<input type="button" onclick="greeting()" value="확인">
+
+</form>
+</body>
+</html>

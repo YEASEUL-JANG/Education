@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+function outerFunction(){
+	var a=10;
+	var b=20;
+	//alert(c); 오류 : 외부함수는 내부함수에 접근할 수 없다.
+	function innerFunction(){//내부함수 : 외부함수에 접근할 수 있다.
+		var b=30;
+		var c=40;
+	alert(a);
+	alert(b);
+	alert(c);
+	}//inner
+	innerFunction();
+	alert('outerFunction');
+}//outer
+outerFunction();
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

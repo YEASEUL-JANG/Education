@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+function checkDate(){
+let s = document.getElementById("pdate").value;//구입날짜
+let pdate = new Date(s);
+let today = new Date();
+let diff= today.getTime()-pdate.getTime();
+let days = Math.floor(diff/(1000*60*60*24));
+if (days >30){
+	let p = "30일이 지나서 교환이 불가합니다.";
+ document.getElementById("result").innerHTML=p;
+ }else{
+	 let p = "교환이 가능합니다.";
+ document.getElementById("result").innerHTML=p;
+ }
+ }
+</script>
+</head>
+<body>
+구입날짜 : <input type="date" id="pdate">
+<button type="button" onclick="checkDate()">검사</button>
+<div id="result"></div>
+
+</body>
+</html>

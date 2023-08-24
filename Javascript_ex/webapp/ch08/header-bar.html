@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Insert title here</title>
+<link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body>
+<div data-role="page" id="page1">
+  <div data-role="header">
+   <h1>머리말영역(header)</h1>
+   <!-- class="ui-btn-right" : 버튼은 왼쪽부터 정렬되는데, 오른쪽으로 정렬하게 함. -->
+   <a href="#page2" class="ui-btn-right">페이지2</a>
+  </div>
+  <div data-role="content">
+   <p>본문영역(content)</p>
+   <h1>첫번째 페이지</h1>
+  </div>
+  <div data-role="footer" data-position="fixed">
+   <h4>꼬리말영역(footer)</h4>
+  </div>
+ </div>
+
+<div data-role="page" id="page2">
+  <div data-role="header">
+   <a href="#page1">홈</a>
+   <h1>머리말영역(header)</h1>
+   <a href="#page3">페이지3</a>
+  </div>
+  <div data-role="content">
+   <p>본문영역(content)</p>
+   <h1>두번째 페이지</h1>
+  </div>
+  <div data-role="footer" data-position="fixed">
+   <h4>꼬리말영역(footer)</h4>
+  </div>
+ </div>
+ 
+ <!--data-add-back-btn="true" : 뒤로가기버튼을 만들어줌  -->
+ <div data-role="page" id="page3">
+  <div data-role="header" data-add-back-btn="true" data-add-back-text="이전으로">
+   <h1>머리말영역(header)</h1>
+  </div>
+  <div data-role="content">
+   <p>본문영역(content)</p>
+   <h1>세번째 페이지</h1>
+  </div>
+  <div data-role="footer" data-position="fixed">
+   <h4>꼬리말영역(footer)</h4>
+  </div>
+ </div>
+
+
+</body>
+</html>

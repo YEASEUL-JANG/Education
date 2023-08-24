@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<canvas id="mycanvas" width="500" height="500"></canvas>
+<script type="text/javascript">
+var canvas = document.getElementById("mycanvas");
+var context = canvas.getContext("2d");
+//이미지객체를 생성하고 해당 변수에 src속성을 설정가능
+var image = new Image();
+image.src = "../images/image.png";
+//이미지가 로딩되면 함수실행
+image.onload=function(){
+	context.drawImage(image,0,0);
+};
+
+
+
+</script>
+
+
+
+</body>
+</html>

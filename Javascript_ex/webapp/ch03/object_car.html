@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+//객체생성 1 방법
+function Car(model, speed, color){//사용자정의객체생성 (생성자로)
+	this.model=model;
+	this.speed=speed;
+	this.color=color;
+	this.brake = function(){this.speed -= 10;}//변수에 함수를 기억하게할 수 있다.
+	this.accel = function(){this.speed +=10;}
+}
+myCar = new Car("520d",250,"red");
+document.write("모델 : "+myCar.model+" 속도 : "+myCar.speed+" 색상 : "+myCar.color,"<br>");
+myCar.brake();
+myCar.color="yellow";
+document.write("모델 : "+myCar.model+" 속도 : "+myCar.speed+" 색상 : "+myCar.color,"<br>");
+
+myCar2 = new Car("sportcar",400,"black");
+document.write("모델 : "+myCar2.model+" 속도 : "+myCar2.speed+" 색상 : "+myCar2.color,"<br>");
+
+</script>
+</body>
+</html>

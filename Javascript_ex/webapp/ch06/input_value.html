@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../include/jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	$("#button1").click(function(){
+		var name=$("#name").val();
+		alert(name);
+		name=prompt("이름을 입력하세요","아무개");
+		$("#name").val(name);//val태그안에 내용이 들어가면 내용이 변경됨.
+		$("#img1").attr("src","https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FLXqDK%2FbtrGuStjXVX%2FcKXyeCqSH8IcAhXOxlzJCk%2Fimg.jpg");
+		$("#img1").attr({
+			"width" : "300px",
+			"height" : "300px"
+		});
+		var img = $("#img1").attr("src");//매개변수 하나는 읽기만함
+	});
+});
+
+function check(){
+	var name = document.getElementById("name").value;
+}
+
+</script>
+</head>
+<body>
+
+이름 : <input type="text" id="name" value=""><br>
+<img id="img1" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FdbBFwZ%2FbtrGvoMfGco%2FnCLptDcETodFr2h3kRXGzk%2Fimg.jpg"> <br>
+<button id="button1">확인</button>
+</body>
+</html>

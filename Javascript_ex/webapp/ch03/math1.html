@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+function calc(type){
+	let x=Number(document.getElementById("input1").value);
+	let y=Number(document.getElementById("input2").value);
+	let c;
+	
+	switch(type){
+	case 1: 
+		c=Math.sin((x * Math.PI)/180.0); break;
+	case 2:
+		c=Math.cos((x *Math.PI)/180.0); break;
+	case 3:
+		c=Math.tan((x *Math.PI)/180.0); break;
+	case 4:
+		c=Math.log(x); break;
+	case 5:
+		c=x*y; break;
+	}
+	document.getElementById("output").value=c;
+	}
+function reset(){
+	document.getElementById("output").value="";
+}
+
+
+</script>
+</head>
+<body>
+첫번째 값 : <input id="input1">
+두번째 값 : <input id="input2">
+결과 : <input id="output"><p>
+<input type="button" id="sin" value="+" onclick="calc(1)">
+<input type="button" id="cos" value="-" onclick="calc(2)">
+<input type="button" id="tan" value="x" onclick="calc(3)">
+<input type="button" id="log" value="log" onclick="calc(4)">
+<input type="button" id="*" value="*" onclick="calc(5)">
+<input type="reset" id="C" value="C" onclick="reset()">
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+let number1 = prompt("숫자를 입력하세요.","");
+while(isNaN(number1)){//숫자가 아니면 true
+	alert("숫자를 입력해주세요")
+	number1=prompt("숫자를 입력해주세요","");
+}
+sum();
+function sum(){
+	let number2=Number(number1);
+	let sum=0;
+	for(let i=1; i<=number2; i++){
+		if(i%2 ==0){
+			sum +=i;
+		}
+	}
+	alert(number2+"까지의 짝수의 합 : "+sum);
+}
+
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

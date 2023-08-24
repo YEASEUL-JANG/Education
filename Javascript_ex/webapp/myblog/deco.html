@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>I'm Your Blog</title>
+<script src="../include/jquery-3.3.1.min.js"></script>
+<link rel = "stylesheet" type="text/css" href="blog_css.css">
+<style type="text/css">
+#sec2{
+border-radius: 10px;
+background: white;
+padding: 60px 20px;
+display: inline-block;
+position: absolute;
+width: 1000px;
+top: 400px;
+left: 390px;
+border : 3px solid gray;
+}
+.top{
+top: 700px;}
+.search{
+top: 780px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div id="music">
+<audio autoplay controls> 
+ <source src="https://drive.google.com/uc?export=download&id=1qDTFcIx21YbFmlfcJL4FMimFKq4_R9-L" 
+ type="audio/mpeg">
+브라우저에서 오디오 파일을 지원하지 않습니다.<br>
+</audio>
+</div>
+
+<div id="header" align="center">
+<h1>&nbsp;&#9998;&nbsp;My Blog 😀</h1>
+</div>
+
+<div id="nav" align="right">
+<b>
+<span><a href="introduce.html">소개&nbsp;&nbsp;</a></span>
+<span><a href="diary.html">Diary&nbsp;&nbsp;</a></span>
+<span><a href="visitor.html">안부게시판&nbsp;&nbsp;</a></span>
+<span><a href="book.html">서재&nbsp;&nbsp;</a></span>
+<span><a href="map.html">지도&nbsp;&nbsp;&nbsp;</a></span>
+<span><a href="deco.html">blog꾸미기</a></span></b>
+</div>
+
+<div id="sec1">
+<img alt="프로필" src="https://www.nicepng.com/png/detail/105-1053345_comment-from-dj-buck-
+perfil-anonimo.png"
+width="120px" length="200px"> <br>
+<div class="profile"style="text-align:right; font-size: 8px;"><a href="introduce.html"><b>프로필 설정</b></a></div>
+ <div class="feeling">
+  <i><strong>Today's feeling...</strong></i><br>
+  <br>
+ </div>
+ <b><a href="diary.html">✍글쓰기</a></b>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ <b><a href="statics.html">📃통계</a></b>
+</div>
+
+<script type="text/javascript">
+function submit(){
+	var textchange = document.getElementById("textchange").value;
+	var blogname = document.getElementById("header");
+	blogname.innerHTML= textchange;
+	blogname.style.fontSize="60px";
+	blogname.style.textDecoration="none";
+	blogname.style.fontWeight="bolder";
+	//블로그이름색상변경
+	var length = document.getElementsByName("colorchange").length;
+    for (var i=0; i<length; i++) {
+        if (document.getElementsByName("colorchange")[i].checked == true) {
+        	blogname.style.color= document.getElementsByName("colorchange")[i].value;
+        }
+    }
+   //배경색상변경
+   document.body.style.backgroundColor=document.getElementById("backchange").value;
+   //폰트색상변경
+   document.body.style.color=document.getElementById("fontchange").value;
+   //폰트변경
+   document.body.style.fontFamily = document.getElementById("font").value;
+    
+}//submit
+
+$(function(){
+	$("input").focus(function(){
+		$(this).css("background-color","yellow");
+		$(this).css("border","3px solid red");
+	});
+	$("input").blur(function(){
+		$(this).css("background-color","white");
+		$(this).css("border","1px solid black");
+	});
+
+});
+</script>
+
+
+
+<div id="sec2" align="center">
+<p><b>블로그명 변경</b></p>
+<input type="text" id="textchange" required><br>
+<p><b>블로그명 색상변경</b></p>
+<input type="radio" name="colorchange" value="blue">Blue
+<input type="radio" name="colorchange" value="orange">Orange
+<input type="radio" name="colorchange" value="pink">Pink
+<input type="radio" name="colorchange" value="black">Black<br>
+<p><b>배경색상변경</b></p>
+<input type="color" id="backchange"><br>
+<p><b>폰트색상변경</b></p>
+<input type="color" id="fontchange"><br>
+<p><b>폰트변경</b></p>
+<select id="font">
+ <option value="굴림">굴림</option>
+ <option value="궁서">궁서</option>
+ <option value="바탕">바탕</option>
+ <option value="고딕">고딕</option>
+</select>
+<p align="right"><input type="button" onclick="submit()" value="변경"></p>
+</div>
+
+
+<div class="up"><a href="#header">⇧</a></div>
+<div class="banner"><a href="https://www.kbfg.com/Kor/pr/press/2022_19.htm">
+<img alt="이미지가 안보여요ㅠ" src="https://tpc.googlesyndication.com/simgad/7529414382496576195" width="165px" height="280px"></a></div>
+<div class="menu" id="menu" align="center">
+<p><a href="introduce.html">소 <br> 개</a></p>·
+<p><a href="diary.html">일 <br> 기</a></p>·
+<p><a href="visitor.html">안 <br> 부</a></p>·
+<p><a href="book.html">서 <br> 재</a></p>·
+<p><a href="map.html">지 <br> 도</a></p>·
+<p><a href="deco.html">de <br> co</a></p>
+</div>
+
+</body>
+</html>

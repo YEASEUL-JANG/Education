@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+var date = new Date();
+var y=date.getFullYear();//현재 년도
+var m=date.getMonth();
+var d=date.getDate;
+
+var theDate=new Date(y,m,1);
+var theDay=theDate.getDay();//1일의 요일
+//1월1일부터 12월까지 마지막 날짜를 배열로 저장한다.
+var last=[31,28,31,30,31,30,31,31,30,31,30,31];
+//윤년일경우 2월의 마지막 날짜는 29로 설정
+if(y%4 && y%100 != 0 || y%400 == 0){
+	lastDate=last[1]=29; //2월을 29일로 바꿈
+}
+lastDate=last[m];
+
+var row = Math.ceil((theDay+lastDate)/7);//필요한 행 수
+document.write("<h1>"+y+"."+(m+1)+"</h1>");
+var calender = "<table border='1'>";
+calender += "<tr>";
+calender += "<th>일</th>";
+calender += "<th>월</th>";
+calender += "<th>화</th>";
+calender += "<th>수</th>";
+calender += "<th>목</th>";
+calender += "<th>금</th>";
+calender += "<th>토</th>";
+calender += "</tr>";
+
+var dNum=1;
+for(var i=1; i<=row; i++){
+	calender += "<tr>";
+	for(var k=1; k<=7;k++){
+		//행이 첫 줄이고 현재 월의 첫날의 요일 이전은 모두 빈열로 표기, 날짜가 마지막 날짜보다 크면 빈열로 표기
+		if(i==1 && k<=theDay || dNum>lastDate){
+		  calender += "<td> &nbsp; </td>";
+		}else {calender+="<td>"+dNum+"</td>"; dNum++}
+	}
+	calender += "</tr>";
+}
+calender += "</table>";
+
+document.write(calender);
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

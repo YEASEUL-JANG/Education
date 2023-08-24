@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+function datesUntilNewYear(){
+	let now = new Date();//현재시각
+	let newYear=new Date(document.getElementById("date").value);//Date(날짜지정(year,month,date));
+	let diff = newYear - now;
+	//밀리세컨드 계산
+	let milliseconds = Math.floor(diff % 1000);
+	diff=diff/1000;
+	//초계산
+	let seconds = Math.floor(diff % 60);
+	diff= diff/60;
+	//분계산
+	let minutes = Math.floor(diff % 60);
+	diff=diff/60;
+	//시 계산
+	let hours = Math.floor(diff % 24);
+	diff=diff/24;
+	
+	let days = Math.floor(diff);
+	let outStr = "목표일까지 남은시간 : "+days + "일, "+hours + "시간, "+minutes+"분, "+ seconds+"초, "+milliseconds+"밀리초 남았습니다."
+	document.getElementById("remaining").innerHTML=outStr;
+}
+
+//setTimeout(datesUntilNewYear(), 1000); //1초에 한번 호출함
+
+</script>
+
+<input type="date" id="date">
+<button type="button" onclick="setInterval('datesUntilNewYear()', 1000)" >확인</button>
+<div id="remaining"></div>
+
+
+</body>
+</html>
