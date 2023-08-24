@@ -1,0 +1,190 @@
+select s.name 이름, s.deptno1 학과코드, d.dname 학과이름
+from student s, department d
+where s.deptno1=d.deptno;
+
+-- 가상의 view에 조인한 테이블 저장가능.
+create or replace view student_v
+as
+select s.name 학생이름, d.dname 학과 , p.name 지도교수
+from student s, department d, professor p
+where s.deptno1=d.deptno and s.profno=p.profno;
+
+-- 생성된 전체 테이블 보기= tab
+select*from tab;
+
+select * from student_v;
+-- = select * from (select s.name 학생이름, d.dname 학과 , p.name 지도교수
+--from student s, department d, professor p
+--where s.deptno1=d.deptno and s.profno=p.profno;) 와 같음 (서브쿼리)
+
+--self join ( 반드시 별칭 사용 )
+select * from emp;
+select a.empno 사번, a.ename 이름, b.empno 매니저사번, b.ename 매니저
+from emp a, emp b
+where a.mgr = b.empno;
+
+-- outer join 
+-- (+) 붙은 컬럼과는 서브쿼리 같이 사용불가
+-- 교수가 배정되지 않은 학생들도 같이 출력
+select s.name 학생이름, p.name 교수이름
+from student s, professor p
+where s.profno=p.profno(+);
+
+-- inner join
+select name 학생이름, deptno1 학과번호, dname 학과이름
+from student a inner join department b --조인할 테이블들
+ on a.deptno1=b.deptno; --조인 조건
+
+-- 참조할 컬럼명이 동일할 때 using
+-- using절에서 쓴 컬럼 deptno는 select문에 사용불가
+select e.empno , d.dname
+from emp e inner join dept d
+using (deptno) ;
+ 
+ --상품테이블
+ create table product (
+product_code varchar2(20) not null primary key,
+product_name varchar2(50) not null,
+price number default 0,
+company varchar2(50),
+make_date date default sysdate
+);
+insert into product values ('A1', '아이폰', 900000, '애플', '2012-09-01');
+insert into product values ('A2', '갤럭시노트', 1000000, '삼성', '2018-08-01');
+insert into product values ('A3', '갤럭시S7', 1200000, '삼성', '2017-10-01');
+select * from product;
+
+--판매테이블
+create table product_sales (
+product_code varchar2(20) not null,
+amount number default 0
+);
+insert into product_sales values ('A1', 100);
+insert into product_sales values ('A2', 200);
+insert into product_sales values ('A3', 300);
+select * from product_sales;
+--상품테이블에 없는 내역 삽입(실제로는 처리불가)
+insert into product_sales values ('A4', 300);
+
+drop table product_sales;
+
+-- product테이블의 product_code와 외래키 관계처리
+create table product_sales (
+product_code varchar2(20) not null
+ references product(product_code), 
+amount number default 0
+);
+insert into product_sales values ('A1', 100);
+insert into product_sales values ('A2', 200);
+insert into product_sales values ('A3', 300);
+-- pk에는 A4가 없기때문에 아래 오류남.
+insert into product_sales values ('A4', 300);
+
+SELECT * FROM product_sales;
+create or replace view product_sales_v
+as
+select p.product_code, product_name, company, price, amount, price*amount money
+from product p, product_sales s --조인할 테이블
+where p.product_code=s.product_code; --조인 조건
+
+commit;
+
+select *from emp;
+select*from dept;
+
+1-1)
+select e.deptno 부서번호, d.dname 부서명, e.ename 이름, e.sal 급여
+from emp e, dept d
+where e.deptno=d.deptno;
+
+1-2)
+select e.deptno 부서번호, d.dname 부서명, e.ename 이름, e.sal 급여
+from emp e inner join dept d
+on e.deptno=d.deptno;
+
+2-1)
+select  e.ename 이름, e.deptno 부서번호, d.dname 부서명
+from emp e, dept d
+where e.deptno=d.deptno and e.job='사원';
+
+2-2)
+select  e.ename 이름, e.deptno 부서번호, d.dname 부서명
+from emp e inner join dept d
+on e.deptno=d.deptno and e.job='사원';
+
+3-1)
+select  e.empno 사번 , e.ename 이름, d.dname 부서명
+from emp e, dept d
+where e.deptno=d.deptno and e.ename='황인태';
+
+3-2)
+select  e.empno 사번 , e.ename 이름, d.dname 부서명
+from emp e inner join dept d
+on e.deptno=d.deptno and e.ename='황인태';
+
+4-1)
+select  b.ename ||'의 매니저는'|| a.ename||'이다.'
+from emp a, emp b
+where a.empno=b.mgr;
+
+4-2)
+select  b.ename ||'의 매니저는'|| a.ename||'이다.'
+from emp a inner join emp b
+on a.empno=b.mgr;
+
+
+
+create table dep(
+id varchar2(10) primary key,
+name varchar2(15) not null,
+location varchar2(50)
+);
+insert into dep values('10', '영업부', '서울 강남구');
+savepoint a;
+insert into dep values('20', '회계부', '부산 동래구');
+savepoint b;
+select * from dep;
+insert into dep values('30', '개발부', '인천 계양구');
+rollback to a;--a지점까지만
+select * from dep;
+commit;
+select * from dep;
+
+select deptno, count(*), sum(sal), round(avg(sal),2)
+from emp
+group by deptno;
+
+--학과별 , 직급별 교수 급여평균
+select deptno, position, round(avg(pay),2)
+from professor
+group by deptno, position
+order by position;
+
+-- group by 절에서 집계 후 having절 실행.
+-- group by 절과 where절 같이 사용가능.
+select p.deptno, d.dname, avg(pay)
+from professor p, department d
+where p.deptno=d.deptno
+group by d.dname, p.deptno
+having avg(pay) >= 250 and p.deptno >= 200;
+
+
+문제 5)
+select deptno 학과번호, sum(pay)+sum(bonus) 
+from professor
+group by deptno
+order by deptno;
+
+문제 6)
+select to_char(birthday, 'MM') 월, count(*) 인원수
+from student
+group by to_char(birthday, 'MM') 
+order by 월;
+
+
+
+
+
+
+
+

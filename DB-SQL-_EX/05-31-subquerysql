@@ -1,0 +1,113 @@
+select e.ename, e.deptno, (
+select d.dname from dept d where e.deptno = d.deptno) dname
+from emp e;
+
+
+select * from professor;
+select * from student;
+
+문제1]
+select p.name 이름, p.hiredate 입사일, d.dname 학과명
+from professor p , department d
+where p.deptno=d.deptno and p.hiredate <(select p.hiredate from professor p where p.name='송도권');
+
+문제2]
+select name, pay, hiredate
+from professor 
+where hiredate =(select hiredate from professor where name='심슨')
+and pay < (select pay from professor where name='조인형');
+
+문제3]
+select grade 학년, name 이름, height 키
+from student
+where (grade,height) in(select grade,max(height) from student group by grade)
+order by grade;
+
+
+
+
+create table t_emp(
+id number(5) not null,
+name varchar2(25),
+salary number(7,2),
+phone varchar2(15),
+dept_name varchar2(25)
+);
+
+rename t_emp to s_emp;
+
+insert into s_emp values(100,'이상헌',2000, '010-222-3333','개발부');
+insert into s_emp values(101, '최순철', 3000, '010-333-4444', '총무부');
+insert into s_emp values(102, '장혜숙', 4000, '010-444-5555', '영업부');
+insert into s_emp (id, name) values (300, '김철수');
+
+alter table s_emp add (hire_date date);
+
+select*from s_emp;
+
+alter table s_emp modify (phone varchar2(20));
+alter table s_emp add (mailid varchar2(10));
+alter table s_emp modify (mailid varchar2(20));
+alter table s_emp rename column mailid to e_mail;
+update s_emp set hire_date= sysdate
+where hire_date is null;
+
+
+create table c_emp(
+id number(5) constraint c_emp_id_pk primary key,
+name varchar2(25) constraint c_emp_name_nn not null,
+salary number(7,2) ,
+phone varchar2(15) constraint c_emp_phone_ck
+check(phone like '3429-%'),
+dept_id number(7) constraint c_emp_dept_id_fk
+references dept(deptno)
+);
+
+select constraint_name from user_constraints;
+select * from user_constraints where table_name='C_EMP'; 
+
+ALTER table c_emp drop constraint c_emp_name_nn;
+alter table c_emp add constraint c_emp_name_un unique (name);
+alter table c_emp modify (name varchar2(25) constraint c_emp_name_nn not null);
+select * from c_emp;
+
+문제4]
+create table customer(
+id varchar2(20), 
+pwd varchar2(15),
+name varchar2(20),
+hp varchar2(20),
+addr varchar2(50)
+);
+select * from customer;
+문제5]
+alter table customer add constraint customer_id_pk primary key(id);
+
+문제6]
+insert into customer values('kim','1234','홍길동', '010-1234-5678','서울 강동구');
+insert into customer values('lee','1234','이철호', '010-1222-3333','서울 강남구');
+insert into customer values('park','1234','박명수', '010-3334-4444','서울 강북구');
+
+문제7]
+alter table customer add (email varchar2(20));
+
+문제 8]
+update customer set email='kim@naver.com' where id = 'kim';
+update customer set email='lee@daum.net' where id = 'lee';
+update customer set email='park@gmail.com' where id = 'park';
+
+문제 9]
+alter table customer modify (email constraint customer_email_nn not null);
+
+문제10]
+alter table customer add( deptno number(2) constraint customer_deptno_kr
+references dept(deptno));
+
+문제11]
+update customer set deptno='10' where id = 'kim';
+update customer set deptno='20' where id = 'lee';
+update customer set deptno='30' where id = 'park';
+
+commit;
+
+
